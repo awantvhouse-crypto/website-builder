@@ -1537,6 +1537,376 @@ section{
 
 
 /* =========================================================
+   PAYMENT INFORMATION
+========================================================= */
+
+.payment-section{
+    position:relative;
+}
+
+.payment-card{
+    position:relative;
+    overflow:hidden;
+
+    padding:45px;
+
+    border-radius:32px;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0,234,255,.11),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(156,92,255,.11),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(12,27,47,.88),
+            rgba(4,11,21,.94)
+        );
+
+    border:
+        1px solid rgba(0,234,255,.16);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.45);
+}
+
+
+.payment-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:8%;
+
+    right:8%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,234,255,.7),
+            rgba(156,92,255,.7),
+            transparent
+        );
+
+    box-shadow:
+        0 0 25px rgba(0,234,255,.35);
+
+}
+
+
+.payment-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap:35px;
+
+    align-items:center;
+
+}
+
+
+.payment-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.payment-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        7px 12px;
+
+    margin-bottom:17px;
+
+    border-radius:50px;
+
+    border:
+        1px solid rgba(0,234,255,.2);
+
+    background:
+        rgba(0,234,255,.045);
+
+    color:#9cefff;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+}
+
+
+.payment-badge span{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#25ff9c;
+
+    box-shadow:
+        0 0 14px #25ff9c;
+
+}
+
+
+.payment-content h2{
+
+    font-family:"Orbitron";
+
+    font-size:
+        clamp(27px,4vw,43px);
+
+    line-height:1.15;
+
+    margin-bottom:15px;
+
+}
+
+
+.payment-content p{
+
+    max-width:680px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.85;
+
+    margin-bottom:22px;
+
+}
+
+
+.payment-content strong{
+
+    color:#e9f7ff;
+
+}
+
+
+.payment-points{
+
+    display:grid;
+
+    gap:11px;
+
+    margin-bottom:27px;
+
+}
+
+
+.payment-point{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:11px;
+
+    color:#b8c8da;
+
+    font-size:11px;
+
+    line-height:1.6;
+
+}
+
+
+.payment-point-icon{
+
+    flex:none;
+
+    width:25px;
+
+    height:25px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:8px;
+
+    color:var(--cyan);
+
+    background:
+        rgba(0,234,255,.07);
+
+    border:
+        1px solid rgba(0,234,255,.13);
+
+}
+
+
+.payment-note{
+
+    padding:14px 16px;
+
+    border-radius:14px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    color:#8193a9;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+
+.payment-note strong{
+
+    color:#b9c9da;
+
+}
+
+
+.payment-action{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.payment-action-card{
+
+    width:min(330px,100%);
+
+    padding:30px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+        rgba(2,10,19,.72);
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+    position:relative;
+
+}
+
+
+.payment-lock{
+
+    width:62px;
+
+    height:62px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin:0 auto 17px;
+
+    border-radius:20px;
+
+    font-size:27px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,234,255,.13),
+            rgba(156,92,255,.13)
+        );
+
+    border:
+        1px solid rgba(0,234,255,.2);
+
+    box-shadow:
+        0 0 35px rgba(0,234,255,.08);
+
+}
+
+
+.payment-action-card h3{
+
+    font-size:15px;
+
+    margin-bottom:9px;
+
+}
+
+
+.payment-action-card p{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+
+.payment-action-card .btn{
+
+    width:100%;
+
+}
+
+
+.payment-status{
+
+    margin-top:13px;
+
+    color:#6f8299;
+
+    font-size:8px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================================
    PROCESS
 ========================================================= */
 
@@ -2235,6 +2605,37 @@ footer p{
 }
 
 
+@media(max-width:800px){
+
+    .payment-card{
+        padding:30px 22px;
+    }
+
+    .payment-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .payment-content{
+        text-align:center;
+    }
+
+    .payment-content p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .payment-points{
+        text-align:left;
+    }
+
+    .payment-note{
+        text-align:left;
+    }
+
+}
+
+
 @media(max-width:700px){
 
     .navbar{
@@ -2370,6 +2771,15 @@ footer p{
 
         width:100%;
 
+    }
+
+    .payment-card{
+        padding:25px 17px;
+        border-radius:25px;
+    }
+
+    .payment-content h2{
+        font-size:27px;
     }
 
 }
@@ -2547,8 +2957,6 @@ footer p{
 
             <div class="hero-image-frame">
 
-
-                <!-- YOUR IMAGE -->
 
                 <img
                     src="hmas-logo.png"
@@ -3355,6 +3763,209 @@ footer p{
 
 
 <!-- =========================================================
+     PAYMENT INFORMATION
+========================================================= -->
+
+<section
+    id="payment"
+    class="payment-section">
+
+
+    <div class="container">
+
+
+        <div class="payment-card reveal">
+
+
+            <div class="payment-grid">
+
+
+                <!-- PAYMENT CONTENT -->
+
+                <div class="payment-content">
+
+
+                    <div class="payment-badge">
+
+                        <span></span>
+
+                        PAYMENT INFORMATION
+
+                    </div>
+
+
+                    <h2>
+
+                        Ready to start?
+                        <span class="gradient">
+                            Let's arrange payment.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Our website packages have clear starting prices.
+                        For <strong>current payment details</strong>,
+                        please contact us directly on WhatsApp.
+
+                        We will privately provide the latest available
+                        payment information based on your selected package
+                        and project requirements.
+
+                    </p>
+
+
+                    <div class="payment-points">
+
+
+                        <div class="payment-point">
+
+                            <div class="payment-point-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Current payment details
+                                </strong>
+
+                                <br>
+
+                                Get the latest payment information directly
+                                from HMAS before making any payment.
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-point">
+
+                            <div class="payment-point-icon">
+                                🔒
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Private payment information
+                                </strong>
+
+                                <br>
+
+                                Bank account details and other available
+                                payment methods are shared privately.
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-point">
+
+                            <div class="payment-point-icon">
+                                💬
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Personal assistance
+                                </strong>
+
+                                <br>
+
+                                Contact us first and we will guide you
+                                through the payment process.
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="payment-note">
+
+                        <strong>Important:</strong>
+
+                        Please contact HMAS before sending any payment.
+                        Payment details may change, so always request the
+                        current details directly from us.
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PAYMENT ACTION -->
+
+                <div class="payment-action">
+
+
+                    <div class="payment-action-card">
+
+
+                        <div class="payment-lock">
+                            🔐
+                        </div>
+
+
+                        <h3>
+                            Need Payment Details?
+                        </h3>
+
+
+                        <p>
+
+                            Message us on WhatsApp and request the
+                            current payment information for your
+                            selected website package.
+
+                        </p>
+
+
+                        <a
+                            href="https://wa.me/923054330064?text=Hello%20HMAS%2C%20I%20would%20like%20to%20get%20the%20current%20payment%20details%20for%20a%20website."
+                            target="_blank"
+                            class="btn btn-primary">
+
+                            💬 REQUEST PAYMENT DETAILS
+
+                        </a>
+
+
+                        <div class="payment-status">
+
+                            CURRENT DETAILS • PRIVATE • DIRECT
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
      PROCESS
 ========================================================= -->
 
@@ -4086,6 +4697,34 @@ footer p{
 
                         Yes. Static websites can be
                         published through GitHub Pages.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item reveal">
+
+                <button
+                    class="faq-question">
+
+                    How can I get the current payment details?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Contact HMAS directly on WhatsApp before
+                        making any payment. We will privately provide
+                        the current available payment details,
+                        including bank information and other
+                        available payment methods.
 
                     </p>
 
