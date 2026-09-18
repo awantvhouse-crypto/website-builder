@@ -1,1399 +1,2192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Abdullah Shahzad (HMAS) | Professional Website Creator</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Abdullah Shahzad (HMAS) - Professional website creator. Premium, responsive and modern websites for businesses, brands, portfolios and organizations.">
-<meta name="keywords" content="Abdullah Shahzad, HMAS, website creator, web designer, website development, Pakistan">
-<meta name="author" content="Abdullah Shahzad">
+<title>
+Abdullah Shahzad (HMAS) | Professional Website Creator
+</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta
+name="description"
+content="Abdullah Shahzad (HMAS) - Professional website creator creating modern, responsive and premium websites."
+>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<meta
+name="keywords"
+content="Abdullah Shahzad, HMAS, website creator, web designer, website developer, Pakistan"
+>
+
+<meta name="author"
+content="Abdullah Shahzad (HMAS)">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap"
+rel="stylesheet">
+
 
 <style>
 
 /* =========================================================
-   HMAS PREMIUM WEBSITE
-   ========================================================= */
+   HMAS PREMIUM DIGITAL STUDIO
+========================================================= */
 
 :root{
-    --bg:#030712;
-    --bg2:#07111f;
-    --card:rgba(12,23,40,.68);
-    --card2:rgba(16,30,52,.8);
+
+    --bg:#020611;
+    --bg2:#06101d;
 
     --cyan:#00eaff;
-    --blue:#3478ff;
-    --purple:#9b5cff;
+    --blue:#3185ff;
+    --purple:#9c5cff;
     --pink:#ff3cac;
 
-    --text:#f5f9ff;
-    --muted:#91a3bb;
+    --white:#f5faff;
+    --text:#d9e6f5;
+    --muted:#899bb1;
+
     --border:rgba(255,255,255,.10);
 
-    --shadow:
-        0 25px 80px rgba(0,0,0,.45),
-        0 0 40px rgba(0,234,255,.05);
+    --glass:rgba(9,20,36,.72);
 
     --radius:26px;
+
+    --shadow:
+        0 30px 90px rgba(0,0,0,.45);
+
 }
+
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
+
 
 html{
     scroll-behavior:smooth;
 }
 
+
 body{
-    font-family:"Inter",sans-serif;
+
     background:
-        radial-gradient(circle at 10% 10%,rgba(0,234,255,.08),transparent 30%),
-        radial-gradient(circle at 90% 20%,rgba(155,92,255,.10),transparent 30%),
-        radial-gradient(circle at 50% 90%,rgba(255,60,172,.07),transparent 30%),
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(0,234,255,.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(156,92,255,.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255,60,172,.08),
+            transparent 30%
+        ),
+
         var(--bg);
 
-    color:var(--text);
+    color:var(--white);
+
+    font-family:"Inter",sans-serif;
+
     overflow-x:hidden;
+
 }
 
+
 /* =========================================================
-   BACKGROUND EFFECTS
-   ========================================================= */
+   GRID BACKGROUND
+========================================================= */
 
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
-    z-index:-2;
+
+    z-index:-3;
 
     background-image:
-        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
 
     background-size:60px 60px;
 
-    mask-image:linear-gradient(to bottom,black,transparent);
 }
 
+
+/* =========================================================
+   SCAN LIGHT
+========================================================= */
+
 body::after{
+
     content:"";
+
     position:fixed;
-    width:500px;
-    height:500px;
+
+    width:700px;
+    height:700px;
+
     border-radius:50%;
-    background:rgba(0,234,255,.07);
-    filter:blur(120px);
-    top:-200px;
-    left:-150px;
-    z-index:-3;
+
+    background:rgba(0,234,255,.045);
+
+    filter:blur(130px);
+
+    top:-350px;
+    left:-250px;
+
+    pointer-events:none;
+
+    z-index:-4;
+
 }
+
 
 /* =========================================================
    PARTICLES
-   ========================================================= */
+========================================================= */
 
 #particles{
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
     z-index:-1;
+
 }
+
 
 .particle{
+
     position:absolute;
-    width:3px;
-    height:3px;
+
+    width:2px;
+    height:2px;
+
     border-radius:50%;
+
     background:var(--cyan);
-    box-shadow:0 0 15px var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan);
+
     opacity:.45;
-    animation:floatParticle linear infinite;
+
+    animation:
+        particleMove linear infinite;
+
 }
 
-@keyframes floatParticle{
+
+@keyframes particleMove{
+
     from{
         transform:translateY(110vh);
     }
+
     to{
         transform:translateY(-10vh);
     }
+
 }
+
 
 /* =========================================================
    NAVBAR
-   ========================================================= */
+========================================================= */
 
 .navbar{
+
     position:fixed;
+
     top:15px;
+
     left:50%;
+
     transform:translateX(-50%);
+
     width:min(1180px,94%);
+
     height:70px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
-    padding:0 22px;
+    padding:0 20px;
 
-    background:rgba(4,10,20,.72);
-    border:1px solid var(--border);
-    backdrop-filter:blur(22px);
+    background:
+        rgba(3,10,20,.76);
+
+    border:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(24px);
 
     border-radius:22px;
 
     box-shadow:
-        0 15px 50px rgba(0,0,0,.35),
-        inset 0 1px rgba(255,255,255,.05);
+        0 15px 60px rgba(0,0,0,.4);
 
     z-index:1000;
+
 }
+
 
 .logo{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     text-decoration:none;
+
     color:white;
-    font-weight:900;
+
 }
 
-.logo-mark{
-    width:42px;
-    height:42px;
+
+.logo-box{
+
+    width:43px;
+
+    height:43px;
+
     display:grid;
+
     place-items:center;
+
     border-radius:13px;
 
-    font-family:"Orbitron",sans-serif;
-    font-size:14px;
-
     background:
-        linear-gradient(135deg,var(--cyan),var(--blue),var(--purple));
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue),
+            var(--purple)
+        );
+
+    font-family:"Orbitron";
+
+    font-weight:900;
+
+    font-size:13px;
 
     box-shadow:
         0 0 30px rgba(0,234,255,.25);
 
-    position:relative;
 }
 
-.logo-mark::after{
-    content:"";
-    position:absolute;
-    inset:2px;
-    border-radius:11px;
-    border:1px solid rgba(255,255,255,.35);
+
+.logo-name{
+
+    font-size:13px;
+
+    font-weight:900;
+
 }
 
-.logo-text{
-    line-height:1.1;
-}
 
-.logo-text small{
+.logo-name small{
+
     display:block;
-    color:var(--muted);
-    font-size:9px;
+
+    font-size:8px;
+
     letter-spacing:2px;
+
+    color:var(--muted);
+
     margin-top:3px;
+
 }
+
 
 .nav-links{
+
     display:flex;
-    gap:24px;
+
+    gap:23px;
+
     list-style:none;
+
 }
+
 
 .nav-links a{
-    color:#b9c7d8;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:600;
-    transition:.3s;
-}
 
-.nav-links a:hover{
-    color:var(--cyan);
-    text-shadow:0 0 15px rgba(0,234,255,.5);
-}
+    color:#aebed0;
 
-.nav-cta{
     text-decoration:none;
-    color:#001016;
-    background:linear-gradient(135deg,var(--cyan),#55b9ff);
-    padding:12px 18px;
-    border-radius:13px;
-    font-weight:900;
+
     font-size:12px;
 
-    box-shadow:0 0 25px rgba(0,234,255,.2);
+    font-weight:700;
+
     transition:.3s;
+
 }
 
-.nav-cta:hover{
-    transform:translateY(-2px) scale(1.03);
-    box-shadow:0 0 35px rgba(0,234,255,.45);
+
+.nav-links a:hover{
+
+    color:var(--cyan);
+
 }
+
+
+.nav-button{
+
+    text-decoration:none;
+
+    padding:11px 16px;
+
+    border-radius:12px;
+
+    color:#001017;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            #6bbaff
+        );
+
+    font-size:11px;
+
+    font-weight:900;
+
+}
+
 
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
 .hero{
+
     min-height:100vh;
+
+    padding:
+        150px 20px 90px;
+
     display:flex;
+
     align-items:center;
-    justify-content:center;
-    padding:150px 20px 90px;
-    position:relative;
+
 }
+
 
 .hero-container{
-    width:min(1200px,100%);
+
+    width:min(1180px,100%);
+
+    margin:auto;
+
     display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:70px;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:60px;
+
     align-items:center;
+
 }
 
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
 
-    padding:8px 14px;
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        8px 13px;
 
     border-radius:50px;
-    border:1px solid rgba(0,234,255,.22);
-    background:rgba(0,234,255,.05);
+
+    border:
+        1px solid rgba(0,234,255,.2);
+
+    background:
+        rgba(0,234,255,.045);
 
     color:#9cefff;
-    font-size:11px;
-    font-weight:800;
+
+    font-size:10px;
+
+    font-weight:900;
+
     letter-spacing:1.5px;
 
     margin-bottom:22px;
+
 }
+
 
 .badge-dot{
+
     width:7px;
+
     height:7px;
-    background:#20ff9a;
+
     border-radius:50%;
-    box-shadow:0 0 15px #20ff9a;
+
+    background:#25ff9c;
+
+    box-shadow:
+        0 0 15px #25ff9c;
+
 }
+
 
 .hero h1{
-    font-family:"Orbitron",sans-serif;
-    font-size:clamp(38px,6vw,78px);
-    line-height:1.02;
+
+    font-family:"Orbitron";
+
+    font-size:
+        clamp(38px,5.5vw,72px);
+
+    line-height:1.03;
+
     letter-spacing:-3px;
+
     margin-bottom:22px;
-}
-
-.gradient-text{
-    background:linear-gradient(
-        90deg,
-        var(--cyan),
-        #75b9ff,
-        var(--purple),
-        var(--pink)
-    );
-
-    background-size:300% 300%;
-
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-
-    animation:gradientMove 7s ease infinite;
-}
-
-@keyframes gradientMove{
-    0%,100%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-}
-
-.hero-description{
-    max-width:650px;
-    color:var(--muted);
-    font-size:17px;
-    line-height:1.8;
-    margin-bottom:30px;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-}
-
-.btn{
-    border:none;
-    cursor:pointer;
-    text-decoration:none;
-
-    padding:15px 23px;
-    border-radius:15px;
-
-    font-weight:900;
-    font-size:13px;
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-
-    transition:.3s;
-}
-
-.btn-primary{
-    color:#001017;
-    background:linear-gradient(135deg,var(--cyan),#6bb9ff);
-    box-shadow:0 10px 35px rgba(0,234,255,.18);
-}
-
-.btn-primary:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 45px rgba(0,234,255,.35);
-}
-
-.btn-secondary{
-    color:white;
-    background:rgba(255,255,255,.04);
-    border:1px solid var(--border);
-}
-
-.btn-secondary:hover{
-    border-color:rgba(0,234,255,.4);
-    color:var(--cyan);
-    transform:translateY(-4px);
-}
-
-/* =========================================================
-   HERO VISUAL
-   ========================================================= */
-
-.hero-visual{
-    position:relative;
-    min-height:520px;
-    display:grid;
-    place-items:center;
-}
-
-.orb{
-    width:340px;
-    height:340px;
-    border-radius:50%;
-
-    background:
-        radial-gradient(circle at 35% 30%,
-            rgba(255,255,255,.35),
-            transparent 7%),
-        radial-gradient(circle,
-            rgba(0,234,255,.35),
-            rgba(52,120,255,.15) 35%,
-            rgba(155,92,255,.12) 55%,
-            transparent 72%);
-
-    box-shadow:
-        0 0 70px rgba(0,234,255,.12),
-        inset 0 0 70px rgba(155,92,255,.10);
-
-    animation:orbFloat 6s ease-in-out infinite;
-}
-
-@keyframes orbFloat{
-    0%,100%{transform:translateY(0) rotate(0deg)}
-    50%{transform:translateY(-20px) rotate(4deg)}
-}
-
-.orb::before,
-.orb::after{
-    content:"";
-    position:absolute;
-    inset:35px;
-
-    border:1px solid rgba(0,234,255,.2);
-    border-radius:50%;
-
-    animation:spin 15s linear infinite;
-}
-
-.orb::after{
-    inset:75px;
-    border-color:rgba(155,92,255,.25);
-    animation-duration:10s;
-    animation-direction:reverse;
-}
-
-@keyframes spin{
-    to{transform:rotate(360deg)}
-}
-
-.holo-card{
-    position:absolute;
-    width:300px;
-    padding:22px;
-
-    background:rgba(7,17,31,.65);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:25px;
-    backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.4),
-        0 0 50px rgba(0,234,255,.05);
-
-    animation:holoFloat 5s ease-in-out infinite;
-}
-
-.holo-card.one{
-    top:55px;
-    right:0;
-}
-
-.holo-card.two{
-    bottom:45px;
-    left:0;
-    animation-delay:-2s;
-}
-
-@keyframes holoFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-13px)}
-}
-
-.holo-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:17px;
-}
-
-.holo-title{
-    font-size:12px;
-    font-weight:800;
-}
-
-.live{
-    color:#38ffad;
-    font-size:10px;
-}
-
-.fake-chart{
-    height:90px;
-    display:flex;
-    align-items:end;
-    gap:8px;
-}
-
-.bar{
-    flex:1;
-    border-radius:8px 8px 2px 2px;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,234,255,.15),
-        rgba(0,234,255,.9)
-    );
-
-    animation:barPulse 2s ease-in-out infinite;
-}
-
-.bar:nth-child(2){height:55%;animation-delay:.1s}
-.bar:nth-child(3){height:75%;animation-delay:.2s}
-.bar:nth-child(4){height:45%;animation-delay:.3s}
-.bar:nth-child(5){height:85%;animation-delay:.4s}
-.bar:nth-child(6){height:65%;animation-delay:.5s}
-.bar:nth-child(7){height:95%;animation-delay:.6s}
-
-@keyframes barPulse{
-    50%{filter:brightness(1.4)}
-}
-
-/* =========================================================
-   STATS
-   ========================================================= */
-
-.stats-wrap{
-    width:min(1150px,92%);
-    margin:-30px auto 100px;
-    position:relative;
-    z-index:2;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.stat-card{
-    position:relative;
-    overflow:hidden;
-
-    padding:25px 20px;
-
-    background:linear-gradient(
-        145deg,
-        rgba(16,30,52,.78),
-        rgba(7,15,27,.72)
-    );
-
-    border:1px solid var(--border);
-    border-radius:22px;
-
-    box-shadow:var(--shadow);
-
-    transition:.4s;
-}
-
-.stat-card::before{
-    content:"";
-    position:absolute;
-    width:120px;
-    height:120px;
-    background:var(--cyan);
-    filter:blur(70px);
-    opacity:.06;
-    top:-60px;
-    right:-40px;
-}
-
-.stat-card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(0,234,255,.25);
-}
-
-.stat-icon{
-    font-size:23px;
-    margin-bottom:12px;
-}
-
-.stat-number{
-    font-family:"Orbitron",sans-serif;
-    font-size:28px;
-    font-weight:900;
-}
-
-.stat-label{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:5px;
-}
-
-/* =========================================================
-   GENERAL SECTIONS
-   ========================================================= */
-
-section{
-    padding:100px 20px;
-}
-
-.section-container{
-    width:min(1150px,100%);
-    margin:auto;
-}
-
-.section-heading{
-    max-width:750px;
-    margin-bottom:50px;
-}
-
-.eyebrow{
-    color:var(--cyan);
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:12px;
-}
-
-.section-heading h2{
-    font-family:"Orbitron",sans-serif;
-    font-size:clamp(30px,5vw,48px);
-    line-height:1.15;
-    margin-bottom:15px;
-}
-
-.section-heading p{
-    color:var(--muted);
-    line-height:1.8;
-}
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
-
-.glass-card{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(17,31,52,.72),
-            rgba(7,14,25,.72)
-        );
-
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-
-    padding:32px;
-
-    box-shadow:var(--shadow);
-
-    transition:.4s;
-}
-
-.glass-card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(0,234,255,.2);
-}
-
-.glass-card h3{
-    font-size:20px;
-    margin-bottom:15px;
-}
-
-.glass-card p{
-    color:var(--muted);
-    line-height:1.85;
-}
-
-.feature-list{
-    margin-top:20px;
-    display:grid;
-    gap:13px;
-}
-
-.feature{
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    color:#c5d2e2;
-    font-size:13px;
-}
-
-.feature span{
-    width:23px;
-    height:23px;
-    min-width:23px;
-    display:grid;
-    place-items:center;
-
-    border-radius:8px;
-    background:rgba(0,234,255,.08);
-    color:var(--cyan);
-}
-
-/* =========================================================
-   SERVICES
-   ========================================================= */
-
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.service-card{
-    padding:28px;
-    min-height:230px;
-
-    background:rgba(9,20,35,.66);
-    border:1px solid var(--border);
-    border-radius:24px;
-
-    transition:.4s;
-    position:relative;
-    overflow:hidden;
-}
-
-.service-card::after{
-    content:"";
-    position:absolute;
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    background:var(--cyan);
-    filter:blur(90px);
-    opacity:.05;
-    right:-70px;
-    bottom:-70px;
-}
 
-.service-card:hover{
-    transform:translateY(-10px);
-    border-color:rgba(0,234,255,.25);
 }
-
-.service-icon{
-    font-size:34px;
-    margin-bottom:20px;
-}
-
-.service-card h3{
-    margin-bottom:10px;
-}
-
-.service-card p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.7;
-}
-
-/* =========================================================
-   PORTFOLIO
-   ========================================================= */
-
-.portfolio-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.project{
-    overflow:hidden;
-    border-radius:27px;
-    border:1px solid var(--border);
-    background:rgba(10,20,35,.7);
-    transition:.4s;
-}
-
-.project:hover{
-    transform:translateY(-8px);
-    border-color:rgba(0,234,255,.25);
-    box-shadow:0 25px 70px rgba(0,0,0,.35);
-}
-
-.project-preview{
-    min-height:260px;
-    position:relative;
-    overflow:hidden;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-        radial-gradient(circle at 30% 30%,rgba(0,234,255,.25),transparent 30%),
-        radial-gradient(circle at 80% 70%,rgba(155,92,255,.25),transparent 30%),
-        #071221;
-}
-
-.project-preview::before{
-    content:"";
-    position:absolute;
-    width:240px;
-    height:240px;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:50%;
-    animation:spin 18s linear infinite;
-}
-
-.browser{
-    width:72%;
-    height:150px;
-    background:rgba(2,7,15,.82);
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:15px;
-    padding:12px;
-    position:relative;
-    box-shadow:0 25px 60px rgba(0,0,0,.4);
-}
-
-.browser-top{
-    display:flex;
-    gap:5px;
-    margin-bottom:12px;
-}
-
-.browser-top i{
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:#64748b;
-}
-
-.browser-line{
-    height:7px;
-    border-radius:10px;
-    background:linear-gradient(90deg,var(--cyan),var(--purple));
-    width:70%;
-    margin-bottom:10px;
-}
-
-.browser-line.small{
-    width:45%;
-    opacity:.4;
-}
-
-.project-content{
-    padding:24px;
-}
-
-.project-content h3{
-    margin-bottom:8px;
-}
-
-.project-content p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.7;
-    margin-bottom:18px;
-}
-
-.project-link{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    text-decoration:none;
-    color:var(--cyan);
-    font-size:12px;
-    font-weight:900;
-}
-
-/* =========================================================
-   PRICING
-   ========================================================= */
-
-.pricing-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.price-card{
-    padding:27px 22px;
-    border-radius:25px;
-    border:1px solid var(--border);
-    background:rgba(9,19,34,.7);
-    position:relative;
-    transition:.4s;
-}
-
-.price-card:hover{
-    transform:translateY(-9px);
-}
-
-.price-card.featured{
-    border-color:rgba(0,234,255,.4);
-    box-shadow:
-        0 0 45px rgba(0,234,255,.08),
-        0 25px 70px rgba(0,0,0,.3);
-}
-
-.popular{
-    position:absolute;
-    top:14px;
-    right:14px;
-    padding:6px 9px;
-    border-radius:20px;
-    background:rgba(0,234,255,.1);
-    color:var(--cyan);
-    font-size:8px;
-    font-weight:900;
-    letter-spacing:1px;
-}
-
-.price-card h3{
-    font-size:15px;
-    margin-bottom:12px;
-}
-
-.price{
-    font-family:"Orbitron",sans-serif;
-    font-size:34px;
-    margin-bottom:20px;
-}
-
-.price small{
-    color:var(--muted);
-    font-family:Inter;
-    font-size:10px;
-}
-
-.price-features{
-    list-style:none;
-    display:grid;
-    gap:10px;
-    margin-bottom:25px;
-}
-
-.price-features li{
-    color:#aab9cb;
-    font-size:11px;
-}
-
-.price-features li::before{
-    content:"✓";
-    color:var(--cyan);
-    margin-right:7px;
-}
-
-/* =========================================================
-   PROCESS
-   ========================================================= */
-
-.process{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.process-card{
-    padding:25px;
-    border:1px solid var(--border);
-    border-radius:22px;
-    background:rgba(10,20,34,.62);
-    position:relative;
-}
-
-.process-number{
-    font-family:"Orbitron",sans-serif;
-    font-size:32px;
-    color:rgba(0,234,255,.25);
-    margin-bottom:20px;
-}
-
-.process-card h3{
-    font-size:15px;
-    margin-bottom:8px;
-}
-
-.process-card p{
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.7;
-}
-
-/* =========================================================
-   SKILLS
-   ========================================================= */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
-
-.skill{
-    margin-bottom:20px;
-}
-
-.skill-top{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:8px;
-    font-size:12px;
-}
-
-.skill-top span:last-child{
-    color:var(--cyan);
-}
-
-.skill-bar{
-    height:8px;
-    background:rgba(255,255,255,.05);
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.skill-fill{
-    height:100%;
-    width:var(--width);
-    border-radius:20px;
-    background:linear-gradient(90deg,var(--cyan),var(--purple));
-    box-shadow:0 0 15px rgba(0,234,255,.25);
-}
-
-/* =========================================================
-   FORM
-   ========================================================= */
-
-.form-section{
-    position:relative;
-}
-
-.form-shell{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(12,25,44,.85),
-            rgba(5,12,22,.88)
-        );
-
-    border:1px solid rgba(0,234,255,.13);
-    border-radius:32px;
-
-    padding:35px;
-
-    box-shadow:
-        0 30px 100px rgba(0,0,0,.45),
-        inset 0 1px rgba(255,255,255,.05);
-}
-
-.form-header{
-    text-align:center;
-    max-width:700px;
-    margin:0 auto 35px;
-}
-
-.form-header h2{
-    font-family:"Orbitron",sans-serif;
-    font-size:clamp(28px,5vw,46px);
-    margin-bottom:13px;
-}
-
-.form-header p{
-    color:var(--muted);
-    line-height:1.7;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-
-.input-group{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-}
-
-.input-group.full{
-    grid-column:1/-1;
-}
-
-.input-group label{
-    color:#b7c7d9;
-    font-size:11px;
-    font-weight:800;
-}
-
-.input-group input,
-.input-group select,
-.input-group textarea{
-    width:100%;
-    border:1px solid rgba(255,255,255,.1);
-    outline:none;
-
-    background:rgba(255,255,255,.035);
-    color:white;
-
-    border-radius:14px;
-    padding:14px;
-
-    font-family:Inter;
-    font-size:13px;
-
-    transition:.3s;
-}
-
-.input-group select option{
-    background:#07111f;
-    color:white;
-}
-
-.input-group input:focus,
-.input-group select:focus,
-.input-group textarea:focus{
-    border-color:rgba(0,234,255,.5);
-    box-shadow:0 0 25px rgba(0,234,255,.07);
-}
-
-.input-group textarea{
-    min-height:140px;
-    resize:vertical;
-}
-
-.checkbox-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.check{
-    position:relative;
-}
-
-.check input{
-    position:absolute;
-    opacity:0;
-}
-
-.check label{
-    display:block;
-    padding:12px;
-
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.08);
-
-    background:rgba(255,255,255,.025);
-
-    color:#aebdd0;
-    font-size:11px;
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.check input:checked + label{
-    color:var(--cyan);
-    border-color:rgba(0,234,255,.4);
-    background:rgba(0,234,255,.06);
-    box-shadow:0 0 20px rgba(0,234,255,.05);
-}
-
-.form-submit{
-    grid-column:1/-1;
-    display:flex;
-    justify-content:center;
-    margin-top:10px;
-}
-
-.ai-send{
-    width:min(420px,100%);
-    padding:18px 25px;
-
-    border:none;
-    border-radius:17px;
-
-    color:#001016;
 
-    font-family:"Orbitron",sans-serif;
-    font-size:13px;
-    font-weight:900;
 
-    cursor:pointer;
+.gradient{
 
     background:
         linear-gradient(
             90deg,
             var(--cyan),
-            #7bc9ff,
+            #6bbaff,
+            var(--purple),
+            var(--pink)
+        );
+
+    background-size:300% 300%;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 7s ease infinite;
+
+}
+
+
+@keyframes gradientMove{
+
+    0%,100%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+}
+
+
+.hero-text{
+
+    color:var(--muted);
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    max-width:620px;
+
+    margin-bottom:28px;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+
+}
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:
+        15px 22px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    transition:.3s;
+
+}
+
+
+.btn-primary{
+
+    color:#001018;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            #67b8ff
+        );
+
+    box-shadow:
+        0 12px 35px rgba(0,234,255,.16);
+
+}
+
+
+.btn-primary:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 20px 50px rgba(0,234,255,.32);
+
+}
+
+
+.btn-secondary{
+
+    color:white;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.btn-secondary:hover{
+
+    color:var(--cyan);
+
+    border-color:
+        rgba(0,234,255,.35);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   HERO IMAGE AREA
+========================================================= */
+
+.hero-visual{
+
+    position:relative;
+
+    min-height:550px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.hero-image-frame{
+
+    position:relative;
+
+    width:min(450px,90vw);
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    border:
+        1px solid rgba(0,234,255,.25);
+
+    background:
+        rgba(3,12,23,.8);
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(255,255,255,.04),
+
+        0 30px 100px
+        rgba(0,0,0,.55),
+
+        0 0 70px
+        rgba(0,234,255,.12);
+
+    transform:
+        perspective(1200px)
+        rotateY(-5deg);
+
+    transition:.5s;
+
+}
+
+
+.hero-image-frame:hover{
+
+    transform:
+        perspective(1200px)
+        rotateY(0deg)
+        translateY(-8px);
+
+    box-shadow:
+
+        0 40px 120px
+        rgba(0,0,0,.6),
+
+        0 0 90px
+        rgba(0,234,255,.2);
+
+}
+
+
+.hero-image-frame img{
+
+    width:100%;
+
+    display:block;
+
+    height:auto;
+
+}
+
+
+.image-glow{
+
+    position:absolute;
+
+    inset:-40px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,234,255,.15),
+            transparent 65%
+        );
+
+    filter:blur(30px);
+
+    z-index:-1;
+
+}
+
+
+.image-label{
+
+    position:absolute;
+
+    left:18px;
+
+    bottom:18px;
+
+    right:18px;
+
+    padding:17px;
+
+    border-radius:18px;
+
+    background:
+        rgba(2,9,17,.78);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:
+        blur(20px);
+
+}
+
+
+.image-label strong{
+
+    display:block;
+
+    font-family:"Orbitron";
+
+    font-size:13px;
+
+    margin-bottom:6px;
+
+}
+
+
+.image-label span{
+
+    color:#8ea0b5;
+
+    font-size:10px;
+
+    line-height:1.6;
+
+}
+
+
+/* floating badge */
+
+.floating-tech{
+
+    position:absolute;
+
+    padding:13px 16px;
+
+    border-radius:15px;
+
+    background:
+        rgba(5,15,27,.82);
+
+    border:
+        1px solid rgba(0,234,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    color:#b7c8da;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+}
+
+
+.floating-tech.one{
+
+    top:55px;
+
+    right:-20px;
+
+    animation:
+        floatOne 5s ease-in-out infinite;
+
+}
+
+
+.floating-tech.two{
+
+    bottom:55px;
+
+    left:-30px;
+
+    animation:
+        floatTwo 5s ease-in-out infinite;
+
+}
+
+
+@keyframes floatOne{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+
+@keyframes floatTwo{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(12px);
+    }
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-wrap{
+
+    width:min(1150px,92%);
+
+    margin:
+        -25px auto 80px;
+
+}
+
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+
+}
+
+
+.stat{
+
+    padding:23px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,28,48,.8),
+            rgba(6,14,26,.72)
+        );
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.28);
+
+    transition:.35s;
+
+}
+
+
+.stat:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,234,255,.25);
+
+}
+
+
+.stat-icon{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+
+.stat-number{
+
+    font-family:"Orbitron";
+
+    font-size:27px;
+
+    font-weight:900;
+
+}
+
+
+.stat-label{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:5px;
+
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section{
+
+    padding:
+        100px 20px;
+
+}
+
+
+.container{
+
+    width:min(1150px,100%);
+
+    margin:auto;
+
+}
+
+
+.heading{
+
+    max-width:720px;
+
+    margin-bottom:45px;
+
+}
+
+
+.eyebrow{
+
+    color:var(--cyan);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+
+}
+
+
+.heading h2{
+
+    font-family:"Orbitron";
+
+    font-size:
+        clamp(29px,4.5vw,47px);
+
+    line-height:1.15;
+
+    margin-bottom:14px;
+
+}
+
+
+.heading p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:22px;
+
+}
+
+
+.card{
+
+    padding:30px;
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,28,48,.75),
+            rgba(5,13,24,.75)
+        );
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+    transition:.4s;
+
+}
+
+
+.card:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,234,255,.2);
+
+}
+
+
+.card h3{
+
+    margin-bottom:14px;
+
+}
+
+
+.card p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:13px;
+
+}
+
+
+.feature-list{
+
+    margin-top:20px;
+
+    display:grid;
+
+    gap:12px;
+
+}
+
+
+.feature{
+
+    display:flex;
+
+    gap:10px;
+
+    color:#b9c8d9;
+
+    font-size:12px;
+
+}
+
+
+.feature span{
+
+    color:var(--cyan);
+
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+
+}
+
+
+.service{
+
+    min-height:220px;
+
+    padding:27px;
+
+    border-radius:24px;
+
+    background:
+        rgba(9,20,36,.68);
+
+    border:
+        1px solid var(--border);
+
+    transition:.4s;
+
+}
+
+
+.service:hover{
+
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(0,234,255,.25);
+
+}
+
+
+.service-icon{
+
+    font-size:32px;
+
+    margin-bottom:18px;
+
+}
+
+
+.service h3{
+
+    margin-bottom:9px;
+
+}
+
+
+.service p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+
+.project{
+
+    overflow:hidden;
+
+    border-radius:27px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(8,18,32,.72);
+
+    transition:.4s;
+
+}
+
+
+.project:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(0,234,255,.25);
+
+}
+
+
+.project-visual{
+
+    height:250px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(0,234,255,.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(156,92,255,.25),
+            transparent 30%
+        ),
+
+        #06101e;
+
+}
+
+
+.browser{
+
+    width:72%;
+
+    height:145px;
+
+    border-radius:14px;
+
+    padding:12px;
+
+    background:
+        rgba(1,6,13,.88);
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+}
+
+
+.browser-top{
+
+    display:flex;
+
+    gap:5px;
+
+    margin-bottom:12px;
+
+}
+
+
+.browser-top i{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#66778b;
+
+}
+
+
+.browser-line{
+
+    height:7px;
+
+    border-radius:20px;
+
+    margin-bottom:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    width:75%;
+
+}
+
+
+.browser-line.small{
+
+    width:45%;
+
+    opacity:.4;
+
+}
+
+
+.project-info{
+
+    padding:24px;
+
+}
+
+
+.project-info h3{
+
+    margin-bottom:8px;
+
+}
+
+
+.project-info p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+
+.project-link{
+
+    color:var(--cyan);
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:900;
+
+}
+
+
+/* =========================================================
+   PRICING
+========================================================= */
+
+.pricing{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+
+}
+
+
+.price-card{
+
+    padding:27px 22px;
+
+    border-radius:25px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(8,18,32,.72);
+
+    position:relative;
+
+    transition:.4s;
+
+}
+
+
+.price-card:hover{
+
+    transform:
+        translateY(-8px);
+
+}
+
+
+.price-card.popular{
+
+    border-color:
+        rgba(0,234,255,.4);
+
+    box-shadow:
+        0 0 50px
+        rgba(0,234,255,.07);
+
+}
+
+
+.popular-tag{
+
+    position:absolute;
+
+    right:13px;
+
+    top:13px;
+
+    padding:5px 8px;
+
+    border-radius:20px;
+
+    color:var(--cyan);
+
+    background:
+        rgba(0,234,255,.08);
+
+    font-size:8px;
+
+    font-weight:900;
+
+}
+
+
+.price-card h3{
+
+    font-size:14px;
+
+    margin-bottom:13px;
+
+}
+
+
+.price{
+
+    font-family:"Orbitron";
+
+    font-size:33px;
+
+    margin-bottom:20px;
+
+}
+
+
+.price-list{
+
+    list-style:none;
+
+    display:grid;
+
+    gap:10px;
+
+    margin-bottom:23px;
+
+}
+
+
+.price-list li{
+
+    color:#aebed0;
+
+    font-size:10px;
+
+}
+
+
+.price-list li::before{
+
+    content:"✓";
+
+    color:var(--cyan);
+
+    margin-right:7px;
+
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+
+.process-card{
+
+    padding:25px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:22px;
+
+    background:
+        rgba(8,18,32,.65);
+
+}
+
+
+.process-number{
+
+    font-family:"Orbitron";
+
+    font-size:30px;
+
+    color:
+        rgba(0,234,255,.3);
+
+    margin-bottom:17px;
+
+}
+
+
+.process-card h3{
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+
+.process-card p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   REQUEST FORM
+========================================================= */
+
+.form-shell{
+
+    padding:35px;
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,27,47,.88),
+            rgba(4,11,21,.9)
+        );
+
+    border:
+        1px solid rgba(0,234,255,.14);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.45);
+
+}
+
+
+.form-heading{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:
+        0 auto 35px;
+
+}
+
+
+.form-heading h2{
+
+    font-family:"Orbitron";
+
+    font-size:
+        clamp(28px,5vw,45px);
+
+    margin-bottom:13px;
+
+}
+
+
+.form-heading p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:17px;
+
+}
+
+
+.input{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+}
+
+
+.input.full{
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+.input label{
+
+    color:#b8c8da;
+
+    font-size:10px;
+
+    font-weight:900;
+
+}
+
+
+.input input,
+.input select,
+.input textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:13px;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:white;
+
+    outline:none;
+
+    font-family:Inter;
+
+    font-size:12px;
+
+    transition:.3s;
+
+}
+
+
+.input input:focus,
+.input select:focus,
+.input textarea:focus{
+
+    border-color:
+        rgba(0,234,255,.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(0,234,255,.06);
+
+}
+
+
+.input select option{
+
+    background:#07111f;
+
+    color:white;
+
+}
+
+
+.input textarea{
+
+    min-height:145px;
+
+    resize:vertical;
+
+}
+
+
+.check-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:9px;
+
+}
+
+
+.check{
+
+    position:relative;
+
+}
+
+
+.check input{
+
+    position:absolute;
+
+    opacity:0;
+
+}
+
+
+.check label{
+
+    display:block;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:#aabacd;
+
+    font-size:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.check input:checked + label{
+
+    color:var(--cyan);
+
+    border-color:
+        rgba(0,234,255,.4);
+
+    background:
+        rgba(0,234,255,.06);
+
+}
+
+
+.submit-area{
+
+    grid-column:
+        1 / -1;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:10px;
+
+}
+
+
+.ai-send{
+
+    width:min(440px,100%);
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:17px;
+
+    cursor:pointer;
+
+    font-family:"Orbitron";
+
+    font-size:12px;
+
+    font-weight:900;
+
+    color:#001018;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            #6bbaff,
             var(--purple),
             var(--pink)
         );
 
     background-size:300% 100%;
 
-    animation:buttonGradient 5s ease infinite;
+    animation:
+        buttonGradient 5s ease infinite;
 
     box-shadow:
-        0 15px 45px rgba(0,234,255,.18);
+        0 15px 45px
+        rgba(0,234,255,.17);
 
-    transition:.3s;
 }
+
 
 .ai-send:hover{
-    transform:translateY(-4px) scale(1.02);
+
+    transform:
+        translateY(-4px);
+
     box-shadow:
-        0 20px 60px rgba(0,234,255,.32);
+        0 20px 60px
+        rgba(0,234,255,.3);
+
 }
+
 
 @keyframes buttonGradient{
-    0%,100%{background-position:0% 50%}
-    50%{background-position:100% 50%}
+
+    0%,100%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
 }
 
-.form-status{
+
+.status{
+
     text-align:center;
-    color:#56ffb1;
-    font-size:12px;
-    margin-top:15px;
+
+    color:#55ffb0;
+
+    font-size:11px;
+
     min-height:20px;
+
+    margin-top:14px;
+
 }
+
 
 /* =========================================================
    FAQ
-   ========================================================= */
+========================================================= */
 
 .faq{
+
     max-width:850px;
+
     margin:auto;
+
 }
+
 
 .faq-item{
-    border:1px solid var(--border);
-    border-radius:17px;
-    margin-bottom:12px;
+
+    margin-bottom:11px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:16px;
+
     overflow:hidden;
-    background:rgba(9,19,33,.55);
+
+    background:
+        rgba(8,18,32,.55);
+
 }
+
 
 .faq-question{
+
     width:100%;
+
     border:none;
+
     background:none;
+
     color:white;
-    padding:19px;
+
+    padding:18px;
+
     text-align:left;
-    cursor:pointer;
 
     display:flex;
-    align-items:center;
+
     justify-content:space-between;
 
+    cursor:pointer;
+
     font-weight:800;
-    font-size:13px;
+
+    font-size:12px;
+
 }
+
 
 .faq-question span{
+
     color:var(--cyan);
+
     font-size:18px;
+
+    transition:.3s;
+
 }
+
 
 .faq-answer{
+
     max-height:0;
+
     overflow:hidden;
+
     transition:.4s;
+
 }
+
 
 .faq-answer p{
-    padding:0 19px 19px;
+
+    padding:
+        0 18px 18px;
+
     color:var(--muted);
+
     line-height:1.7;
-    font-size:12px;
+
+    font-size:11px;
+
 }
 
-.faq-item.active .faq-answer{
+
+.faq-item.active
+.faq-answer{
+
     max-height:200px;
+
 }
 
-.faq-item.active .faq-question span{
-    transform:rotate(45deg);
+
+.faq-item.active
+.faq-question span{
+
+    transform:
+        rotate(45deg);
+
 }
+
 
 /* =========================================================
-   CONTACT CTA
-   ========================================================= */
+   CONTACT
+========================================================= */
 
 .contact-box{
+
     text-align:center;
-    padding:65px 30px;
+
+    padding:
+        65px 25px;
 
     border-radius:32px;
 
+    border:
+        1px solid rgba(0,234,255,.14);
+
     background:
-        radial-gradient(circle at 50% 0%,rgba(0,234,255,.15),transparent 45%),
-        linear-gradient(145deg,rgba(12,27,47,.85),rgba(5,12,21,.9));
 
-    border:1px solid rgba(0,234,255,.13);
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,234,255,.15),
+            transparent 45%
+        ),
 
-    box-shadow:0 30px 100px rgba(0,0,0,.4);
+        rgba(8,19,34,.85);
+
 }
+
 
 .contact-box h2{
-    font-family:"Orbitron",sans-serif;
-    font-size:clamp(28px,5vw,48px);
+
+    font-family:"Orbitron";
+
+    font-size:
+        clamp(28px,5vw,46px);
+
     margin-bottom:15px;
+
 }
 
+
 .contact-box p{
-    color:var(--muted);
+
     max-width:650px;
-    margin:0 auto 25px;
+
+    margin:
+        0 auto 25px;
+
+    color:var(--muted);
+
     line-height:1.8;
+
 }
+
 
 /* =========================================================
    FOOTER
-   ========================================================= */
+========================================================= */
 
 footer{
-    padding:40px 20px;
-    border-top:1px solid var(--border);
+
+    border-top:
+        1px solid var(--border);
+
     text-align:center;
+
+    padding:40px 20px;
+
 }
+
 
 footer p{
-    color:#65758a;
-    font-size:11px;
+
+    color:#64758b;
+
+    font-size:10px;
+
 }
 
-footer strong{
-    color:#aebed1;
-}
 
 /* =========================================================
-   WHATSAPP FLOAT
-   ========================================================= */
+   WHATSAPP
+========================================================= */
 
 .whatsapp{
+
     position:fixed;
+
     right:20px;
+
     bottom:20px;
 
     width:60px;
+
     height:60px;
+
+    display:grid;
+
+    place-items:center;
 
     border-radius:50%;
 
-    display:grid;
-    place-items:center;
-
     background:#20d66b;
+
     color:white;
 
-    font-size:25px;
     text-decoration:none;
 
+    font-size:25px;
+
     box-shadow:
-        0 12px 35px rgba(32,214,107,.35);
+        0 15px 40px
+        rgba(32,214,107,.3);
 
     z-index:999;
 
-    animation:whatsappPulse 2s infinite;
 }
 
-@keyframes whatsappPulse{
-    0%,100%{
-        box-shadow:0 12px 35px rgba(32,214,107,.35);
-    }
-    50%{
-        box-shadow:
-            0 12px 35px rgba(32,214,107,.35),
-            0 0 0 12px rgba(32,214,107,.05);
-    }
-}
 
 /* =========================================================
-   REVEAL ANIMATION
-   ========================================================= */
+   REVEAL
+========================================================= */
 
 .reveal{
+
     opacity:0;
-    transform:translateY(35px);
+
+    transform:
+        translateY(30px);
+
     transition:
         opacity .8s ease,
         transform .8s ease;
+
 }
 
+
 .reveal.visible{
+
     opacity:1;
-    transform:translateY(0);
+
+    transform:
+        translateY(0);
+
 }
+
 
 /* =========================================================
    RESPONSIVE
-   ========================================================= */
+========================================================= */
 
 @media(max-width:950px){
 
@@ -1406,7 +2199,7 @@ footer strong{
         text-align:center;
     }
 
-    .hero-description{
+    .hero-text{
         margin-left:auto;
         margin-right:auto;
     }
@@ -1416,148 +2209,178 @@ footer strong{
     }
 
     .hero-visual{
-        min-height:430px;
+        min-height:500px;
     }
 
     .stats{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
+    .services{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .pricing-grid{
-        grid-template-columns:repeat(2,1fr);
+    .pricing{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .process{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
+
 }
+
 
 @media(max-width:700px){
 
     .navbar{
+
         height:62px;
-        padding:0 14px;
+
+        padding:
+            0 13px;
+
     }
 
-    .logo-text{
-        font-size:12px;
-    }
+    .nav-button{
 
-    .nav-cta{
-        padding:10px 12px;
-        font-size:10px;
+        padding:
+            9px 11px;
+
+        font-size:9px;
+
     }
 
     .hero{
+
         padding-top:130px;
+
     }
 
     .hero h1{
+
         letter-spacing:-2px;
+
     }
 
-    .hero-description{
-        font-size:14px;
+    .hero-visual{
+
+        min-height:440px;
+
     }
 
-    .orb{
-        width:260px;
-        height:260px;
+    .hero-image-frame{
+
+        width:
+            min(390px,92vw);
+
     }
 
-    .holo-card{
-        width:230px;
-        padding:17px;
+    .floating-tech.one{
+
+        right:0;
+
     }
 
-    .holo-card.one{
-        right:-5px;
-        top:35px;
-    }
+    .floating-tech.two{
 
-    .holo-card.two{
-        left:-5px;
-        bottom:25px;
-    }
+        left:0;
 
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stat-card{
-        padding:18px 14px;
-    }
-
-    .stat-number{
-        font-size:22px;
     }
 
     .about-grid,
-    .portfolio-grid,
-    .skills-grid{
+    .portfolio{
+
         grid-template-columns:1fr;
+
     }
 
-    .services-grid{
+    .services{
+
         grid-template-columns:1fr;
+
     }
 
-    .pricing-grid{
+    .pricing{
+
         grid-template-columns:1fr;
+
     }
 
     .process{
-        grid-template-columns:1fr;
-    }
 
-    .form-shell{
-        padding:22px 16px;
+        grid-template-columns:1fr;
+
     }
 
     .form-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .input-group.full{
+    .input.full{
+
         grid-column:auto;
+
     }
 
-    .checkbox-grid{
-        grid-template-columns:1fr 1fr;
-    }
+    .submit-area{
 
-    .form-submit{
         grid-column:auto;
+
     }
 
-    .contact-box{
-        padding:45px 20px;
+    .check-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
+
+    .form-shell{
+
+        padding:
+            23px 16px;
+
+    }
+
 }
+
 
 @media(max-width:420px){
 
-    .checkbox-grid{
+    .check-grid{
+
         grid-template-columns:1fr;
+
     }
 
     .hero-buttons{
+
         flex-direction:column;
+
     }
 
     .btn{
+
         width:100%;
+
     }
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================================================
      PARTICLES
@@ -1565,37 +2388,75 @@ footer strong{
 
 <div id="particles"></div>
 
+
 <!-- =========================================================
      NAVBAR
 ========================================================= -->
 
 <nav class="navbar">
 
-    <a href="#home" class="logo">
+    <a href="#home"
+       class="logo">
 
-        <div class="logo-mark">
+        <div class="logo-box">
             HM
         </div>
 
-        <div class="logo-text">
+        <div class="logo-name">
+
             Abdullah Shahzad
-            <small>HMAS • WEB CREATOR</small>
+
+            <small>
+                HMAS • DIGITAL CREATOR
+            </small>
+
         </div>
 
     </a>
 
+
     <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#request">Request</a></li>
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#services">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="#portfolio">
+                Portfolio
+            </a>
+        </li>
+
+        <li>
+            <a href="#pricing">
+                Pricing
+            </a>
+        </li>
+
+        <li>
+            <a href="#request">
+                Request
+            </a>
+        </li>
+
     </ul>
 
-    <a class="nav-cta"
-       href="https://wa.me/923054330064"
-       target="_blank">
+
+    <a
+        href="https://wa.me/923054330064"
+        target="_blank"
+        class="nav-button">
+
         CONTACT ME
+
     </a>
 
 </nav>
@@ -1605,41 +2466,70 @@ footer strong{
      HERO
 ========================================================= -->
 
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home">
+
 
     <div class="hero-container">
 
-        <div class="hero-content reveal">
+
+        <!-- LEFT -->
+
+        <div class="reveal">
 
             <div class="badge">
+
                 <span class="badge-dot"></span>
+
                 AVAILABLE FOR NEW PROJECTS
+
             </div>
 
+
             <h1>
+
                 I Create
-                <span class="gradient-text">
+
+                <span class="gradient">
                     Digital Experiences
                 </span>
+
             </h1>
 
-            <p class="hero-description">
-                I'm <strong>Abdullah Shahzad (HMAS)</strong>,
-                a professional website creator focused on modern,
-                responsive, premium and visually powerful websites
-                for businesses, brands, portfolios and organizations.
+
+            <p class="hero-text">
+
+                I'm
+                <strong>
+                    Abdullah Shahzad (HMAS)
+                </strong>,
+
+                a professional website creator focused on
+                modern, responsive and visually powerful
+                websites for businesses, brands,
+                portfolios and organizations.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#request"
-                   class="btn btn-primary">
+                <a
+                    href="#request"
+                    class="btn btn-primary">
+
                     🚀 START YOUR WEBSITE
+
                 </a>
 
-                <a href="#portfolio"
-                   class="btn btn-secondary">
+
+                <a
+                    href="#portfolio"
+                    class="btn btn-secondary">
+
                     🌐 VIEW MY WORK
+
                 </a>
 
             </div>
@@ -1647,62 +2537,58 @@ footer strong{
         </div>
 
 
+        <!-- RIGHT IMAGE -->
+
         <div class="hero-visual reveal">
 
-            <div class="orb"></div>
 
-            <div class="holo-card one">
+            <div class="image-glow"></div>
 
-                <div class="holo-top">
 
-                    <div class="holo-title">
-                        WEBSITE PERFORMANCE
-                    </div>
+            <div class="hero-image-frame">
 
-                    <div class="live">
-                        ● LIVE
-                    </div>
+
+                <!-- YOUR IMAGE -->
+
+                <img
+                    src="hmas-logo.png"
+                    alt="HMAS Abdullah Shahzad futuristic digital identity"
+                >
+
+
+                <div class="image-label">
+
+                    <strong>
+                        HMAS DIGITAL IDENTITY
+                    </strong>
+
+                    <span>
+
+                        Futuristic look.
+                        Professional work.
+                        Creative technology.
+
+                    </span>
 
                 </div>
 
-                <div class="fake-chart">
-
-                    <div class="bar" style="height:35%"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-
-                </div>
 
             </div>
 
 
-            <div class="holo-card two">
+            <div class="floating-tech one">
 
-                <div class="holo-top">
-
-                    <div class="holo-title">
-                        HMAS DIGITAL STUDIO
-                    </div>
-
-                    <div class="live">
-                        ONLINE
-                    </div>
-
-                </div>
-
-                <div style="font-size:24px;font-weight:900;">
-                    PREMIUM
-                </div>
-
-                <div style="color:#8496ac;font-size:11px;margin-top:5px;">
-                    DESIGN • CODE • EXPERIENCE
-                </div>
+                ⚡ WEBSITE CREATOR
 
             </div>
+
+
+            <div class="floating-tech two">
+
+                🌐 DIGITAL EXPERIENCE
+
+            </div>
+
 
         </div>
 
@@ -1717,15 +2603,22 @@ footer strong{
 
 <div class="stats-wrap reveal">
 
+
     <div class="stats">
 
-        <div class="stat-card">
 
-            <div class="stat-icon">👁️</div>
+        <div class="stat">
 
-            <div class="stat-number"
-                 id="visitorCount">
+            <div class="stat-icon">
+                👁️
+            </div>
+
+            <div
+                class="stat-number"
+                id="visitorCount">
+
                 0
+
             </div>
 
             <div class="stat-label">
@@ -1735,13 +2628,18 @@ footer strong{
         </div>
 
 
-        <div class="stat-card">
+        <div class="stat">
 
-            <div class="stat-icon">📝</div>
+            <div class="stat-icon">
+                📝
+            </div>
 
-            <div class="stat-number"
-                 id="registrationCount">
+            <div
+                class="stat-number"
+                id="registrationCount">
+
                 0
+
             </div>
 
             <div class="stat-label">
@@ -1751,9 +2649,11 @@ footer strong{
         </div>
 
 
-        <div class="stat-card">
+        <div class="stat">
 
-            <div class="stat-icon">🌐</div>
+            <div class="stat-icon">
+                🌐
+            </div>
 
             <div class="stat-number">
                 2+
@@ -1766,9 +2666,11 @@ footer strong{
         </div>
 
 
-        <div class="stat-card">
+        <div class="stat">
 
-            <div class="stat-icon">⚡</div>
+            <div class="stat-icon">
+                ⚡
+            </div>
 
             <div class="stat-number">
                 24/7
@@ -1779,6 +2681,7 @@ footer strong{
             </div>
 
         </div>
+
 
     </div>
 
@@ -1791,24 +2694,34 @@ footer strong{
 
 <section id="about">
 
-    <div class="section-container">
 
-        <div class="section-heading reveal">
+    <div class="container">
+
+
+        <div class="heading reveal">
 
             <div class="eyebrow">
                 ABOUT HMAS
             </div>
 
             <h2>
-                Websites that look
-                <span class="gradient-text">
-                    seriously professional.
+
+                A futuristic identity
+                with a
+                <span class="gradient">
+                    professional purpose.
                 </span>
+
             </h2>
 
             <p>
-                My goal is simple: turn your idea into a website
-                that looks modern, trustworthy and memorable.
+
+                The visual identity represents a futuristic
+                digital and technology aesthetic.
+                The image is a creative design concept —
+                my actual work is focused on professional
+                website creation and digital experiences.
+
             </p>
 
         </div>
@@ -1816,40 +2729,44 @@ footer strong{
 
         <div class="about-grid">
 
-            <div class="glass-card reveal">
+
+            <div class="card reveal">
 
                 <h3>
                     👨‍💻 Who I Am
                 </h3>
 
                 <p>
-                    I'm Abdullah Shahzad (HMAS), a website creator
-                    who focuses on creating modern digital experiences.
-                    Every website is designed with attention to layout,
-                    mobile responsiveness, visual hierarchy and user
-                    experience.
+
+                    I'm Abdullah Shahzad (HMAS),
+                    a website creator who builds modern
+                    digital experiences with responsive
+                    layouts, visual effects and clean
+                    user interfaces.
+
                 </p>
+
 
                 <div class="feature-list">
 
                     <div class="feature">
                         <span>✓</span>
-                        Responsive design for mobile and desktop
+                        Modern responsive websites
                     </div>
 
                     <div class="feature">
                         <span>✓</span>
-                        Modern animations and premium visual effects
+                        Premium animations and effects
                     </div>
 
                     <div class="feature">
                         <span>✓</span>
-                        GitHub Pages compatible websites
+                        Mobile and desktop layouts
                     </div>
 
                     <div class="feature">
                         <span>✓</span>
-                        Direct WhatsApp communication
+                        GitHub Pages compatible projects
                     </div>
 
                 </div>
@@ -1857,43 +2774,48 @@ footer strong{
             </div>
 
 
-            <div class="glass-card reveal">
+            <div class="card reveal">
 
                 <h3>
-                    ⚡ My Approach
+                    🛡️ Professional Focus
                 </h3>
 
                 <p>
-                    Instead of giving every project the same template,
-                    I focus on the purpose of your website, your audience,
-                    your colors and your required features.
+
+                    My website design is focused on
+                    creativity, presentation and usability.
+                    The futuristic visual style is simply
+                    part of the HMAS brand identity.
+
                 </p>
+
 
                 <div class="feature-list">
 
                     <div class="feature">
                         <span>01</span>
-                        Understand your idea
+                        Creative design
                     </div>
 
                     <div class="feature">
                         <span>02</span>
-                        Plan the website structure
+                        Professional presentation
                     </div>
 
                     <div class="feature">
                         <span>03</span>
-                        Design and develop
+                        User-friendly experience
                     </div>
 
                     <div class="feature">
                         <span>04</span>
-                        Deliver your website
+                        Custom client requirements
                     </div>
 
                 </div>
 
             </div>
+
 
         </div>
 
@@ -1908,33 +2830,41 @@ footer strong{
 
 <section id="services">
 
-    <div class="section-container">
 
-        <div class="section-heading reveal">
+    <div class="container">
+
+
+        <div class="heading reveal">
 
             <div class="eyebrow">
                 SERVICES
             </div>
 
             <h2>
+
                 Everything your
-                <span class="gradient-text">
+                <span class="gradient">
                     website needs.
                 </span>
+
             </h2>
 
             <p>
-                From simple websites to advanced digital experiences.
+                From simple pages to advanced digital
+                experiences.
             </p>
 
         </div>
 
 
-        <div class="services-grid">
+        <div class="services">
 
-            <div class="service-card reveal">
 
-                <div class="service-icon">🌐</div>
+            <div class="service reveal">
+
+                <div class="service-icon">
+                    🌐
+                </div>
 
                 <h3>
                     Business Websites
@@ -1948,84 +2878,96 @@ footer strong{
             </div>
 
 
-            <div class="service-card reveal">
+            <div class="service reveal">
 
-                <div class="service-icon">🎨</div>
+                <div class="service-icon">
+                    🎨
+                </div>
 
                 <h3>
-                    Premium Design
+                    Premium UI
                 </h3>
 
                 <p>
-                    Modern visual systems with gradients,
-                    glass effects, animations and responsive layouts.
+                    Modern layouts with gradients,
+                    glass effects, animations and
+                    visual hierarchy.
                 </p>
 
             </div>
 
 
-            <div class="service-card reveal">
+            <div class="service reveal">
 
-                <div class="service-icon">📱</div>
+                <div class="service-icon">
+                    📱
+                </div>
 
                 <h3>
-                    Mobile Responsive
+                    Responsive Design
                 </h3>
 
                 <p>
-                    Your website adapts beautifully to phones,
-                    tablets, laptops and large screens.
+                    Websites designed for phones,
+                    tablets, laptops and desktops.
                 </p>
 
             </div>
 
 
-            <div class="service-card reveal">
+            <div class="service reveal">
 
-                <div class="service-icon">🚀</div>
+                <div class="service-icon">
+                    🚀
+                </div>
 
                 <h3>
                     Landing Pages
                 </h3>
 
                 <p>
-                    Focused landing pages designed to present
-                    your product, service or idea.
+                    Focused pages for products,
+                    services, campaigns and ideas.
                 </p>
 
             </div>
 
 
-            <div class="service-card reveal">
+            <div class="service reveal">
 
-                <div class="service-icon">💼</div>
+                <div class="service-icon">
+                    💼
+                </div>
 
                 <h3>
                     Portfolio Websites
                 </h3>
 
                 <p>
-                    Showcase your skills, projects, services,
-                    achievements and professional identity.
+                    Showcase your skills, work,
+                    services and professional identity.
                 </p>
 
             </div>
 
 
-            <div class="service-card reveal">
+            <div class="service reveal">
 
-                <div class="service-icon">⚙️</div>
+                <div class="service-icon">
+                    ⚙️
+                </div>
 
                 <h3>
                     Custom Features
                 </h3>
 
                 <p>
-                    Forms, animations, sections, interactive UI
-                    and custom functionality based on your requirements.
+                    Interactive sections, forms,
+                    animations and custom UI.
                 </p>
 
             </div>
+
 
         </div>
 
@@ -2040,66 +2982,81 @@ footer strong{
 
 <section id="portfolio">
 
-    <div class="section-container">
 
-        <div class="section-heading reveal">
+    <div class="container">
+
+
+        <div class="heading reveal">
 
             <div class="eyebrow">
                 PORTFOLIO
             </div>
 
             <h2>
+
                 Selected
-                <span class="gradient-text">
+                <span class="gradient">
                     projects.
                 </span>
+
             </h2>
 
             <p>
-                Explore some of the websites created and published online.
+                Websites created and published online.
             </p>
 
         </div>
 
 
-        <div class="portfolio-grid">
+        <div class="portfolio">
 
 
             <div class="project reveal">
 
-                <div class="project-preview">
+                <div class="project-visual">
 
                     <div class="browser">
 
                         <div class="browser-top">
+
                             <i></i>
                             <i></i>
                             <i></i>
+
                         </div>
 
                         <div class="browser-line"></div>
+
                         <div class="browser-line small"></div>
+
                         <div class="browser-line"></div>
 
                     </div>
 
                 </div>
 
-                <div class="project-content">
+
+                <div class="project-info">
 
                     <h3>
                         IQRA QURAN ACADEMY
                     </h3>
 
                     <p>
-                        A dedicated Islamic educational website
-                        designed for Quran learning and online presence.
+
+                        A dedicated Islamic educational
+                        website designed for Quran learning
+                        and online presence.
+
                     </p>
 
-                    <a class="project-link"
-                       href="https://awantvhouse-crypto.github.io/IQRA-QURAN.ACADEMY/"
-                       target="_blank">
+                    <a
+                        href="https://awantvhouse-crypto.github.io/IQRA-QURAN.ACADEMY/"
+                        target="_blank"
+                        class="project-link">
+
                         VIEW LIVE WEBSITE →
+
                     </a>
 
                 </div>
@@ -2109,39 +3066,50 @@ footer strong{
 
             <div class="project reveal">
 
-                <div class="project-preview">
+                <div class="project-visual">
 
                     <div class="browser">
 
                         <div class="browser-top">
+
                             <i></i>
                             <i></i>
                             <i></i>
+
                         </div>
 
                         <div class="browser-line"></div>
+
                         <div class="browser-line small"></div>
+
                         <div class="browser-line"></div>
 
                     </div>
 
                 </div>
 
-                <div class="project-content">
+
+                <div class="project-info">
 
                     <h3>
                         ISLAMIC PLACE
                     </h3>
 
                     <p>
-                        An Islamic themed digital project with
-                        a clean and accessible presentation.
+
+                        An Islamic themed digital project
+                        with a clean and accessible
+                        presentation.
+
                     </p>
 
-                    <a class="project-link"
-                       href="https://awantvhouse-crypto.github.io/Islamic-place/"
-                       target="_blank">
+                    <a
+                        href="https://awantvhouse-crypto.github.io/Islamic-place/"
+                        target="_blank"
+                        class="project-link">
+
                         VIEW LIVE WEBSITE →
+
                     </a>
 
                 </div>
@@ -2162,29 +3130,33 @@ footer strong{
 
 <section id="pricing">
 
-    <div class="section-container">
 
-        <div class="section-heading reveal">
+    <div class="container">
+
+
+        <div class="heading reveal">
 
             <div class="eyebrow">
                 PRICING
             </div>
 
             <h2>
+
                 Choose your
-                <span class="gradient-text">
+                <span class="gradient">
                     website level.
                 </span>
+
             </h2>
 
             <p>
-                Simple packages for different website requirements.
+                Simple packages for different project requirements.
             </p>
 
         </div>
 
 
-        <div class="pricing-grid">
+        <div class="pricing">
 
 
             <div class="price-card reveal">
@@ -2197,28 +3169,45 @@ footer strong{
                     $20
                 </div>
 
-                <ul class="price-features">
+                <ul class="price-list">
 
-                    <li>Modern design</li>
-                    <li>Responsive layout</li>
-                    <li>Basic sections</li>
-                    <li>Contact information</li>
-                    <li>GitHub Pages support</li>
+                    <li>
+                        Modern design
+                    </li>
+
+                    <li>
+                        Responsive layout
+                    </li>
+
+                    <li>
+                        Basic sections
+                    </li>
+
+                    <li>
+                        Contact information
+                    </li>
+
+                    <li>
+                        GitHub Pages support
+                    </li>
 
                 </ul>
 
-                <a href="#request"
-                   class="btn btn-secondary"
-                   style="width:100%">
+                <a
+                    href="#request"
+                    class="btn btn-secondary"
+                    style="width:100%">
+
                     SELECT
+
                 </a>
 
             </div>
 
 
-            <div class="price-card featured reveal">
+            <div class="price-card popular reveal">
 
-                <div class="popular">
+                <div class="popular-tag">
                     POPULAR
                 </div>
 
@@ -2230,20 +3219,37 @@ footer strong{
                     $39
                 </div>
 
-                <ul class="price-features">
+                <ul class="price-list">
 
-                    <li>Premium design</li>
-                    <li>Responsive UI</li>
-                    <li>Multiple sections</li>
-                    <li>Animations</li>
-                    <li>Contact CTA</li>
+                    <li>
+                        Premium design
+                    </li>
+
+                    <li>
+                        Responsive UI
+                    </li>
+
+                    <li>
+                        Multiple sections
+                    </li>
+
+                    <li>
+                        Animations
+                    </li>
+
+                    <li>
+                        Contact CTA
+                    </li>
 
                 </ul>
 
-                <a href="#request"
-                   class="btn btn-primary"
-                   style="width:100%">
+                <a
+                    href="#request"
+                    class="btn btn-primary"
+                    style="width:100%">
+
                     SELECT
+
                 </a>
 
             </div>
@@ -2259,20 +3265,37 @@ footer strong{
                     $50
                 </div>
 
-                <ul class="price-features">
+                <ul class="price-list">
 
-                    <li>Advanced UI</li>
-                    <li>Premium animations</li>
-                    <li>Advanced sections</li>
-                    <li>Interactive features</li>
-                    <li>Custom requirements</li>
+                    <li>
+                        Advanced UI
+                    </li>
+
+                    <li>
+                        Premium animations
+                    </li>
+
+                    <li>
+                        Advanced sections
+                    </li>
+
+                    <li>
+                        Interactive features
+                    </li>
+
+                    <li>
+                        Custom requirements
+                    </li>
 
                 </ul>
 
-                <a href="#request"
-                   class="btn btn-secondary"
-                   style="width:100%">
+                <a
+                    href="#request"
+                    class="btn btn-secondary"
+                    style="width:100%">
+
                     SELECT
+
                 </a>
 
             </div>
@@ -2288,23 +3311,41 @@ footer strong{
                     $80
                 </div>
 
-                <ul class="price-features">
+                <ul class="price-list">
 
-                    <li>Premium brand design</li>
-                    <li>Advanced UI/UX</li>
-                    <li>Custom animations</li>
-                    <li>Professional sections</li>
-                    <li>High-end presentation</li>
+                    <li>
+                        Premium brand design
+                    </li>
+
+                    <li>
+                        Advanced UI/UX
+                    </li>
+
+                    <li>
+                        Custom animations
+                    </li>
+
+                    <li>
+                        Professional sections
+                    </li>
+
+                    <li>
+                        High-end presentation
+                    </li>
 
                 </ul>
 
-                <a href="#request"
-                   class="btn btn-secondary"
-                   style="width:100%">
+                <a
+                    href="#request"
+                    class="btn btn-secondary"
+                    style="width:100%">
+
                     SELECT
+
                 </a>
 
             </div>
+
 
         </div>
 
@@ -2319,25 +3360,30 @@ footer strong{
 
 <section>
 
-    <div class="section-container">
 
-        <div class="section-heading reveal">
+    <div class="container">
+
+
+        <div class="heading reveal">
 
             <div class="eyebrow">
                 WORKFLOW
             </div>
 
             <h2>
+
                 From idea to
-                <span class="gradient-text">
+                <span class="gradient">
                     website.
                 </span>
+
             </h2>
 
         </div>
 
 
         <div class="process">
+
 
             <div class="process-card reveal">
 
@@ -2368,8 +3414,8 @@ footer strong{
                 </h3>
 
                 <p>
-                    We define pages, features, colors
-                    and visual direction.
+                    We define pages, features,
+                    colors and visual direction.
                 </p>
 
             </div>
@@ -2386,8 +3432,8 @@ footer strong{
                 </h3>
 
                 <p>
-                    Your website is designed and developed
-                    with modern web technologies.
+                    The website is designed and developed
+                    around your requirements.
                 </p>
 
             </div>
@@ -2404,141 +3450,12 @@ footer strong{
                 </h3>
 
                 <p>
-                    Your completed website is prepared
+                    The finished website is prepared
                     for publishing and use.
                 </p>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     SKILLS
-========================================================= -->
-
-<section>
-
-    <div class="section-container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">
-                SKILLS
-            </div>
-
-            <h2>
-                Built with
-                <span class="gradient-text">
-                    modern web skills.
-                </span>
-            </h2>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-            <div class="glass-card reveal">
-
-                <div class="skill">
-
-                    <div class="skill-top">
-                        <span>HTML</span>
-                        <span>95%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div class="skill-fill"
-                             style="--width:95%"></div>
-                    </div>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <div class="skill-top">
-                        <span>CSS</span>
-                        <span>92%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div class="skill-fill"
-                             style="--width:92%"></div>
-                    </div>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <div class="skill-top">
-                        <span>Responsive Design</span>
-                        <span>94%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div class="skill-fill"
-                             style="--width:94%"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="glass-card reveal">
-
-                <div class="skill">
-
-                    <div class="skill-top">
-                        <span>UI / UX</span>
-                        <span>90%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div class="skill-fill"
-                             style="--width:90%"></div>
-                    </div>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <div class="skill-top">
-                        <span>Animations</span>
-                        <span>88%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div class="skill-fill"
-                             style="--width:88%"></div>
-                    </div>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <div class="skill-top">
-                        <span>GitHub Pages</span>
-                        <span>95%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div class="skill-fill"
-                             style="--width:95%"></div>
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 
@@ -2548,33 +3465,40 @@ footer strong{
 
 
 <!-- =========================================================
-     CLIENT REQUEST FORM
+     REQUEST FORM
 ========================================================= -->
 
-<section id="request" class="form-section">
+<section id="request">
 
-    <div class="section-container">
+
+    <div class="container">
+
 
         <div class="form-shell reveal">
 
-            <div class="form-header">
+
+            <div class="form-heading">
 
                 <div class="eyebrow">
                     START A PROJECT
                 </div>
 
                 <h2>
+
                     Tell me about your
-                    <span class="gradient-text">
+                    <span class="gradient">
                         website.
                     </span>
+
                 </h2>
 
                 <p>
-                    Fill in the information below.
-                    When you press AI SEND (HMAS), your complete
-                    project information will be prepared and opened
-                    directly in WhatsApp.
+
+                    Complete the form below.
+                    Press AI SEND (HMAS) and the
+                    complete request will be prepared
+                    for WhatsApp.
+
                 </p>
 
             </div>
@@ -2582,20 +3506,19 @@ footer strong{
 
             <form id="projectForm">
 
+
                 <div class="form-grid">
 
 
-                    <!-- NAME -->
-
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             FULL NAME *
                         </label>
 
                         <input
-                            type="text"
                             id="fullName"
+                            type="text"
                             placeholder="Your full name"
                             required
                         >
@@ -2603,34 +3526,30 @@ footer strong{
                     </div>
 
 
-                    <!-- FATHER NAME -->
-
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             FATHER NAME
                         </label>
 
                         <input
-                            type="text"
                             id="fatherName"
+                            type="text"
                             placeholder="Father's name"
                         >
 
                     </div>
 
 
-                    <!-- PHONE -->
-
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             WHATSAPP / PHONE *
                         </label>
 
                         <input
-                            type="tel"
                             id="phone"
+                            type="tel"
                             placeholder="0300 1234567"
                             required
                         >
@@ -2638,110 +3557,144 @@ footer strong{
                     </div>
 
 
-                    <!-- EMAIL -->
-
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             EMAIL
                         </label>
 
                         <input
-                            type="email"
                             id="email"
+                            type="email"
                             placeholder="your@email.com"
                         >
 
                     </div>
 
 
-                    <!-- WHAT DO YOU DO -->
-
-                    <div class="input-group full">
+                    <div class="input full">
 
                         <label>
                             WHAT DO YOU DO? *
                         </label>
 
                         <input
-                            type="text"
                             id="occupation"
-                            placeholder="Business owner, student, teacher, freelancer, organization..."
+                            type="text"
+                            placeholder="Business owner, student, teacher, freelancer..."
                             required
                         >
 
                     </div>
 
 
-                    <!-- WEBSITE TYPE -->
+                    <!-- WEBSITE TYPES -->
 
-                    <div class="input-group full">
+                    <div class="input full">
 
                         <label>
-                            WHICH TYPE OF WEBSITE DO YOU WANT?
+                            WEBSITE TYPE
                         </label>
 
-                        <div class="checkbox-grid">
+
+                        <div class="check-grid">
+
 
                             <div class="check">
-                                <input type="checkbox"
-                                       id="typeBusiness"
-                                       value="Business Website"
-                                       name="websiteType">
-                                <label for="typeBusiness">
+
+                                <input
+                                    id="business"
+                                    name="websiteType"
+                                    type="checkbox"
+                                    value="Business Website"
+                                >
+
+                                <label for="business">
                                     💼 Business
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="typePortfolio"
-                                       value="Portfolio Website"
-                                       name="websiteType">
-                                <label for="typePortfolio">
+
+                                <input
+                                    id="portfolio"
+                                    name="websiteType"
+                                    type="checkbox"
+                                    value="Portfolio Website"
+                                >
+
+                                <label for="portfolio">
                                     👨‍💻 Portfolio
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="typeShop"
-                                       value="Online Store"
-                                       name="websiteType">
-                                <label for="typeShop">
+
+                                <input
+                                    id="store"
+                                    name="websiteType"
+                                    type="checkbox"
+                                    value="Online Store"
+                                >
+
+                                <label for="store">
                                     🛒 Online Store
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="typeEducation"
-                                       value="Education Website"
-                                       name="websiteType">
-                                <label for="typeEducation">
+
+                                <input
+                                    id="education"
+                                    name="websiteType"
+                                    type="checkbox"
+                                    value="Education Website"
+                                >
+
+                                <label for="education">
                                     🎓 Education
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="typeIslamic"
-                                       value="Islamic Website"
-                                       name="websiteType">
-                                <label for="typeIslamic">
+
+                                <input
+                                    id="islamic"
+                                    name="websiteType"
+                                    type="checkbox"
+                                    value="Islamic Website"
+                                >
+
+                                <label for="islamic">
                                     ☪️ Islamic
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="typeOther"
-                                       value="Other"
-                                       name="websiteType">
-                                <label for="typeOther">
+
+                                <input
+                                    id="other"
+                                    name="websiteType"
+                                    type="checkbox"
+                                    value="Other"
+                                >
+
+                                <label for="other">
                                     ✨ Other
                                 </label>
+
                             </div>
+
 
                         </div>
 
@@ -2750,7 +3703,7 @@ footer strong{
 
                     <!-- PACKAGE -->
 
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             PACKAGE
@@ -2758,23 +3711,23 @@ footer strong{
 
                         <select id="package">
 
-                            <option value="Not Selected">
-                                Select package
+                            <option>
+                                Not Selected
                             </option>
 
-                            <option value="Easy Website - $20">
+                            <option>
                                 Easy Website - $20
                             </option>
 
-                            <option value="Normal Website - $39">
+                            <option>
                                 Normal Website - $39
                             </option>
 
-                            <option value="Advanced Website - $50">
+                            <option>
                                 Advanced Website - $50
                             </option>
 
-                            <option value="Brand Website - $80">
+                            <option>
                                 Brand Website - $80
                             </option>
 
@@ -2785,15 +3738,15 @@ footer strong{
 
                     <!-- DEADLINE -->
 
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             PREFERRED DEADLINE
                         </label>
 
                         <input
-                            type="date"
                             id="deadline"
+                            type="date"
                         >
 
                     </div>
@@ -2801,15 +3754,15 @@ footer strong{
 
                     <!-- PAGES -->
 
-                    <div class="input-group full">
+                    <div class="input full">
 
                         <label>
-                            PAGES / SECTIONS YOU NEED
+                            PAGES / SECTIONS
                         </label>
 
                         <input
-                            type="text"
                             id="pages"
+                            type="text"
                             placeholder="Home, About, Services, Contact, Gallery..."
                         >
 
@@ -2818,116 +3771,148 @@ footer strong{
 
                     <!-- FEATURES -->
 
-                    <div class="input-group full">
+                    <div class="input full">
 
                         <label>
                             FEATURES YOU WANT
                         </label>
 
-                        <div class="checkbox-grid">
+
+                        <div class="check-grid">
+
 
                             <div class="check">
-                                <input type="checkbox"
-                                       id="featureContact"
-                                       value="Contact Form"
-                                       name="features">
-                                <label for="featureContact">
+
+                                <input
+                                    id="contactFeature"
+                                    name="features"
+                                    type="checkbox"
+                                    value="Contact Form"
+                                >
+
+                                <label for="contactFeature">
                                     📩 Contact Form
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="featureWhatsApp"
-                                       value="WhatsApp Button"
-                                       name="features">
-                                <label for="featureWhatsApp">
+
+                                <input
+                                    id="whatsappFeature"
+                                    name="features"
+                                    type="checkbox"
+                                    value="WhatsApp Button"
+                                >
+
+                                <label for="whatsappFeature">
                                     📱 WhatsApp
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="featureAnimation"
-                                       value="Animations"
-                                       name="features">
-                                <label for="featureAnimation">
+
+                                <input
+                                    id="animationFeature"
+                                    name="features"
+                                    type="checkbox"
+                                    value="Animations"
+                                >
+
+                                <label for="animationFeature">
                                     ✨ Animations
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="featureGallery"
-                                       value="Gallery"
-                                       name="features">
-                                <label for="featureGallery">
+
+                                <input
+                                    id="galleryFeature"
+                                    name="features"
+                                    type="checkbox"
+                                    value="Gallery"
+                                >
+
+                                <label for="galleryFeature">
                                     🖼️ Gallery
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="featureSocial"
-                                       value="Social Media Links"
-                                       name="features">
-                                <label for="featureSocial">
+
+                                <input
+                                    id="socialFeature"
+                                    name="features"
+                                    type="checkbox"
+                                    value="Social Media Links"
+                                >
+
+                                <label for="socialFeature">
                                     🔗 Social Links
                                 </label>
+
                             </div>
 
+
                             <div class="check">
-                                <input type="checkbox"
-                                       id="featureCustom"
-                                       value="Custom Feature"
-                                       name="features">
-                                <label for="featureCustom">
+
+                                <input
+                                    id="customFeature"
+                                    name="features"
+                                    type="checkbox"
+                                    value="Custom Feature"
+                                >
+
+                                <label for="customFeature">
                                     ⚙️ Custom
                                 </label>
+
                             </div>
+
 
                         </div>
 
                     </div>
 
 
-                    <!-- COLORS -->
-
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             PREFERRED COLORS
                         </label>
 
                         <input
-                            type="text"
                             id="colors"
+                            type="text"
                             placeholder="Black & Gold, Blue, Green..."
                         >
 
                     </div>
 
 
-                    <!-- REFERENCE -->
-
-                    <div class="input-group">
+                    <div class="input">
 
                         <label>
                             REFERENCE WEBSITE
                         </label>
 
                         <input
-                            type="url"
                             id="reference"
+                            type="url"
                             placeholder="https://example.com"
                         >
 
                     </div>
 
 
-                    <!-- DESCRIPTION -->
-
-                    <div class="input-group full">
+                    <div class="input full">
 
                         <label>
                             DETAILED PROJECT DESCRIPTION *
@@ -2942,26 +3927,30 @@ footer strong{
                     </div>
 
 
-                    <!-- SUBMIT -->
-
-                    <div class="form-submit">
+                    <div class="submit-area">
 
                         <button
-                            type="submit"
-                            class="ai-send">
+                            class="ai-send"
+                            type="submit">
+
                             🤖 AI SEND (HMAS)
+
                         </button>
 
                     </div>
 
+
                 </div>
+
 
                 <div
-                    class="form-status"
-                    id="formStatus">
+                    class="status"
+                    id="status">
                 </div>
 
+
             </form>
+
 
         </div>
 
@@ -2976,19 +3965,23 @@ footer strong{
 
 <section>
 
-    <div class="section-container">
 
-        <div class="section-heading reveal">
+    <div class="container">
+
+
+        <div class="heading reveal">
 
             <div class="eyebrow">
                 FAQ
             </div>
 
             <h2>
+
                 Frequently asked
-                <span class="gradient-text">
+                <span class="gradient">
                     questions.
                 </span>
+
             </h2>
 
         </div>
@@ -2996,19 +3989,27 @@ footer strong{
 
         <div class="faq">
 
+
             <div class="faq-item reveal">
 
-                <button class="faq-question">
+                <button
+                    class="faq-question">
+
                     How can I order a website?
+
                     <span>+</span>
+
                 </button>
 
                 <div class="faq-answer">
 
                     <p>
-                        Fill out the project request form and press
-                        AI SEND (HMAS). Your information will be
-                        prepared in WhatsApp.
+
+                        Fill out the website request form
+                        and press AI SEND (HMAS).
+                        Your project details will be
+                        prepared for WhatsApp.
+
                     </p>
 
                 </div>
@@ -3018,16 +4019,23 @@ footer strong{
 
             <div class="faq-item reveal">
 
-                <button class="faq-question">
-                    Do you make mobile responsive websites?
+                <button
+                    class="faq-question">
+
+                    Do you create mobile responsive websites?
+
                     <span>+</span>
+
                 </button>
 
                 <div class="faq-answer">
 
                     <p>
-                        Yes. Websites can be designed to work across
-                        phones, tablets, laptops and desktop screens.
+
+                        Yes. The website can be designed
+                        to work across phones, tablets,
+                        laptops and desktop screens.
+
                     </p>
 
                 </div>
@@ -3037,17 +4045,23 @@ footer strong{
 
             <div class="faq-item reveal">
 
-                <button class="faq-question">
+                <button
+                    class="faq-question">
+
                     Can I request custom features?
+
                     <span>+</span>
+
                 </button>
 
                 <div class="faq-answer">
 
                     <p>
-                        Yes. Mention your required features in the
-                        project description and they can be discussed
-                        before development.
+
+                        Yes. Describe your desired features
+                        in the project form and they can
+                        be discussed before development.
+
                     </p>
 
                 </div>
@@ -3057,16 +4071,22 @@ footer strong{
 
             <div class="faq-item reveal">
 
-                <button class="faq-question">
-                    Can the website be hosted on GitHub Pages?
+                <button
+                    class="faq-question">
+
+                    Can the website use GitHub Pages?
+
                     <span>+</span>
+
                 </button>
 
                 <div class="faq-answer">
 
                     <p>
-                        Yes. Static websites can be published using
-                        GitHub Pages.
+
+                        Yes. Static websites can be
+                        published through GitHub Pages.
+
                     </p>
 
                 </div>
@@ -3076,23 +4096,31 @@ footer strong{
 
             <div class="faq-item reveal">
 
-                <button class="faq-question">
-                    Are the visitor and registration numbers real global numbers?
+                <button
+                    class="faq-question">
+
+                    Are the counters globally real?
+
                     <span>+</span>
+
                 </button>
 
                 <div class="faq-answer">
 
                     <p>
-                        In this backend-free version, the counters use
-                        browser local storage. They are not a centralized
-                        global database. A real global counter requires
-                        a backend or external database/counter service.
+
+                        The current backend-free version
+                        stores counters in the visitor's
+                        browser. A real global visitor and
+                        registration database requires an
+                        external database or backend.
+
                     </p>
 
                 </div>
 
             </div>
+
 
         </div>
 
@@ -3107,42 +4135,64 @@ footer strong{
 
 <section>
 
-    <div class="section-container">
+
+    <div class="container">
+
 
         <div class="contact-box reveal">
+
 
             <div class="eyebrow">
                 LET'S BUILD
             </div>
 
+
             <h2>
+
                 Your next website
-                <span class="gradient-text">
+                <span class="gradient">
                     starts here.
                 </span>
+
             </h2>
 
+
             <p>
-                Have an idea? Tell me about it.
-                Let's turn your concept into a professional
+
+                Have an idea?
+                Tell me about it and let's turn
+                your concept into a professional
                 digital experience.
+
             </p>
 
-            <div class="hero-buttons"
-                 style="justify-content:center;">
 
-                <a href="#request"
-                   class="btn btn-primary">
+            <div
+                class="hero-buttons"
+                style="justify-content:center;">
+
+
+                <a
+                    href="#request"
+                    class="btn btn-primary">
+
                     🚀 REQUEST WEBSITE
+
                 </a>
 
-                <a href="https://wa.me/923054330064"
-                   target="_blank"
-                   class="btn btn-secondary">
+
+                <a
+                    href="https://wa.me/923054330064"
+                    target="_blank"
+                    class="btn btn-secondary">
+
                     💬 CHAT ON WHATSAPP
+
                 </a>
+
 
             </div>
+
 
         </div>
 
@@ -3158,24 +4208,32 @@ footer strong{
 <footer>
 
     <p>
-        © <span id="year"></span>
-        <strong>Abdullah Shahzad (HMAS)</strong>
+
+        ©
+        <span id="year"></span>
+
+        <strong>
+            Abdullah Shahzad (HMAS)
+        </strong>
+
         — Professional Website Creator.
+
     </p>
 
 </footer>
 
 
 <!-- =========================================================
-     WHATSAPP FLOAT
+     WHATSAPP
 ========================================================= -->
 
 <a
     class="whatsapp"
     href="https://wa.me/923054330064"
-    target="_blank"
-    aria-label="WhatsApp">
+    target="_blank">
+
     ☎
+
 </a>
 
 
@@ -3185,29 +4243,29 @@ footer strong{
    PARTICLES
 ========================================================= */
 
-const particleContainer =
+const particleBox =
     document.getElementById("particles");
 
-for(let i = 0; i < 55; i++){
 
-    const particle =
+for(let i=0;i<55;i++){
+
+    const p =
         document.createElement("div");
 
-    particle.className = "particle";
+    p.className =
+        "particle";
 
-    particle.style.left =
-        Math.random() * 100 + "%";
+    p.style.left =
+        Math.random()*100+"%";
 
-    particle.style.animationDuration =
-        (Math.random() * 15 + 10) + "s";
+    p.style.animationDuration =
+        (Math.random()*15+10)+"s";
 
-    particle.style.animationDelay =
-        Math.random() * 10 + "s";
+    p.style.animationDelay =
+        Math.random()*10+"s";
 
-    particle.style.opacity =
-        Math.random() * .5;
+    particleBox.appendChild(p);
 
-    particleContainer.appendChild(particle);
 }
 
 
@@ -3216,18 +4274,24 @@ for(let i = 0; i < 55; i++){
 ========================================================= */
 
 document.getElementById("year")
-    .textContent = new Date().getFullYear();
+.innerText =
+    new Date().getFullYear();
 
 
 /* =========================================================
    VISITOR COUNTER
-   BACKEND-FREE / LOCAL STORAGE
 ========================================================= */
 
 let visitors =
-    Number(localStorage.getItem("hmas_visitors")) || 0;
+    Number(
+        localStorage.getItem(
+            "hmas_visitors"
+        )
+    ) || 0;
+
 
 visitors++;
+
 
 localStorage.setItem(
     "hmas_visitors",
@@ -3240,82 +4304,116 @@ localStorage.setItem(
 ========================================================= */
 
 let registrations =
-    Number(localStorage.getItem("hmas_registrations")) || 0;
+    Number(
+        localStorage.getItem(
+            "hmas_registrations"
+        )
+    ) || 0;
 
 
 /* =========================================================
-   NUMBER ANIMATION
+   ANIMATE NUMBERS
 ========================================================= */
 
-function animateNumber(element, target){
+function animateNumber(
+    element,
+    target
+){
 
-    let start = 0;
+    let start=0;
 
-    const duration = 1200;
+    const duration=1200;
 
-    const startTime = performance.now();
+    const startTime=
+        performance.now();
 
-    function update(currentTime){
 
-        const progress =
+    function update(time){
+
+        const progress=
             Math.min(
-                (currentTime - startTime) / duration,
+                (time-startTime) /
+                duration,
                 1
             );
 
-        const eased =
-            1 - Math.pow(1 - progress, 3);
 
-        const value =
-            Math.floor(start + (target - start) * eased);
+        const eased=
+            1-Math.pow(
+                1-progress,
+                3
+            );
 
-        element.textContent =
-            value.toLocaleString();
 
-        if(progress < 1){
-            requestAnimationFrame(update);
+        element.innerText=
+            Math.floor(
+                start+
+                (target-start)*
+                eased
+            ).toLocaleString();
+
+
+        if(progress<1){
+
+            requestAnimationFrame(
+                update
+            );
+
         }
 
     }
 
-    requestAnimationFrame(update);
+
+    requestAnimationFrame(
+        update
+    );
+
 }
 
 
 animateNumber(
-    document.getElementById("visitorCount"),
+    document.getElementById(
+        "visitorCount"
+    ),
     visitors
 );
 
+
 animateNumber(
-    document.getElementById("registrationCount"),
+    document.getElementById(
+        "registrationCount"
+    ),
     registrations
 );
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL
 ========================================================= */
 
-const revealObserver =
+const observer =
     new IntersectionObserver(
-        entries => {
+        entries=>{
 
-            entries.forEach(entry => {
+            entries.forEach(
+                entry=>{
 
-                if(entry.isIntersecting){
+                    if(
+                        entry.isIntersecting
+                    ){
 
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                    revealObserver.unobserve(
                         entry.target
-                    );
+                        .classList
+                        .add("visible");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         },
         {
@@ -3325,12 +4423,11 @@ const revealObserver =
 
 
 document
-    .querySelectorAll(".reveal")
-    .forEach(element => {
-
-        revealObserver.observe(element);
-
-    });
+.querySelectorAll(".reveal")
+.forEach(
+    element =>
+        observer.observe(element)
+);
 
 
 /* =========================================================
@@ -3338,29 +4435,39 @@ document
 ========================================================= */
 
 document
-    .querySelectorAll(".faq-question")
-    .forEach(button => {
+.querySelectorAll(".faq-question")
+.forEach(
+    button=>{
 
         button.addEventListener(
             "click",
-            () => {
+            ()=>{
 
                 const item =
                     button.parentElement;
 
+
                 document
-                    .querySelectorAll(".faq-item")
-                    .forEach(other => {
+                .querySelectorAll(
+                    ".faq-item"
+                )
+                .forEach(
+                    other=>{
 
-                        if(other !== item){
+                        if(
+                            other!==item
+                        ){
 
-                            other.classList.remove(
+                            other.classList
+                            .remove(
                                 "active"
                             );
 
                         }
 
-                    });
+                    }
+                );
+
 
                 item.classList.toggle(
                     "active"
@@ -3369,79 +4476,94 @@ document
             }
         );
 
-    });
+    }
+);
 
 
 /* =========================================================
-   FORM -> WHATSAPP
+   WEBSITE REQUEST FORM
 ========================================================= */
 
 const form =
-    document.getElementById("projectForm");
-
-const status =
-    document.getElementById("formStatus");
+    document.getElementById(
+        "projectForm"
+    );
 
 
 form.addEventListener(
     "submit",
-    function(event){
+    function(e){
 
-        event.preventDefault();
+        e.preventDefault();
 
-
-        /* ==============================
-           GET BASIC INFORMATION
-        ============================== */
 
         const fullName =
-            document.getElementById("fullName")
-            .value.trim();
+            document.getElementById(
+                "fullName"
+            ).value.trim();
+
 
         const fatherName =
-            document.getElementById("fatherName")
-            .value.trim();
+            document.getElementById(
+                "fatherName"
+            ).value.trim();
+
 
         const phone =
-            document.getElementById("phone")
-            .value.trim();
+            document.getElementById(
+                "phone"
+            ).value.trim();
+
 
         const email =
-            document.getElementById("email")
-            .value.trim();
+            document.getElementById(
+                "email"
+            ).value.trim();
+
 
         const occupation =
-            document.getElementById("occupation")
-            .value.trim();
+            document.getElementById(
+                "occupation"
+            ).value.trim();
+
 
         const packageName =
-            document.getElementById("package")
-            .value;
+            document.getElementById(
+                "package"
+            ).value;
+
 
         const deadline =
-            document.getElementById("deadline")
-            .value;
+            document.getElementById(
+                "deadline"
+            ).value;
+
 
         const pages =
-            document.getElementById("pages")
-            .value.trim();
+            document.getElementById(
+                "pages"
+            ).value.trim();
+
 
         const colors =
-            document.getElementById("colors")
-            .value.trim();
+            document.getElementById(
+                "colors"
+            ).value.trim();
+
 
         const reference =
-            document.getElementById("reference")
-            .value.trim();
+            document.getElementById(
+                "reference"
+            ).value.trim();
+
 
         const description =
-            document.getElementById("description")
-            .value.trim();
+            document.getElementById(
+                "description"
+            ).value.trim();
 
 
-        /* ==============================
-           WEBSITE TYPES
-        ============================== */
+        /* WEBSITE TYPES */
 
         const websiteTypes =
             Array.from(
@@ -3449,12 +4571,13 @@ form.addEventListener(
                     'input[name="websiteType"]:checked'
                 )
             )
-            .map(input => input.value);
+            .map(
+                input =>
+                    input.value
+            );
 
 
-        /* ==============================
-           FEATURES
-        ============================== */
+        /* FEATURES */
 
         const features =
             Array.from(
@@ -3462,19 +4585,24 @@ form.addEventListener(
                     'input[name="features"]:checked'
                 )
             )
-            .map(input => input.value);
+            .map(
+                input =>
+                    input.value
+            );
 
 
-        /* ==============================
-           VALIDATION
-        ============================== */
+        /* VALIDATION */
 
-        if(!fullName ||
-           !phone ||
-           !occupation ||
-           !description){
+        if(
+            !fullName ||
+            !phone ||
+            !occupation ||
+            !description
+        ){
 
-            status.textContent =
+            document.getElementById(
+                "status"
+            ).innerText =
                 "⚠️ Please fill all required fields.";
 
             return;
@@ -3482,16 +4610,16 @@ form.addEventListener(
         }
 
 
-        /* ==============================
-           REGISTRATION COUNT
-        ============================== */
+        /* REGISTRATION */
 
         registrations++;
+
 
         localStorage.setItem(
             "hmas_registrations",
             registrations
         );
+
 
         animateNumber(
             document.getElementById(
@@ -3501,16 +4629,14 @@ form.addEventListener(
         );
 
 
-        /* ==============================
-           WHATSAPP MESSAGE
-        ============================== */
+        /* WHATSAPP MESSAGE */
 
         const message = `
 
-🚀 *NEW WEBSITE REQUEST*
+🚀 NEW WEBSITE REQUEST
 ━━━━━━━━━━━━━━━━━━━━
 
-👤 *CLIENT INFORMATION*
+👤 CLIENT INFORMATION
 
 Full Name:
 ${fullName}
@@ -3528,12 +4654,14 @@ What I Do:
 ${occupation}
 
 
-🌐 *WEBSITE INFORMATION*
+🌐 WEBSITE INFORMATION
 
 Website Type:
-${websiteTypes.length
+${
+    websiteTypes.length
     ? websiteTypes.join(", ")
-    : "Not Selected"}
+    : "Not Selected"
+}
 
 Package:
 ${packageName}
@@ -3542,9 +4670,11 @@ Pages / Sections:
 ${pages || "Not Specified"}
 
 Features:
-${features.length
+${
+    features.length
     ? features.join(", ")
-    : "Not Selected"}
+    : "Not Selected"
+}
 
 Preferred Colors:
 ${colors || "Not Specified"}
@@ -3556,60 +4686,48 @@ Reference Website:
 ${reference || "Not Provided"}
 
 
-📝 *PROJECT DESCRIPTION*
+📝 PROJECT DESCRIPTION
 
 ${description}
 
 
 ━━━━━━━━━━━━━━━━━━━━
 
-🔥 *REQUEST SENT FROM*
-Abdullah Shahzad (HMAS)
-Website Creator
+🔥 REQUEST SENT FROM
 
-📱 HMAS WhatsApp:
+Abdullah Shahzad (HMAS)
+
+Professional Website Creator
+
+📱 WhatsApp:
 03054330064
 
 ━━━━━━━━━━━━━━━━━━━━
-        `;
+`;
 
 
-        /* ==============================
-           ENCODE MESSAGE
-        ============================== */
-
-        const encodedMessage =
+        const encoded =
             encodeURIComponent(
                 message.trim()
             );
 
 
-        /* ==============================
-           WHATSAPP NUMBER
-        ============================== */
-
-        const whatsappNumber =
+        const whatsapp =
             "923054330064";
 
 
-        const whatsappURL =
-            `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        const url =
+            `https://wa.me/${whatsapp}?text=${encoded}`;
 
 
-        /* ==============================
-           STATUS
-        ============================== */
-
-        status.textContent =
+        document.getElementById(
+            "status"
+        ).innerText =
             "✅ Request prepared. Opening WhatsApp...";
 
 
-        /* ==============================
-           OPEN WHATSAPP
-        ============================== */
-
         window.open(
-            whatsappURL,
+            url,
             "_blank"
         );
 
@@ -3618,62 +4736,70 @@ Website Creator
 
 
 /* =========================================================
-   3D CARD TILT EFFECT
+   IMAGE TILT
 ========================================================= */
 
-document
-    .querySelectorAll(
-        ".glass-card, .service-card, .price-card"
-    )
-    .forEach(card => {
-
-        card.addEventListener(
-            "mousemove",
-            event => {
-
-                const rect =
-                    card.getBoundingClientRect();
-
-                const x =
-                    event.clientX - rect.left;
-
-                const y =
-                    event.clientY - rect.top;
-
-                const centerX =
-                    rect.width / 2;
-
-                const centerY =
-                    rect.height / 2;
-
-                const rotateX =
-                    ((y - centerY) / centerY) * -2;
-
-                const rotateY =
-                    ((x - centerX) / centerX) * 2;
-
-                card.style.transform =
-                    `perspective(800px)
-                     rotateX(${rotateX}deg)
-                     rotateY(${rotateY}deg)
-                     translateY(-5px)`;
-
-            }
-        );
+const image =
+    document.querySelector(
+        ".hero-image-frame"
+    );
 
 
-        card.addEventListener(
-            "mouseleave",
-            () => {
+if(image){
 
-                card.style.transform = "";
+    image.addEventListener(
+        "mousemove",
+        event=>{
 
-            }
-        );
+            const rect =
+                image.getBoundingClientRect();
 
-    });
+
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const rotateY =
+                ((x-rect.width/2) /
+                (rect.width/2))*5;
+
+
+            const rotateX =
+                ((y-rect.height/2) /
+                (rect.height/2))*-5;
+
+
+            image.style.transform =
+                `perspective(1200px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 scale(1.01)`;
+
+        }
+    );
+
+
+    image.addEventListener(
+        "mouseleave",
+        ()=>{
+
+            image.style.transform =
+                "perspective(1200px) rotateY(-5deg)";
+
+        }
+    );
+
+}
 
 </script>
 
+
 </body>
+
 </html>
