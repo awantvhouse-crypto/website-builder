@@ -1,2251 +1,1569 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Abdullah Shahzad (HMAS) | Professional Website Creator</title>
 
-<meta name="description"
-content="Abdullah Shahzad (HMAS) creates modern, professional, responsive and premium websites for businesses, brands, organizations and individuals.">
+<meta name="description" content="Abdullah Shahzad (HMAS) - Professional website creator. Premium, responsive and modern websites for businesses, brands, portfolios and organizations.">
+<meta name="keywords" content="Abdullah Shahzad, HMAS, website creator, web designer, website development, Pakistan">
+<meta name="author" content="Abdullah Shahzad">
 
-<meta name="keywords"
-content="Abdullah Shahzad, HMAS, website creator, web designer, website developer, Pakistan, GitHub Pages">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<meta name="author"
-content="Abdullah Shahzad (HMAS)">
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   ROOT
-========================================================= */
+   HMAS PREMIUM WEBSITE
+   ========================================================= */
 
 :root{
+    --bg:#030712;
+    --bg2:#07111f;
+    --card:rgba(12,23,40,.68);
+    --card2:rgba(16,30,52,.8);
 
---bg:#03050d;
---bg2:#070b18;
+    --cyan:#00eaff;
+    --blue:#3478ff;
+    --purple:#9b5cff;
+    --pink:#ff3cac;
 
---card:rgba(13,19,39,.72);
+    --text:#f5f9ff;
+    --muted:#91a3bb;
+    --border:rgba(255,255,255,.10);
 
---primary:#21c7ff;
---primary2:#6d5cff;
---purple:#9b6cff;
+    --shadow:
+        0 25px 80px rgba(0,0,0,.45),
+        0 0 40px rgba(0,234,255,.05);
 
---white:#f5f8ff;
---text:#dce6f7;
---muted:#91a0bb;
-
---border:rgba(112,183,255,.16);
-
---green:#25d366;
-
---shadow:
-0 30px 100px rgba(0,0,0,.45);
-
+    --radius:26px;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 html{
-overflow-x:hidden;
+    scroll-behavior:smooth;
 }
 
 body{
+    font-family:"Inter",sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(0,234,255,.08),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(155,92,255,.10),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(255,60,172,.07),transparent 30%),
+        var(--bg);
 
-font-family:"Inter",sans-serif;
-
-background:
-
-radial-gradient(
-circle at 10% 10%,
-rgba(33,199,255,.13),
-transparent 25%
-),
-
-radial-gradient(
-circle at 90% 15%,
-rgba(109,92,255,.14),
-transparent 28%
-),
-
-radial-gradient(
-circle at 50% 80%,
-rgba(33,199,255,.05),
-transparent 30%
-),
-
-var(--bg);
-
-color:var(--white);
-
-line-height:1.6;
-
-overflow-x:hidden;
-
+    color:var(--text);
+    overflow-x:hidden;
 }
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-button,
-input,
-textarea,
-select{
-font-family:inherit;
-}
-
 
 /* =========================================================
-   CONTAINER
-========================================================= */
+   BACKGROUND EFFECTS
+   ========================================================= */
 
-.container{
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
 
-width:min(1180px,92%);
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
 
-margin:auto;
+    background-size:60px 60px;
 
+    mask-image:linear-gradient(to bottom,black,transparent);
 }
 
-.section{
-
-padding:110px 0;
-
-position:relative;
-
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(0,234,255,.07);
+    filter:blur(120px);
+    top:-200px;
+    left:-150px;
+    z-index:-3;
 }
 
-.section-title{
+/* =========================================================
+   PARTICLES
+   ========================================================= */
 
-text-align:center;
-
-margin-bottom:60px;
-
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
 }
 
-.section-title .mini{
-
-display:inline-block;
-
-color:var(--primary);
-
-font-size:12px;
-
-font-weight:900;
-
-letter-spacing:4px;
-
-text-transform:uppercase;
-
-margin-bottom:12px;
-
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 15px var(--cyan);
+    opacity:.45;
+    animation:floatParticle linear infinite;
 }
 
-.section-title h2{
-
-font-size:
-clamp(34px,5vw,58px);
-
-line-height:1.05;
-
-letter-spacing:-2px;
-
-margin-bottom:16px;
-
+@keyframes floatParticle{
+    from{
+        transform:translateY(110vh);
+    }
+    to{
+        transform:translateY(-10vh);
+    }
 }
-
-.section-title p{
-
-max-width:700px;
-
-margin:auto;
-
-color:var(--muted);
-
-font-size:15px;
-
-}
-
 
 /* =========================================================
    NAVBAR
-========================================================= */
+   ========================================================= */
 
 .navbar{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1180px,94%);
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-position:fixed;
+    padding:0 22px;
 
-top:0;
-left:0;
+    background:rgba(4,10,20,.72);
+    border:1px solid var(--border);
+    backdrop-filter:blur(22px);
 
-width:100%;
+    border-radius:22px;
 
-z-index:1000;
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.05);
 
-background:
-rgba(3,5,13,.72);
-
-backdrop-filter:blur(22px);
-
-border-bottom:
-1px solid rgba(255,255,255,.05);
-
-}
-
-.nav-inner{
-
-height:78px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
+    z-index:1000;
 }
 
 .logo{
-
-font-size:23px;
-
-font-weight:900;
-
-letter-spacing:-1px;
-
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:white;
+    font-weight:900;
 }
 
-.logo span{
+.logo-mark{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
 
-color:var(--primary);
+    font-family:"Orbitron",sans-serif;
+    font-size:14px;
 
+    background:
+        linear-gradient(135deg,var(--cyan),var(--blue),var(--purple));
+
+    box-shadow:
+        0 0 30px rgba(0,234,255,.25);
+
+    position:relative;
+}
+
+.logo-mark::after{
+    content:"";
+    position:absolute;
+    inset:2px;
+    border-radius:11px;
+    border:1px solid rgba(255,255,255,.35);
+}
+
+.logo-text{
+    line-height:1.1;
+}
+
+.logo-text small{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+    letter-spacing:2px;
+    margin-top:3px;
 }
 
 .nav-links{
-
-display:flex;
-
-gap:30px;
-
-list-style:none;
-
+    display:flex;
+    gap:24px;
+    list-style:none;
 }
 
 .nav-links a{
-
-font-size:13px;
-
-font-weight:700;
-
-color:#aebbd1;
-
-transition:.3s;
-
+    color:#b9c7d8;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-
-color:white;
-
+    color:var(--cyan);
+    text-shadow:0 0 15px rgba(0,234,255,.5);
 }
 
-.nav-hire{
+.nav-cta{
+    text-decoration:none;
+    color:#001016;
+    background:linear-gradient(135deg,var(--cyan),#55b9ff);
+    padding:12px 18px;
+    border-radius:13px;
+    font-weight:900;
+    font-size:12px;
 
-padding:11px 18px;
-
-border-radius:11px;
-
-font-size:13px;
-
-font-weight:900;
-
-background:
-linear-gradient(
-135deg,
-var(--primary),
-var(--primary2)
-);
-
-box-shadow:
-0 10px 35px rgba(33,199,255,.18);
-
+    box-shadow:0 0 25px rgba(0,234,255,.2);
+    transition:.3s;
 }
 
+.nav-cta:hover{
+    transform:translateY(-2px) scale(1.03);
+    box-shadow:0 0 35px rgba(0,234,255,.45);
+}
 
 /* =========================================================
    HERO
-========================================================= */
+   ========================================================= */
 
 .hero{
-
-min-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-padding-top:100px;
-
-position:relative;
-
-overflow:hidden;
-
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:150px 20px 90px;
+    position:relative;
 }
 
-.hero-grid{
-
-display:grid;
-
-grid-template-columns:
-1.12fr .88fr;
-
-gap:70px;
-
-align-items:center;
-
+.hero-container{
+    width:min(1200px,100%);
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:70px;
+    align-items:center;
 }
 
-.hero-badge{
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
 
-display:inline-flex;
+    padding:8px 14px;
 
-align-items:center;
+    border-radius:50px;
+    border:1px solid rgba(0,234,255,.22);
+    background:rgba(0,234,255,.05);
 
-gap:8px;
+    color:#9cefff;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
 
-padding:9px 15px;
-
-border-radius:50px;
-
-border:1px solid var(--border);
-
-background:
-rgba(255,255,255,.035);
-
-color:#b9edff;
-
-font-size:12px;
-
-font-weight:700;
-
-margin-bottom:25px;
-
+    margin-bottom:22px;
 }
 
-.status-dot{
-
-width:8px;
-
-height:8px;
-
-border-radius:50%;
-
-background:#35e88c;
-
-box-shadow:
-0 0 15px #35e88c;
-
+.badge-dot{
+    width:7px;
+    height:7px;
+    background:#20ff9a;
+    border-radius:50%;
+    box-shadow:0 0 15px #20ff9a;
 }
 
 .hero h1{
-
-font-size:
-clamp(48px,7vw,82px);
-
-line-height:.96;
-
-letter-spacing:-5px;
-
-margin-bottom:28px;
-
+    font-family:"Orbitron",sans-serif;
+    font-size:clamp(38px,6vw,78px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    margin-bottom:22px;
 }
 
 .gradient-text{
+    background:linear-gradient(
+        90deg,
+        var(--cyan),
+        #75b9ff,
+        var(--purple),
+        var(--pink)
+    );
 
-background:
-linear-gradient(
-90deg,
-#37d0ff,
-#8e72ff,
-#c074ff
-);
+    background-size:300% 300%;
 
--webkit-background-clip:text;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 
-background-clip:text;
+    animation:gradientMove 7s ease infinite;
+}
 
-color:transparent;
-
+@keyframes gradientMove{
+    0%,100%{background-position:0% 50%}
+    50%{background-position:100% 50%}
 }
 
 .hero-description{
-
-color:var(--muted);
-
-font-size:17px;
-
-max-width:650px;
-
-margin-bottom:32px;
-
+    max-width:650px;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:30px;
 }
 
 .hero-buttons{
-
-display:flex;
-
-gap:13px;
-
-flex-wrap:wrap;
-
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
 }
 
 .btn{
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
 
-display:inline-flex;
+    padding:15px 23px;
+    border-radius:15px;
 
-align-items:center;
+    font-weight:900;
+    font-size:13px;
 
-justify-content:center;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 
-gap:9px;
-
-padding:14px 22px;
-
-border-radius:12px;
-
-font-size:13px;
-
-font-weight:900;
-
-border:1px solid var(--border);
-
-transition:.3s;
-
-cursor:pointer;
-
-}
-
-.btn:hover{
-
-transform:translateY(-4px);
-
+    transition:.3s;
 }
 
 .btn-primary{
-
-border:none;
-
-background:
-linear-gradient(
-135deg,
-var(--primary),
-var(--primary2)
-);
-
-box-shadow:
-0 15px 40px rgba(33,199,255,.2);
-
+    color:#001017;
+    background:linear-gradient(135deg,var(--cyan),#6bb9ff);
+    box-shadow:0 10px 35px rgba(0,234,255,.18);
 }
 
-.btn-outline{
-
-background:
-rgba(255,255,255,.025);
-
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 45px rgba(0,234,255,.35);
 }
 
-.btn-whatsapp{
-
-background:var(--green);
-
-color:#031509;
-
-border:none;
-
+.btn-secondary{
+    color:white;
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--border);
 }
 
+.btn-secondary:hover{
+    border-color:rgba(0,234,255,.4);
+    color:var(--cyan);
+    transform:translateY(-4px);
+}
 
 /* =========================================================
    HERO VISUAL
-========================================================= */
+   ========================================================= */
 
 .hero-visual{
-
-position:relative;
-
+    position:relative;
+    min-height:520px;
+    display:grid;
+    place-items:center;
 }
 
-.glow{
+.orb{
+    width:340px;
+    height:340px;
+    border-radius:50%;
 
-position:absolute;
+    background:
+        radial-gradient(circle at 35% 30%,
+            rgba(255,255,255,.35),
+            transparent 7%),
+        radial-gradient(circle,
+            rgba(0,234,255,.35),
+            rgba(52,120,255,.15) 35%,
+            rgba(155,92,255,.12) 55%,
+            transparent 72%);
 
-width:300px;
+    box-shadow:
+        0 0 70px rgba(0,234,255,.12),
+        inset 0 0 70px rgba(155,92,255,.10);
 
-height:300px;
-
-border-radius:50%;
-
-background:var(--primary);
-
-filter:blur(100px);
-
-opacity:.14;
-
-top:30px;
-
-left:50%;
-
-transform:translateX(-50%);
-
+    animation:orbFloat 6s ease-in-out infinite;
 }
 
-.profile-card{
-
-position:relative;
-
-z-index:2;
-
-padding:35px;
-
-border-radius:28px;
-
-background:
-
-linear-gradient(
-145deg,
-rgba(19,30,61,.9),
-rgba(7,11,25,.75)
-);
-
-border:1px solid var(--border);
-
-box-shadow:var(--shadow);
-
-overflow:hidden;
-
+@keyframes orbFloat{
+    0%,100%{transform:translateY(0) rotate(0deg)}
+    50%{transform:translateY(-20px) rotate(4deg)}
 }
 
-.profile-card::before{
+.orb::before,
+.orb::after{
+    content:"";
+    position:absolute;
+    inset:35px;
 
-content:"";
+    border:1px solid rgba(0,234,255,.2);
+    border-radius:50%;
 
-position:absolute;
-
-width:180px;
-
-height:180px;
-
-border-radius:50%;
-
-border:1px solid rgba(33,199,255,.15);
-
-top:-80px;
-
-right:-70px;
-
+    animation:spin 15s linear infinite;
 }
 
-.profile-card::after{
-
-content:"";
-
-position:absolute;
-
-width:120px;
-
-height:120px;
-
-border-radius:50%;
-
-border:1px solid rgba(155,108,255,.15);
-
-bottom:-50px;
-
-left:-40px;
-
+.orb::after{
+    inset:75px;
+    border-color:rgba(155,92,255,.25);
+    animation-duration:10s;
+    animation-direction:reverse;
 }
 
-.profile-avatar{
-
-width:130px;
-
-height:130px;
-
-margin:0 auto 20px;
-
-border-radius:50%;
-
-display:grid;
-
-place-items:center;
-
-font-size:45px;
-
-font-weight:900;
-
-background:
-linear-gradient(
-135deg,
-#21c7ff,
-#705bff
-);
-
-box-shadow:
-0 0 80px rgba(33,199,255,.25);
-
+@keyframes spin{
+    to{transform:rotate(360deg)}
 }
 
-.profile-card h3{
+.holo-card{
+    position:absolute;
+    width:300px;
+    padding:22px;
 
-text-align:center;
+    background:rgba(7,17,31,.65);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:25px;
+    backdrop-filter:blur(20px);
 
-font-size:25px;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.4),
+        0 0 50px rgba(0,234,255,.05);
 
+    animation:holoFloat 5s ease-in-out infinite;
 }
 
-.profile-role{
-
-text-align:center;
-
-color:var(--primary);
-
-font-size:13px;
-
-font-weight:800;
-
-margin-top:4px;
-
-margin-bottom:28px;
-
+.holo-card.one{
+    top:55px;
+    right:0;
 }
 
-.profile-stats{
-
-display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-gap:10px;
-
+.holo-card.two{
+    bottom:45px;
+    left:0;
+    animation-delay:-2s;
 }
 
-.profile-stat{
-
-text-align:center;
-
-padding:15px 7px;
-
-border-radius:14px;
-
-background:
-rgba(255,255,255,.035);
-
-border:1px solid rgba(255,255,255,.05);
-
+@keyframes holoFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-13px)}
 }
 
-.profile-stat strong{
-
-display:block;
-
-font-size:21px;
-
+.holo-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:17px;
 }
 
-.profile-stat small{
-
-font-size:10px;
-
-color:var(--muted);
-
+.holo-title{
+    font-size:12px;
+    font-weight:800;
 }
 
+.live{
+    color:#38ffad;
+    font-size:10px;
+}
+
+.fake-chart{
+    height:90px;
+    display:flex;
+    align-items:end;
+    gap:8px;
+}
+
+.bar{
+    flex:1;
+    border-radius:8px 8px 2px 2px;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,234,255,.15),
+        rgba(0,234,255,.9)
+    );
+
+    animation:barPulse 2s ease-in-out infinite;
+}
+
+.bar:nth-child(2){height:55%;animation-delay:.1s}
+.bar:nth-child(3){height:75%;animation-delay:.2s}
+.bar:nth-child(4){height:45%;animation-delay:.3s}
+.bar:nth-child(5){height:85%;animation-delay:.4s}
+.bar:nth-child(6){height:65%;animation-delay:.5s}
+.bar:nth-child(7){height:95%;animation-delay:.6s}
+
+@keyframes barPulse{
+    50%{filter:brightness(1.4)}
+}
 
 /* =========================================================
-   MARQUEE
-========================================================= */
+   STATS
+   ========================================================= */
 
-.marquee{
-
-overflow:hidden;
-
-border-top:
-1px solid rgba(255,255,255,.04);
-
-border-bottom:
-1px solid rgba(255,255,255,.04);
-
-padding:20px 0;
-
-background:
-rgba(255,255,255,.015);
-
+.stats-wrap{
+    width:min(1150px,92%);
+    margin:-30px auto 100px;
+    position:relative;
+    z-index:2;
 }
 
-.marquee-track{
-
-display:flex;
-
-width:max-content;
-
-animation:
-marquee 25s linear infinite;
-
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
 }
 
-.marquee-item{
+.stat-card{
+    position:relative;
+    overflow:hidden;
 
-margin-right:50px;
+    padding:25px 20px;
 
-font-size:12px;
+    background:linear-gradient(
+        145deg,
+        rgba(16,30,52,.78),
+        rgba(7,15,27,.72)
+    );
 
-font-weight:900;
+    border:1px solid var(--border);
+    border-radius:22px;
 
-color:#72809a;
+    box-shadow:var(--shadow);
 
-letter-spacing:2px;
-
-text-transform:uppercase;
-
+    transition:.4s;
 }
 
-@keyframes marquee{
-
-from{
-transform:translateX(0);
+.stat-card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:var(--cyan);
+    filter:blur(70px);
+    opacity:.06;
+    top:-60px;
+    right:-40px;
 }
 
-to{
-transform:translateX(-50%);
+.stat-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,234,255,.25);
 }
 
+.stat-icon{
+    font-size:23px;
+    margin-bottom:12px;
 }
 
+.stat-number{
+    font-family:"Orbitron",sans-serif;
+    font-size:28px;
+    font-weight:900;
+}
+
+.stat-label{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:5px;
+}
 
 /* =========================================================
-   SERVICES
-========================================================= */
+   GENERAL SECTIONS
+   ========================================================= */
 
-.service-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-gap:20px;
-
+section{
+    padding:100px 20px;
 }
 
-.service-card{
-
-padding:30px;
-
-border-radius:22px;
-
-background:
-var(--card);
-
-border:1px solid var(--border);
-
-backdrop-filter:blur(20px);
-
-transition:.4s;
-
-position:relative;
-
-overflow:hidden;
-
+.section-container{
+    width:min(1150px,100%);
+    margin:auto;
 }
 
-.service-card:hover{
-
-transform:
-translateY(-10px);
-
-border-color:
-rgba(33,199,255,.4);
-
-box-shadow:
-0 25px 60px rgba(0,0,0,.25);
-
+.section-heading{
+    max-width:750px;
+    margin-bottom:50px;
 }
 
-.service-number{
-
-position:absolute;
-
-right:20px;
-
-top:15px;
-
-font-size:50px;
-
-font-weight:900;
-
-color:
-rgba(255,255,255,.025);
-
+.eyebrow{
+    color:var(--cyan);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:12px;
 }
 
-.service-icon{
-
-width:55px;
-
-height:55px;
-
-display:grid;
-
-place-items:center;
-
-border-radius:15px;
-
-background:
-rgba(33,199,255,.08);
-
-border:1px solid
-rgba(33,199,255,.14);
-
-font-size:25px;
-
-margin-bottom:20px;
-
+.section-heading h2{
+    font-family:"Orbitron",sans-serif;
+    font-size:clamp(30px,5vw,48px);
+    line-height:1.15;
+    margin-bottom:15px;
 }
 
-.service-card h3{
-
-font-size:18px;
-
-margin-bottom:10px;
-
+.section-heading p{
+    color:var(--muted);
+    line-height:1.8;
 }
-
-.service-card p{
-
-font-size:13px;
-
-color:var(--muted);
-
-}
-
 
 /* =========================================================
    ABOUT
-========================================================= */
+   ========================================================= */
 
 .about-grid{
-
-display:grid;
-
-grid-template-columns:
-.8fr 1.2fr;
-
-gap:60px;
-
-align-items:center;
-
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
 }
 
-.about-visual{
+.glass-card{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17,31,52,.72),
+            rgba(7,14,25,.72)
+        );
 
-min-height:420px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
 
-border-radius:28px;
+    padding:32px;
 
-border:1px solid var(--border);
+    box-shadow:var(--shadow);
 
-background:
-
-radial-gradient(
-circle at center,
-rgba(33,199,255,.14),
-transparent 35%
-),
-
-rgba(255,255,255,.02);
-
-display:grid;
-
-place-items:center;
-
-position:relative;
-
-overflow:hidden;
-
+    transition:.4s;
 }
 
-.about-orbit{
-
-width:250px;
-
-height:250px;
-
-border:1px dashed
-rgba(33,199,255,.3);
-
-border-radius:50%;
-
-display:grid;
-
-place-items:center;
-
-animation:
-rotate 18s linear infinite;
-
+.glass-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(0,234,255,.2);
 }
 
-.about-orbit::before{
-
-content:"";
-
-width:165px;
-
-height:165px;
-
-border-radius:50%;
-
-border:1px solid
-rgba(109,92,255,.4);
-
+.glass-card h3{
+    font-size:20px;
+    margin-bottom:15px;
 }
 
-.about-core{
-
-position:absolute;
-
-width:130px;
-
-height:130px;
-
-border-radius:50%;
-
-display:grid;
-
-place-items:center;
-
-font-size:42px;
-
-font-weight:900;
-
-background:
-linear-gradient(
-135deg,
-#21c7ff,
-#705bff
-);
-
-box-shadow:
-0 0 80px rgba(33,199,255,.3);
-
+.glass-card p{
+    color:var(--muted);
+    line-height:1.85;
 }
 
-@keyframes rotate{
-
-from{
-transform:rotate(0);
+.feature-list{
+    margin-top:20px;
+    display:grid;
+    gap:13px;
 }
 
-to{
-transform:rotate(360deg);
+.feature{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    color:#c5d2e2;
+    font-size:13px;
 }
 
+.feature span{
+    width:23px;
+    height:23px;
+    min-width:23px;
+    display:grid;
+    place-items:center;
+
+    border-radius:8px;
+    background:rgba(0,234,255,.08);
+    color:var(--cyan);
 }
 
-.about-content h2{
+/* =========================================================
+   SERVICES
+   ========================================================= */
 
-font-size:43px;
-
-line-height:1.05;
-
-letter-spacing:-2px;
-
-margin-bottom:20px;
-
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.about-content p{
+.service-card{
+    padding:28px;
+    min-height:230px;
 
-color:var(--muted);
+    background:rgba(9,20,35,.66);
+    border:1px solid var(--border);
+    border-radius:24px;
 
-font-size:14px;
-
-margin-bottom:15px;
-
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
 }
 
-.check-list{
-
-list-style:none;
-
-margin-top:25px;
-
+.service-card::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:var(--cyan);
+    filter:blur(90px);
+    opacity:.05;
+    right:-70px;
+    bottom:-70px;
 }
 
-.check-list li{
-
-font-size:13px;
-
-margin:11px 0;
-
-color:#dce7f7;
-
+.service-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(0,234,255,.25);
 }
 
-.check-list li::before{
-
-content:"✓";
-
-color:var(--primary);
-
-font-weight:900;
-
-margin-right:10px;
-
+.service-icon{
+    font-size:34px;
+    margin-bottom:20px;
 }
 
+.service-card h3{
+    margin-bottom:10px;
+}
+
+.service-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+}
 
 /* =========================================================
    PORTFOLIO
-========================================================= */
+   ========================================================= */
 
 .portfolio-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:25px;
-
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
 .project{
-
-border-radius:24px;
-
-overflow:hidden;
-
-border:1px solid var(--border);
-
-background:#080d1d;
-
-transition:.4s;
-
+    overflow:hidden;
+    border-radius:27px;
+    border:1px solid var(--border);
+    background:rgba(10,20,35,.7);
+    transition:.4s;
 }
 
 .project:hover{
-
-transform:
-translateY(-8px);
-
-box-shadow:
-0 25px 70px rgba(0,0,0,.3);
-
+    transform:translateY(-8px);
+    border-color:rgba(0,234,255,.25);
+    box-shadow:0 25px 70px rgba(0,0,0,.35);
 }
 
-.project-screen{
+.project-preview{
+    min-height:260px;
+    position:relative;
+    overflow:hidden;
 
-height:280px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-padding:32px;
+    background:
+        radial-gradient(circle at 30% 30%,rgba(0,234,255,.25),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(155,92,255,.25),transparent 30%),
+        #071221;
+}
 
-display:flex;
-
-align-items:flex-end;
-
-background:
-
-radial-gradient(
-circle at 20% 20%,
-rgba(33,199,255,.3),
-transparent 35%
-),
-
-linear-gradient(
-135deg,
-#101c3c,
-#0b1025
-);
-
+.project-preview::before{
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:50%;
+    animation:spin 18s linear infinite;
 }
 
 .browser{
-
-width:100%;
-
-height:200px;
-
-background:white;
-
-border-radius:15px 15px 0 0;
-
-overflow:hidden;
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.4);
-
+    width:72%;
+    height:150px;
+    background:rgba(2,7,15,.82);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:15px;
+    padding:12px;
+    position:relative;
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
 }
 
-.browser-bar{
-
-height:27px;
-
-background:#e7ebf1;
-
-display:flex;
-
-align-items:center;
-
-gap:5px;
-
-padding-left:12px;
-
+.browser-top{
+    display:flex;
+    gap:5px;
+    margin-bottom:12px;
 }
 
-.browser-bar i{
-
-width:6px;
-
-height:6px;
-
-background:#8994a8;
-
-border-radius:50%;
-
+.browser-top i{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#64748b;
 }
 
-.browser-content{
-
-height:100%;
-
-padding:25px;
-
-color:#101827;
-
-background:
-linear-gradient(
-135deg,
-#ffffff,
-#dff4ff
-);
-
+.browser-line{
+    height:7px;
+    border-radius:10px;
+    background:linear-gradient(90deg,var(--cyan),var(--purple));
+    width:70%;
+    margin-bottom:10px;
 }
 
-.browser-content h4{
-
-font-size:21px;
-
-margin-bottom:5px;
-
+.browser-line.small{
+    width:45%;
+    opacity:.4;
 }
 
-.browser-content p{
-
-font-size:12px;
-
-color:#596579;
-
+.project-content{
+    padding:24px;
 }
 
-.project-info{
-
-padding:26px;
-
+.project-content h3{
+    margin-bottom:8px;
 }
 
-.project-info h3{
-
-font-size:20px;
-
-margin-bottom:9px;
-
-}
-
-.project-info p{
-
-font-size:13px;
-
-color:var(--muted);
-
-margin-bottom:18px;
-
+.project-content p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+    margin-bottom:18px;
 }
 
 .project-link{
-
-color:var(--primary);
-
-font-size:13px;
-
-font-weight:900;
-
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:var(--cyan);
+    font-size:12px;
+    font-weight:900;
 }
-
 
 /* =========================================================
    PRICING
-========================================================= */
+   ========================================================= */
 
 .pricing-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:15px;
-
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
 .price-card{
-
-padding:28px 20px;
-
-border-radius:22px;
-
-background:
-rgba(255,255,255,.025);
-
-border:1px solid var(--border);
-
-position:relative;
-
-transition:.4s;
-
+    padding:27px 22px;
+    border-radius:25px;
+    border:1px solid var(--border);
+    background:rgba(9,19,34,.7);
+    position:relative;
+    transition:.4s;
 }
 
 .price-card:hover{
-
-transform:
-translateY(-9px);
-
+    transform:translateY(-9px);
 }
 
 .price-card.featured{
-
-border-color:
-rgba(33,199,255,.55);
-
-box-shadow:
-0 20px 60px
-rgba(33,199,255,.08);
-
+    border-color:rgba(0,234,255,.4);
+    box-shadow:
+        0 0 45px rgba(0,234,255,.08),
+        0 25px 70px rgba(0,0,0,.3);
 }
 
 .popular{
-
-position:absolute;
-
-top:14px;
-
-right:14px;
-
-font-size:9px;
-
-font-weight:900;
-
-padding:5px 8px;
-
-border-radius:20px;
-
-background:var(--primary);
-
-color:#00121c;
-
+    position:absolute;
+    top:14px;
+    right:14px;
+    padding:6px 9px;
+    border-radius:20px;
+    background:rgba(0,234,255,.1);
+    color:var(--cyan);
+    font-size:8px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
 .price-card h3{
-
-font-size:17px;
-
+    font-size:15px;
+    margin-bottom:12px;
 }
 
 .price{
-
-font-size:40px;
-
-font-weight:900;
-
-margin:10px 0;
-
+    font-family:"Orbitron",sans-serif;
+    font-size:34px;
+    margin-bottom:20px;
 }
 
 .price small{
-
-font-size:12px;
-
-color:var(--muted);
-
-font-weight:500;
-
+    color:var(--muted);
+    font-family:Inter;
+    font-size:10px;
 }
 
-.price-card>p{
-
-font-size:12px;
-
-color:var(--muted);
-
-min-height:55px;
-
+.price-features{
+    list-style:none;
+    display:grid;
+    gap:10px;
+    margin-bottom:25px;
 }
 
-.features{
-
-list-style:none;
-
-margin:20px 0;
-
+.price-features li{
+    color:#aab9cb;
+    font-size:11px;
 }
 
-.features li{
-
-font-size:11px;
-
-color:#cbd6e8;
-
-margin:9px 0;
-
+.price-features li::before{
+    content:"✓";
+    color:var(--cyan);
+    margin-right:7px;
 }
-
-.features li::before{
-
-content:"✓";
-
-color:var(--primary);
-
-margin-right:7px;
-
-}
-
-.price-btn{
-
-width:100%;
-
-}
-
 
 /* =========================================================
    PROCESS
-========================================================= */
+   ========================================================= */
 
-.process-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:20px;
-
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
 .process-card{
-
-text-align:center;
-
-padding:25px;
-
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:rgba(10,20,34,.62);
+    position:relative;
 }
 
 .process-number{
-
-width:60px;
-
-height:60px;
-
-border-radius:50%;
-
-margin:0 auto 18px;
-
-display:grid;
-
-place-items:center;
-
-font-size:14px;
-
-font-weight:900;
-
-color:var(--primary);
-
-border:1px solid
-rgba(33,199,255,.3);
-
-background:
-rgba(33,199,255,.07);
-
+    font-family:"Orbitron",sans-serif;
+    font-size:32px;
+    color:rgba(0,234,255,.25);
+    margin-bottom:20px;
 }
 
 .process-card h3{
-
-font-size:16px;
-
-margin-bottom:8px;
-
+    font-size:15px;
+    margin-bottom:8px;
 }
 
 .process-card p{
-
-font-size:12px;
-
-color:var(--muted);
-
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
 }
-
 
 /* =========================================================
    SKILLS
-========================================================= */
+   ========================================================= */
 
 .skills-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:15px;
-
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
 }
 
 .skill{
-
-padding:22px;
-
-text-align:center;
-
-border-radius:16px;
-
-background:
-rgba(255,255,255,.025);
-
-border:1px solid var(--border);
-
-font-size:13px;
-
-font-weight:800;
-
-transition:.3s;
-
+    margin-bottom:20px;
 }
 
-.skill:hover{
-
-border-color:
-rgba(33,199,255,.4);
-
-transform:
-translateY(-5px);
-
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-size:12px;
 }
 
-.skill-icon{
-
-font-size:28px;
-
-display:block;
-
-margin-bottom:8px;
-
+.skill-top span:last-child{
+    color:var(--cyan);
 }
 
+.skill-bar{
+    height:8px;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    width:var(--width);
+    border-radius:20px;
+    background:linear-gradient(90deg,var(--cyan),var(--purple));
+    box-shadow:0 0 15px rgba(0,234,255,.25);
+}
 
 /* =========================================================
-   CLIENT FORM
-========================================================= */
+   FORM
+   ========================================================= */
 
 .form-section{
-
-position:relative;
-
+    position:relative;
 }
 
-.form-wrapper{
+.form-shell{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,25,44,.85),
+            rgba(5,12,22,.88)
+        );
 
-max-width:1050px;
+    border:1px solid rgba(0,234,255,.13);
+    border-radius:32px;
 
-margin:auto;
+    padding:35px;
 
-padding:40px;
-
-border-radius:30px;
-
-background:
-
-linear-gradient(
-145deg,
-rgba(15,25,53,.92),
-rgba(6,10,25,.9)
-);
-
-border:1px solid
-rgba(33,199,255,.18);
-
-box-shadow:
-0 35px 100px rgba(0,0,0,.35);
-
-position:relative;
-
-overflow:hidden;
-
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.45),
+        inset 0 1px rgba(255,255,255,.05);
 }
 
-.form-wrapper::before{
-
-content:"";
-
-position:absolute;
-
-width:350px;
-
-height:350px;
-
-border-radius:50%;
-
-background:var(--primary);
-
-filter:blur(150px);
-
-opacity:.07;
-
-right:-150px;
-
-top:-150px;
-
+.form-header{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 35px;
 }
 
-.form-heading{
-
-position:relative;
-
-z-index:2;
-
-margin-bottom:30px;
-
+.form-header h2{
+    font-family:"Orbitron",sans-serif;
+    font-size:clamp(28px,5vw,46px);
+    margin-bottom:13px;
 }
 
-.form-heading h3{
-
-font-size:29px;
-
-margin-bottom:8px;
-
-}
-
-.form-heading p{
-
-font-size:13px;
-
-color:var(--muted);
-
+.form-header p{
+    color:var(--muted);
+    line-height:1.7;
 }
 
 .form-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:18px;
-
-position:relative;
-
-z-index:2;
-
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
 }
 
-.form-group{
-
-display:flex;
-
-flex-direction:column;
-
-gap:8px;
-
+.input-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
 }
 
-.form-group.full{
-
-grid-column:
-1 / -1;
-
+.input-group.full{
+    grid-column:1/-1;
 }
 
-.form-group label{
-
-font-size:12px;
-
-font-weight:800;
-
-color:#cdd9ed;
-
+.input-group label{
+    color:#b7c7d9;
+    font-size:11px;
+    font-weight:800;
 }
 
-.form-group label span{
+.input-group input,
+.input-group select,
+.input-group textarea{
+    width:100%;
+    border:1px solid rgba(255,255,255,.1);
+    outline:none;
 
-color:var(--primary);
+    background:rgba(255,255,255,.035);
+    color:white;
 
+    border-radius:14px;
+    padding:14px;
+
+    font-family:Inter;
+    font-size:13px;
+
+    transition:.3s;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select{
-
-width:100%;
-
-padding:14px 15px;
-
-border-radius:12px;
-
-border:1px solid
-rgba(255,255,255,.08);
-
-outline:none;
-
-background:
-rgba(255,255,255,.035);
-
-color:white;
-
-font-size:13px;
-
-transition:.3s;
-
+.input-group select option{
+    background:#07111f;
+    color:white;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder{
-
-color:#65738d;
-
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+    border-color:rgba(0,234,255,.5);
+    box-shadow:0 0 25px rgba(0,234,255,.07);
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-
-border-color:
-rgba(33,199,255,.6);
-
-box-shadow:
-0 0 0 3px
-rgba(33,199,255,.07);
-
+.input-group textarea{
+    min-height:140px;
+    resize:vertical;
 }
-
-.form-group select option{
-
-background:#0b1124;
-
-color:white;
-
-}
-
-.form-group textarea{
-
-min-height:130px;
-
-resize:vertical;
-
-}
-
-
-/* CHECKBOXES */
 
 .checkbox-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-gap:9px;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
 }
 
-.check-option{
-
-position:relative;
-
+.check{
+    position:relative;
 }
 
-.check-option input{
-
-position:absolute;
-
-opacity:0;
-
-pointer-events:none;
-
+.check input{
+    position:absolute;
+    opacity:0;
 }
 
-.check-option label{
+.check label{
+    display:block;
+    padding:12px;
 
-display:block;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.08);
 
-padding:11px 12px;
+    background:rgba(255,255,255,.025);
 
-border-radius:10px;
+    color:#aebdd0;
+    font-size:11px;
+    cursor:pointer;
 
-border:1px solid
-rgba(255,255,255,.07);
-
-background:
-rgba(255,255,255,.025);
-
-font-size:11px;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.3s;
-
+    transition:.3s;
 }
 
-.check-option input:checked + label{
-
-border-color:
-rgba(33,199,255,.65);
-
-background:
-rgba(33,199,255,.1);
-
-color:#aeeaff;
-
+.check input:checked + label{
+    color:var(--cyan);
+    border-color:rgba(0,234,255,.4);
+    background:rgba(0,234,255,.06);
+    box-shadow:0 0 20px rgba(0,234,255,.05);
 }
 
-
-/* FORM BOTTOM */
-
-.form-bottom{
-
-position:relative;
-
-z-index:2;
-
-margin-top:25px;
-
-padding-top:22px;
-
-border-top:
-1px solid rgba(255,255,255,.06);
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:20px;
-
+.form-submit{
+    grid-column:1/-1;
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
 }
 
-.contact-number{
+.ai-send{
+    width:min(420px,100%);
+    padding:18px 25px;
 
-color:var(--muted);
+    border:none;
+    border-radius:17px;
 
-font-size:12px;
+    color:#001016;
 
+    font-family:"Orbitron",sans-serif;
+    font-size:13px;
+    font-weight:900;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            #7bc9ff,
+            var(--purple),
+            var(--pink)
+        );
+
+    background-size:300% 100%;
+
+    animation:buttonGradient 5s ease infinite;
+
+    box-shadow:
+        0 15px 45px rgba(0,234,255,.18);
+
+    transition:.3s;
 }
 
-.contact-number strong{
-
-display:block;
-
-font-size:19px;
-
-color:white;
-
-margin-top:4px;
-
+.ai-send:hover{
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:
+        0 20px 60px rgba(0,234,255,.32);
 }
 
-.send-btn{
-
-border:none;
-
-background:
-linear-gradient(
-135deg,
-#25d366,
-#10b957
-);
-
-color:#021209;
-
-font-size:14px;
-
-padding:16px 28px;
-
-box-shadow:
-0 15px 35px
-rgba(37,211,102,.15);
-
+@keyframes buttonGradient{
+    0%,100%{background-position:0% 50%}
+    50%{background-position:100% 50%}
 }
 
-.send-btn:hover{
-
-box-shadow:
-0 20px 50px
-rgba(37,211,102,.3);
-
+.form-status{
+    text-align:center;
+    color:#56ffb1;
+    font-size:12px;
+    margin-top:15px;
+    min-height:20px;
 }
-
-
-/* =========================================================
-   FORM SUCCESS MESSAGE
-========================================================= */
-
-.form-note{
-
-display:none;
-
-margin-top:18px;
-
-padding:13px;
-
-border-radius:11px;
-
-background:
-rgba(37,211,102,.08);
-
-border:1px solid
-rgba(37,211,102,.2);
-
-color:#8affb7;
-
-font-size:12px;
-
-text-align:center;
-
-}
-
-.form-note.show{
-
-display:block;
-
-}
-
 
 /* =========================================================
    FAQ
-========================================================= */
+   ========================================================= */
 
 .faq{
-
-max-width:850px;
-
-margin:auto;
-
+    max-width:850px;
+    margin:auto;
 }
 
-details{
-
-padding:20px;
-
-border-radius:14px;
-
-border:1px solid var(--border);
-
-background:
-rgba(255,255,255,.025);
-
-margin-bottom:12px;
-
+.faq-item{
+    border:1px solid var(--border);
+    border-radius:17px;
+    margin-bottom:12px;
+    overflow:hidden;
+    background:rgba(9,19,33,.55);
 }
 
-summary{
+.faq-question{
+    width:100%;
+    border:none;
+    background:none;
+    color:white;
+    padding:19px;
+    text-align:left;
+    cursor:pointer;
 
-cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-font-size:14px;
-
-font-weight:800;
-
+    font-weight:800;
+    font-size:13px;
 }
 
-details p{
-
-color:var(--muted);
-
-font-size:13px;
-
-margin-top:12px;
-
+.faq-question span{
+    color:var(--cyan);
+    font-size:18px;
 }
 
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.faq-answer p{
+    padding:0 19px 19px;
+    color:var(--muted);
+    line-height:1.7;
+    font-size:12px;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
 
 /* =========================================================
-   CTA
-========================================================= */
+   CONTACT CTA
+   ========================================================= */
 
-.cta{
+.contact-box{
+    text-align:center;
+    padding:65px 30px;
 
-padding:65px 30px;
+    border-radius:32px;
 
-border-radius:30px;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(0,234,255,.15),transparent 45%),
+        linear-gradient(145deg,rgba(12,27,47,.85),rgba(5,12,21,.9));
 
-text-align:center;
+    border:1px solid rgba(0,234,255,.13);
 
-background:
-
-radial-gradient(
-circle at 20% 50%,
-rgba(33,199,255,.16),
-transparent 30%
-),
-
-radial-gradient(
-circle at 80% 50%,
-rgba(109,92,255,.18),
-transparent 30%
-),
-
-rgba(255,255,255,.025);
-
-border:1px solid var(--border);
-
+    box-shadow:0 30px 100px rgba(0,0,0,.4);
 }
 
-.cta h2{
-
-font-size:
-clamp(35px,5vw,58px);
-
-line-height:1;
-
-letter-spacing:-2px;
-
-margin-bottom:15px;
-
+.contact-box h2{
+    font-family:"Orbitron",sans-serif;
+    font-size:clamp(28px,5vw,48px);
+    margin-bottom:15px;
 }
 
-.cta p{
-
-max-width:650px;
-
-margin:auto auto 25px;
-
-color:var(--muted);
-
+.contact-box p{
+    color:var(--muted);
+    max-width:650px;
+    margin:0 auto 25px;
+    line-height:1.8;
 }
-
-.phone{
-
-display:block;
-
-font-size:25px;
-
-font-weight:900;
-
-margin-bottom:25px;
-
-}
-
 
 /* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
 
 footer{
+    padding:40px 20px;
+    border-top:1px solid var(--border);
+    text-align:center;
+}
 
-padding:35px 0;
-
-border-top:
-1px solid rgba(255,255,255,.05);
-
-text-align:center;
-
-color:var(--muted);
-
-font-size:12px;
-
+footer p{
+    color:#65758a;
+    font-size:11px;
 }
 
 footer strong{
-
-color:white;
-
+    color:#aebed1;
 }
-
 
 /* =========================================================
-   FLOATING WHATSAPP
-========================================================= */
+   WHATSAPP FLOAT
+   ========================================================= */
 
-.floating-wa{
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
 
-position:fixed;
+    width:60px;
+    height:60px;
 
-right:20px;
+    border-radius:50%;
 
-bottom:20px;
+    display:grid;
+    place-items:center;
 
-width:60px;
+    background:#20d66b;
+    color:white;
 
-height:60px;
+    font-size:25px;
+    text-decoration:none;
 
-border-radius:50%;
+    box-shadow:
+        0 12px 35px rgba(32,214,107,.35);
 
-display:grid;
+    z-index:999;
 
-place-items:center;
-
-background:#25d366;
-
-color:white;
-
-font-size:25px;
-
-z-index:999;
-
-box-shadow:
-0 15px 40px
-rgba(37,211,102,.3);
-
-animation:
-pulse 2s infinite;
-
+    animation:whatsappPulse 2s infinite;
 }
 
-@keyframes pulse{
-
-0%,100%{
-box-shadow:
-0 0 0 0 rgba(37,211,102,.35);
+@keyframes whatsappPulse{
+    0%,100%{
+        box-shadow:0 12px 35px rgba(32,214,107,.35);
+    }
+    50%{
+        box-shadow:
+            0 12px 35px rgba(32,214,107,.35),
+            0 0 0 12px rgba(32,214,107,.05);
+    }
 }
-
-50%{
-box-shadow:
-0 0 0 13px rgba(37,211,102,0);
-}
-
-}
-
 
 /* =========================================================
-   SCROLL REVEAL
-========================================================= */
+   REVEAL ANIMATION
+   ========================================================= */
 
 .reveal{
-
-opacity:0;
-
-transform:
-translateY(35px);
-
-transition:
-opacity .8s ease,
-transform .8s ease;
-
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
 }
 
-.reveal.active{
-
-opacity:1;
-
-transform:
-translateY(0);
-
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
 }
-
 
 /* =========================================================
    RESPONSIVE
-========================================================= */
+   ========================================================= */
 
 @media(max-width:950px){
 
-.nav-links{
-display:none;
+    .nav-links{
+        display:none;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        min-height:430px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .pricing-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-.hero-grid{
+@media(max-width:700px){
 
-grid-template-columns:1fr;
+    .navbar{
+        height:62px;
+        padding:0 14px;
+    }
 
+    .logo-text{
+        font-size:12px;
+    }
+
+    .nav-cta{
+        padding:10px 12px;
+        font-size:10px;
+    }
+
+    .hero{
+        padding-top:130px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .orb{
+        width:260px;
+        height:260px;
+    }
+
+    .holo-card{
+        width:230px;
+        padding:17px;
+    }
+
+    .holo-card.one{
+        right:-5px;
+        top:35px;
+    }
+
+    .holo-card.two{
+        left:-5px;
+        bottom:25px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-card{
+        padding:18px 14px;
+    }
+
+    .stat-number{
+        font-size:22px;
+    }
+
+    .about-grid,
+    .portfolio-grid,
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .form-shell{
+        padding:22px 16px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .input-group.full{
+        grid-column:auto;
+    }
+
+    .checkbox-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .form-submit{
+        grid-column:auto;
+    }
+
+    .contact-box{
+        padding:45px 20px;
+    }
 }
 
-.service-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-}
-
-.pricing-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-}
-
-.process-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-}
-
-.skills-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-}
-
-.about-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-
-@media(max-width:650px){
-
-.section{
-
-padding:80px 0;
-
-}
-
-.hero{
-
-padding-top:120px;
-
-}
-
-.hero h1{
-
-font-size:48px;
-
-letter-spacing:-3px;
-
-}
-
-.hero-description{
-
-font-size:15px;
-
-}
-
-.service-grid,
-.portfolio-grid,
-.pricing-grid,
-.process-grid,
-.skills-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.form-wrapper{
-
-padding:25px 18px;
-
-}
-
-.form-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.form-group.full{
-
-grid-column:auto;
-
-}
-
-.checkbox-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-}
-
-.form-bottom{
-
-flex-direction:column;
-
-align-items:stretch;
-
-}
-
-.send-btn{
-
-width:100%;
-
-}
-
-.about-content h2{
-
-font-size:35px;
-
-}
-
-.project-screen{
-
-height:220px;
-
-padding:20px;
-
-}
-
-.browser{
-
-height:165px;
-
-}
-
-.cta{
-
-padding:45px 20px;
-
-}
-
+@media(max-width:420px){
+
+    .checkbox-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<!-- =========================================================
+     PARTICLES
+========================================================= -->
+
+<div id="particles"></div>
 
 <!-- =========================================================
      NAVBAR
@@ -2253,52 +1571,34 @@ padding:45px 20px;
 
 <nav class="navbar">
 
-<div class="container nav-inner">
+    <a href="#home" class="logo">
 
-<a href="#home" class="logo">
-HMAS<span>.</span>
-</a>
+        <div class="logo-mark">
+            HM
+        </div>
 
-<ul class="nav-links">
+        <div class="logo-text">
+            Abdullah Shahzad
+            <small>HMAS • WEB CREATOR</small>
+        </div>
 
-<li>
-<a href="#about">About</a>
-</li>
+    </a>
 
-<li>
-<a href="#services">Services</a>
-</li>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#request">Request</a></li>
+    </ul>
 
-<li>
-<a href="#portfolio">Portfolio</a>
-</li>
-
-<li>
-<a href="#pricing">Pricing</a>
-</li>
-
-<li>
-<a href="#order">Order Website</a>
-</li>
-
-<li>
-<a href="#contact">Contact</a>
-</li>
-
-</ul>
-
-<a
-class="nav-hire"
-href="#order">
-
-Start Project
-
-</a>
-
-</div>
+    <a class="nav-cta"
+       href="https://wa.me/923054330064"
+       target="_blank">
+        CONTACT ME
+    </a>
 
 </nav>
-
 
 
 <!-- =========================================================
@@ -2307,1983 +1607,1548 @@ Start Project
 
 <section class="hero" id="home">
 
-<div class="container hero-grid">
+    <div class="hero-container">
+
+        <div class="hero-content reveal">
+
+            <div class="badge">
+                <span class="badge-dot"></span>
+                AVAILABLE FOR NEW PROJECTS
+            </div>
+
+            <h1>
+                I Create
+                <span class="gradient-text">
+                    Digital Experiences
+                </span>
+            </h1>
+
+            <p class="hero-description">
+                I'm <strong>Abdullah Shahzad (HMAS)</strong>,
+                a professional website creator focused on modern,
+                responsive, premium and visually powerful websites
+                for businesses, brands, portfolios and organizations.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#request"
+                   class="btn btn-primary">
+                    🚀 START YOUR WEBSITE
+                </a>
+
+                <a href="#portfolio"
+                   class="btn btn-secondary">
+                    🌐 VIEW MY WORK
+                </a>
+
+            </div>
+
+        </div>
 
 
-<div>
+        <div class="hero-visual reveal">
 
-<div class="hero-badge">
+            <div class="orb"></div>
 
-<span class="status-dot"></span>
+            <div class="holo-card one">
 
-Available for Website Projects
+                <div class="holo-top">
 
-</div>
+                    <div class="holo-title">
+                        WEBSITE PERFORMANCE
+                    </div>
 
+                    <div class="live">
+                        ● LIVE
+                    </div>
 
-<h1>
+                </div>
 
-I Build
+                <div class="fake-chart">
 
-<span class="gradient-text">
-Websites
-</span>
+                    <div class="bar" style="height:35%"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
 
-That Look Different.
+                </div>
 
-</h1>
-
-
-<p class="hero-description">
-
-I'm <strong>Abdullah Shahzad (HMAS)</strong> —
-a website creator focused on modern, responsive,
-professional and attractive websites for people,
-businesses, organizations and brands.
-
-</p>
-
-
-<div class="hero-buttons">
-
-<a
-href="#portfolio"
-class="btn btn-primary">
-
-🚀 Explore My Work
-
-</a>
+            </div>
 
 
-<a
-href="#order"
-class="btn btn-outline">
+            <div class="holo-card two">
 
-📝 Create Your Website
+                <div class="holo-top">
 
-</a>
+                    <div class="holo-title">
+                        HMAS DIGITAL STUDIO
+                    </div>
 
-</div>
+                    <div class="live">
+                        ONLINE
+                    </div>
 
-</div>
+                </div>
 
+                <div style="font-size:24px;font-weight:900;">
+                    PREMIUM
+                </div>
 
+                <div style="color:#8496ac;font-size:11px;margin-top:5px;">
+                    DESIGN • CODE • EXPERIENCE
+                </div>
 
-<div class="hero-visual reveal">
+            </div>
 
-<div class="glow"></div>
+        </div>
 
-<div class="profile-card">
-
-<div class="profile-avatar">
-AS
-</div>
-
-<h3>
-Abdullah Shahzad
-</h3>
-
-<div class="profile-role">
-WEBSITE CREATOR • HMAS
-</div>
-
-
-<div class="profile-stats">
-
-<div class="profile-stat">
-
-<strong>2+</strong>
-
-<small>
-Live Projects
-</small>
-
-</div>
-
-
-<div class="profile-stat">
-
-<strong>100%</strong>
-
-<small>
-Responsive
-</small>
-
-</div>
-
-
-<div class="profile-stat">
-
-<strong>4</strong>
-
-<small>
-Packages
-</small>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     MARQUEE
+     STATS
 ========================================================= -->
 
-<div class="marquee">
+<div class="stats-wrap reveal">
 
-<div class="marquee-track">
+    <div class="stats">
 
-<div class="marquee-item">
-WEB DESIGN
+        <div class="stat-card">
+
+            <div class="stat-icon">👁️</div>
+
+            <div class="stat-number"
+                 id="visitorCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                YOUR LOOKS
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📝</div>
+
+            <div class="stat-number"
+                 id="registrationCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                REGISTRATIONS
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🌐</div>
+
+            <div class="stat-number">
+                2+
+            </div>
+
+            <div class="stat-label">
+                LIVE PROJECTS
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">⚡</div>
+
+            <div class="stat-number">
+                24/7
+            </div>
+
+            <div class="stat-label">
+                DIGITAL ACCESS
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
-
-<div class="marquee-item">
-CUSTOM WEBSITES
-</div>
-
-<div class="marquee-item">
-RESPONSIVE DESIGN
-</div>
-
-<div class="marquee-item">
-BUSINESS WEBSITES
-</div>
-
-<div class="marquee-item">
-PORTFOLIOS
-</div>
-
-<div class="marquee-item">
-LANDING PAGES
-</div>
-
-<div class="marquee-item">
-BRAND WEBSITES
-</div>
-
-<div class="marquee-item">
-WEB DESIGN
-</div>
-
-<div class="marquee-item">
-CUSTOM WEBSITES
-</div>
-
-<div class="marquee-item">
-RESPONSIVE DESIGN
-</div>
-
-</div>
-
-</div>
-
 
 
 <!-- =========================================================
      ABOUT
 ========================================================= -->
 
-<section class="section" id="about">
+<section id="about">
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="section-heading reveal">
 
-<div class="mini">
-Who I Am
-</div>
+            <div class="eyebrow">
+                ABOUT HMAS
+            </div>
 
-<h2>
-About HMAS
-</h2>
+            <h2>
+                Websites that look
+                <span class="gradient-text">
+                    seriously professional.
+                </span>
+            </h2>
 
-<p>
-I turn ideas into websites that people can actually use.
-</p>
+            <p>
+                My goal is simple: turn your idea into a website
+                that looks modern, trustworthy and memorable.
+            </p>
 
-</div>
-
-
-<div class="about-grid">
-
-
-<div class="about-visual reveal">
-
-<div class="about-orbit"></div>
-
-<div class="about-core">
-AS
-</div>
-
-</div>
+        </div>
 
 
-<div class="about-content reveal">
+        <div class="about-grid">
 
-<h2>
-Your idea.
-<br>
-My <span class="gradient-text">website.</span>
-</h2>
+            <div class="glass-card reveal">
+
+                <h3>
+                    👨‍💻 Who I Am
+                </h3>
+
+                <p>
+                    I'm Abdullah Shahzad (HMAS), a website creator
+                    who focuses on creating modern digital experiences.
+                    Every website is designed with attention to layout,
+                    mobile responsiveness, visual hierarchy and user
+                    experience.
+                </p>
+
+                <div class="feature-list">
+
+                    <div class="feature">
+                        <span>✓</span>
+                        Responsive design for mobile and desktop
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        Modern animations and premium visual effects
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        GitHub Pages compatible websites
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        Direct WhatsApp communication
+                    </div>
+
+                </div>
+
+            </div>
 
 
-<p>
+            <div class="glass-card reveal">
 
-I'm Abdullah Shahzad, also known as HMAS.
-I create websites with attention to design,
-responsiveness, usability and presentation.
+                <h3>
+                    ⚡ My Approach
+                </h3>
 
-</p>
+                <p>
+                    Instead of giving every project the same template,
+                    I focus on the purpose of your website, your audience,
+                    your colors and your required features.
+                </p>
 
+                <div class="feature-list">
 
-<p>
+                    <div class="feature">
+                        <span>01</span>
+                        Understand your idea
+                    </div>
 
-Whether you need a personal portfolio,
-business website, educational website,
-landing page or complete brand presence,
-I can create a website around your requirements.
+                    <div class="feature">
+                        <span>02</span>
+                        Plan the website structure
+                    </div>
 
-</p>
+                    <div class="feature">
+                        <span>03</span>
+                        Design and develop
+                    </div>
 
+                    <div class="feature">
+                        <span>04</span>
+                        Deliver your website
+                    </div>
 
-<ul class="check-list">
+                </div>
 
-<li>
-Modern professional interface
-</li>
+            </div>
 
-<li>
-Mobile, tablet and desktop responsive
-</li>
+        </div>
 
-<li>
-Custom colors and visual style
-</li>
-
-<li>
-Smooth animations and interactive effects
-</li>
-
-<li>
-Clean HTML, CSS and JavaScript
-</li>
-
-<li>
-GitHub Pages compatible projects
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
      SERVICES
 ========================================================= -->
 
-<section class="section" id="services">
+<section id="services">
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="section-heading reveal">
 
-<div class="mini">
-What I Create
-</div>
+            <div class="eyebrow">
+                SERVICES
+            </div>
 
-<h2>
-Website Services
-</h2>
+            <h2>
+                Everything your
+                <span class="gradient-text">
+                    website needs.
+                </span>
+            </h2>
 
-<p>
-Different website solutions for different needs.
-</p>
+            <p>
+                From simple websites to advanced digital experiences.
+            </p>
 
-</div>
+        </div>
 
 
-<div class="service-grid">
+        <div class="services-grid">
 
+            <div class="service-card reveal">
 
-<div class="service-card reveal">
+                <div class="service-icon">🌐</div>
 
-<div class="service-number">
-01
-</div>
+                <h3>
+                    Business Websites
+                </h3>
 
-<div class="service-icon">
-🌐
-</div>
+                <p>
+                    Professional websites for businesses,
+                    shops, services and organizations.
+                </p>
 
-<h3>
-Business Websites
-</h3>
+            </div>
 
-<p>
-Professional websites for businesses,
-shops, services, companies and organizations.
-</p>
 
-</div>
+            <div class="service-card reveal">
 
+                <div class="service-icon">🎨</div>
 
+                <h3>
+                    Premium Design
+                </h3>
 
-<div class="service-card reveal">
+                <p>
+                    Modern visual systems with gradients,
+                    glass effects, animations and responsive layouts.
+                </p>
 
-<div class="service-number">
-02
-</div>
+            </div>
 
-<div class="service-icon">
-👤
-</div>
 
-<h3>
-Personal Websites
-</h3>
+            <div class="service-card reveal">
 
-<p>
-Personal profiles, portfolios, CV websites
-and professional online identities.
-</p>
+                <div class="service-icon">📱</div>
 
-</div>
+                <h3>
+                    Mobile Responsive
+                </h3>
 
+                <p>
+                    Your website adapts beautifully to phones,
+                    tablets, laptops and large screens.
+                </p>
 
+            </div>
 
-<div class="service-card reveal">
 
-<div class="service-number">
-03
-</div>
+            <div class="service-card reveal">
 
-<div class="service-icon">
-🚀
-</div>
+                <div class="service-icon">🚀</div>
 
-<h3>
-Landing Pages
-</h3>
+                <h3>
+                    Landing Pages
+                </h3>
 
-<p>
-High-impact landing pages for products,
-services, campaigns and ideas.
-</p>
+                <p>
+                    Focused landing pages designed to present
+                    your product, service or idea.
+                </p>
 
-</div>
+            </div>
 
 
+            <div class="service-card reveal">
 
-<div class="service-card reveal">
+                <div class="service-icon">💼</div>
 
-<div class="service-number">
-04
-</div>
+                <h3>
+                    Portfolio Websites
+                </h3>
 
-<div class="service-icon">
-🎓
-</div>
+                <p>
+                    Showcase your skills, projects, services,
+                    achievements and professional identity.
+                </p>
 
-<h3>
-Educational Websites
-</h3>
+            </div>
 
-<p>
-Websites for academies, schools,
-courses, teachers and learning projects.
-</p>
 
-</div>
+            <div class="service-card reveal">
 
+                <div class="service-icon">⚙️</div>
 
+                <h3>
+                    Custom Features
+                </h3>
 
-<div class="service-card reveal">
+                <p>
+                    Forms, animations, sections, interactive UI
+                    and custom functionality based on your requirements.
+                </p>
 
-<div class="service-number">
-05
-</div>
+            </div>
 
-<div class="service-icon">
-🎨
-</div>
+        </div>
 
-<h3>
-Portfolio Websites
-</h3>
-
-<p>
-Modern portfolios for creators,
-designers, developers and professionals.
-</p>
-
-</div>
-
-
-
-<div class="service-card reveal">
-
-<div class="service-number">
-06
-</div>
-
-<div class="service-icon">
-🏆
-</div>
-
-<h3>
-Brand Websites
-</h3>
-
-<p>
-Complete branded web presence with
-custom visual identity and premium sections.
-</p>
-
-</div>
-
-
-
-<div class="service-card reveal">
-
-<div class="service-number">
-07
-</div>
-
-<div class="service-icon">
-🛍️
-</div>
-
-<h3>
-Product Websites
-</h3>
-
-<p>
-Beautiful product showcase pages with
-clear information and call-to-action sections.
-</p>
-
-</div>
-
-
-
-<div class="service-card reveal">
-
-<div class="service-number">
-08
-</div>
-
-<div class="service-icon">
-📱
-</div>
-
-<h3>
-Responsive Websites
-</h3>
-
-<p>
-Websites optimized for phones,
-tablets, laptops and desktop screens.
-</p>
-
-</div>
-
-
-
-<div class="service-card reveal">
-
-<div class="service-number">
-09
-</div>
-
-<div class="service-icon">
-⚡
-</div>
-
-<h3>
-Custom Web Projects
-</h3>
-
-<p>
-Have a different idea? Tell me what you
-need and we can discuss a custom solution.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
      PORTFOLIO
 ========================================================= -->
 
-<section class="section" id="portfolio">
+<section id="portfolio">
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="section-heading reveal">
 
-<div class="mini">
-Selected Work
-</div>
+            <div class="eyebrow">
+                PORTFOLIO
+            </div>
 
-<h2>
-My Websites
-</h2>
+            <h2>
+                Selected
+                <span class="gradient-text">
+                    projects.
+                </span>
+            </h2>
 
-<p>
-Here are some websites I have created.
-</p>
+            <p>
+                Explore some of the websites created and published online.
+            </p>
 
-</div>
+        </div>
 
 
-<div class="portfolio-grid">
+        <div class="portfolio-grid">
 
 
-<!-- PROJECT 1 -->
+            <div class="project reveal">
 
-<div class="project reveal">
+                <div class="project-preview">
 
-<div class="project-screen">
+                    <div class="browser">
 
-<div class="browser">
+                        <div class="browser-top">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
 
-<div class="browser-bar">
+                        <div class="browser-line"></div>
+                        <div class="browser-line small"></div>
+                        <div class="browser-line"></div>
 
-<i></i>
-<i></i>
-<i></i>
+                    </div>
 
-</div>
+                </div>
 
-<div class="browser-content">
+                <div class="project-content">
 
-<h4>
-📖 Iqra Quran Academy
-</h4>
+                    <h3>
+                        IQRA QURAN ACADEMY
+                    </h3>
 
-<p>
-Online Quran learning website
-</p>
+                    <p>
+                        A dedicated Islamic educational website
+                        designed for Quran learning and online presence.
+                    </p>
 
-<br>
+                    <a class="project-link"
+                       href="https://awantvhouse-crypto.github.io/IQRA-QURAN.ACADEMY/"
+                       target="_blank">
+                        VIEW LIVE WEBSITE →
+                    </a>
 
-<strong>
-Quran • Hifz • Nazra • Tajweed
-</strong>
+                </div>
 
-</div>
+            </div>
 
-</div>
 
-</div>
+            <div class="project reveal">
 
+                <div class="project-preview">
 
-<div class="project-info">
+                    <div class="browser">
 
-<h3>
-Iqra Quran Academy
-</h3>
+                        <div class="browser-top">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
 
-<p>
+                        <div class="browser-line"></div>
+                        <div class="browser-line small"></div>
+                        <div class="browser-line"></div>
 
-An online Quran learning website
-created as a complete educational
-web project.
+                    </div>
 
-</p>
+                </div>
 
-<a
-class="project-link"
-href="https://awantvhouse-crypto.github.io/IQRA-QURAN.ACADEMY/"
-target="_blank">
+                <div class="project-content">
 
-View Live Website →
+                    <h3>
+                        ISLAMIC PLACE
+                    </h3>
 
-</a>
+                    <p>
+                        An Islamic themed digital project with
+                        a clean and accessible presentation.
+                    </p>
 
-</div>
+                    <a class="project-link"
+                       href="https://awantvhouse-crypto.github.io/Islamic-place/"
+                       target="_blank">
+                        VIEW LIVE WEBSITE →
+                    </a>
 
-</div>
+                </div>
 
+            </div>
 
 
-<!-- PROJECT 2 -->
+        </div>
 
-<div class="project reveal">
-
-<div class="project-screen">
-
-<div class="browser">
-
-<div class="browser-bar">
-
-<i></i>
-<i></i>
-<i></i>
-
-</div>
-
-<div class="browser-content">
-
-<h4>
-☪ Islamic Place
-</h4>
-
-<p>
-Islamic information and learning website
-</p>
-
-<br>
-
-<strong>
-Quran • Namaz • Hadith
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="project-info">
-
-<h3>
-Islamic Place
-</h3>
-
-<p>
-
-An Islamic website project containing
-Quran, Namaz, Hadith and educational content.
-
-</p>
-
-<a
-class="project-link"
-href="https://awantvhouse-crypto.github.io/Islamic-place/"
-target="_blank">
-
-View Live Website →
-
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
      PRICING
 ========================================================= -->
 
-<section class="section" id="pricing">
+<section id="pricing">
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="section-heading reveal">
 
-<div class="mini">
-Website Packages
-</div>
+            <div class="eyebrow">
+                PRICING
+            </div>
 
-<h2>
-Simple Pricing
-</h2>
+            <h2>
+                Choose your
+                <span class="gradient-text">
+                    website level.
+                </span>
+            </h2>
 
-<p>
-Choose a package or request a custom website.
-</p>
+            <p>
+                Simple packages for different website requirements.
+            </p>
 
-</div>
+        </div>
 
 
-<div class="pricing-grid">
+        <div class="pricing-grid">
 
 
-<!-- EASY -->
+            <div class="price-card reveal">
 
-<div class="price-card reveal">
+                <h3>
+                    EASY WEBSITE
+                </h3>
 
-<h3>
-Easy Website
-</h3>
+                <div class="price">
+                    $20
+                </div>
 
-<div class="price">
-$20
-</div>
+                <ul class="price-features">
 
-<p>
-For simple personal or basic website requirements.
-</p>
+                    <li>Modern design</li>
+                    <li>Responsive layout</li>
+                    <li>Basic sections</li>
+                    <li>Contact information</li>
+                    <li>GitHub Pages support</li>
 
-<ul class="features">
+                </ul>
 
-<li>
-1–3 Main Sections
-</li>
+                <a href="#request"
+                   class="btn btn-secondary"
+                   style="width:100%">
+                    SELECT
+                </a>
 
-<li>
-Responsive Design
-</li>
+            </div>
 
-<li>
-Clean Layout
-</li>
 
-<li>
-Basic Contact CTA
-</li>
+            <div class="price-card featured reveal">
 
-<li>
-Mobile Friendly
-</li>
+                <div class="popular">
+                    POPULAR
+                </div>
 
-</ul>
+                <h3>
+                    NORMAL WEBSITE
+                </h3>
 
-<a
-href="#order"
-class="btn btn-outline price-btn">
+                <div class="price">
+                    $39
+                </div>
 
-Order Now
+                <ul class="price-features">
 
-</a>
+                    <li>Premium design</li>
+                    <li>Responsive UI</li>
+                    <li>Multiple sections</li>
+                    <li>Animations</li>
+                    <li>Contact CTA</li>
 
-</div>
+                </ul>
 
+                <a href="#request"
+                   class="btn btn-primary"
+                   style="width:100%">
+                    SELECT
+                </a>
 
+            </div>
 
-<!-- NORMAL -->
 
-<div class="price-card featured reveal">
+            <div class="price-card reveal">
 
-<div class="popular">
-POPULAR
-</div>
+                <h3>
+                    ADVANCED WEBSITE
+                </h3>
 
-<h3>
-Normal Website
-</h3>
+                <div class="price">
+                    $50
+                </div>
 
-<div class="price">
-$39
-</div>
+                <ul class="price-features">
 
-<p>
-Professional website for individuals and small businesses.
-</p>
+                    <li>Advanced UI</li>
+                    <li>Premium animations</li>
+                    <li>Advanced sections</li>
+                    <li>Interactive features</li>
+                    <li>Custom requirements</li>
 
-<ul class="features">
+                </ul>
 
-<li>
-5–7 Sections
-</li>
+                <a href="#request"
+                   class="btn btn-secondary"
+                   style="width:100%">
+                    SELECT
+                </a>
 
-<li>
-Modern UI
-</li>
+            </div>
 
-<li>
-Responsive Design
-</li>
 
-<li>
-Animations & Effects
-</li>
+            <div class="price-card reveal">
 
-<li>
-Services / Portfolio
-</li>
+                <h3>
+                    BRAND WEBSITE
+                </h3>
 
-<li>
-WhatsApp CTA
-</li>
+                <div class="price">
+                    $80
+                </div>
 
-</ul>
+                <ul class="price-features">
 
-<a
-href="#order"
-class="btn btn-primary price-btn">
+                    <li>Premium brand design</li>
+                    <li>Advanced UI/UX</li>
+                    <li>Custom animations</li>
+                    <li>Professional sections</li>
+                    <li>High-end presentation</li>
 
-Order Now
+                </ul>
 
-</a>
+                <a href="#request"
+                   class="btn btn-secondary"
+                   style="width:100%">
+                    SELECT
+                </a>
 
-</div>
+            </div>
 
+        </div>
 
-
-<!-- ADVANCED -->
-
-<div class="price-card reveal">
-
-<h3>
-Advanced Website
-</h3>
-
-<div class="price">
-$50
-</div>
-
-<p>
-Feature-rich website with advanced presentation.
-</p>
-
-<ul class="features">
-
-<li>
-8+ Sections
-</li>
-
-<li>
-Premium UI
-</li>
-
-<li>
-Advanced Animations
-</li>
-
-<li>
-Portfolio
-</li>
-
-<li>
-FAQ
-</li>
-
-<li>
-Testimonials
-</li>
-
-<li>
-Advanced CTA
-</li>
-
-</ul>
-
-<a
-href="#order"
-class="btn btn-outline price-btn">
-
-Order Now
-
-</a>
-
-</div>
-
-
-
-<!-- BRAND -->
-
-<div class="price-card reveal">
-
-<h3>
-Brand Website
-</h3>
-
-<div class="price">
-$80
-</div>
-
-<p>
-Complete premium website for a strong online presence.
-</p>
-
-<ul class="features">
-
-<li>
-Custom Branding
-</li>
-
-<li>
-Premium Design
-</li>
-
-<li>
-Multiple Sections
-</li>
-
-<li>
-Animations
-</li>
-
-<li>
-Portfolio
-</li>
-
-<li>
-Services
-</li>
-
-<li>
-Mobile Optimization
-</li>
-
-</ul>
-
-<a
-href="#order"
-class="btn btn-outline price-btn">
-
-Order Now
-
-</a>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
      PROCESS
 ========================================================= -->
 
-<section class="section">
+<section>
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="section-heading reveal">
 
-<div class="mini">
-My Process
-</div>
+            <div class="eyebrow">
+                WORKFLOW
+            </div>
 
-<h2>
-From Idea To Website
-</h2>
+            <h2>
+                From idea to
+                <span class="gradient-text">
+                    website.
+                </span>
+            </h2>
 
-<p>
-A simple process to turn your idea into a website.
-</p>
-
-</div>
-
-
-<div class="process-grid">
+        </div>
 
 
-<div class="process-card reveal">
+        <div class="process">
 
-<div class="process-number">
-01
-</div>
+            <div class="process-card reveal">
 
-<h3>
-Tell Me Your Idea
-</h3>
+                <div class="process-number">
+                    01
+                </div>
 
-<p>
-Fill out the website request form with your requirements.
-</p>
+                <h3>
+                    Your Idea
+                </h3>
 
-</div>
+                <p>
+                    Tell me what your website is about
+                    and what you need.
+                </p>
 
-
-<div class="process-card reveal">
-
-<div class="process-number">
-02
-</div>
-
-<h3>
-Discuss & Plan
-</h3>
-
-<p>
-We discuss design, features, colors and website structure.
-</p>
-
-</div>
+            </div>
 
 
-<div class="process-card reveal">
+            <div class="process-card reveal">
 
-<div class="process-number">
-03
-</div>
+                <div class="process-number">
+                    02
+                </div>
 
-<h3>
-I Build
-</h3>
+                <h3>
+                    Planning
+                </h3>
 
-<p>
-The website is created according to the agreed requirements.
-</p>
+                <p>
+                    We define pages, features, colors
+                    and visual direction.
+                </p>
 
-</div>
-
-
-<div class="process-card reveal">
-
-<div class="process-number">
-04
-</div>
-
-<h3>
-Launch
-</h3>
-
-<p>
-Your website is prepared for publishing and delivery.
-</p>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="process-card reveal">
 
-</div>
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Development
+                </h3>
+
+                <p>
+                    Your website is designed and developed
+                    with modern web technologies.
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Delivery
+                </h3>
+
+                <p>
+                    Your completed website is prepared
+                    for publishing and use.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
      SKILLS
 ========================================================= -->
 
-<section class="section">
+<section>
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="section-heading reveal">
 
-<div class="mini">
-My Skills
-</div>
+            <div class="eyebrow">
+                SKILLS
+            </div>
 
-<h2>
-What I Work With
-</h2>
+            <h2>
+                Built with
+                <span class="gradient-text">
+                    modern web skills.
+                </span>
+            </h2>
 
-</div>
-
-
-<div class="skills-grid">
-
-
-<div class="skill reveal">
-<span class="skill-icon">🌐</span>
-HTML
-</div>
+        </div>
 
 
-<div class="skill reveal">
-<span class="skill-icon">🎨</span>
-CSS
-</div>
+        <div class="skills-grid">
+
+            <div class="glass-card reveal">
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>HTML</span>
+                        <span>95%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-fill"
+                             style="--width:95%"></div>
+                    </div>
+
+                </div>
 
 
-<div class="skill reveal">
-<span class="skill-icon">⚡</span>
-JavaScript
-</div>
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>CSS</span>
+                        <span>92%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-fill"
+                             style="--width:92%"></div>
+                    </div>
+
+                </div>
 
 
-<div class="skill reveal">
-<span class="skill-icon">📱</span>
-Responsive Design
-</div>
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>Responsive Design</span>
+                        <span>94%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-fill"
+                             style="--width:94%"></div>
+                    </div>
+
+                </div>
+
+            </div>
 
 
-<div class="skill reveal">
-<span class="skill-icon">✨</span>
-UI Design
-</div>
+            <div class="glass-card reveal">
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>UI / UX</span>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-fill"
+                             style="--width:90%"></div>
+                    </div>
+
+                </div>
 
 
-<div class="skill reveal">
-<span class="skill-icon">🚀</span>
-Web Animations
-</div>
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>Animations</span>
+                        <span>88%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-fill"
+                             style="--width:88%"></div>
+                    </div>
+
+                </div>
 
 
-<div class="skill reveal">
-<span class="skill-icon">🐙</span>
-GitHub Pages
-</div>
+                <div class="skill">
 
+                    <div class="skill-top">
+                        <span>GitHub Pages</span>
+                        <span>95%</span>
+                    </div>
 
-<div class="skill reveal">
-<span class="skill-icon">🧩</span>
-Custom Websites
-</div>
+                    <div class="skill-bar">
+                        <div class="skill-fill"
+                             style="--width:95%"></div>
+                    </div>
 
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
-     CLIENT WEBSITE ORDER FORM
+     CLIENT REQUEST FORM
 ========================================================= -->
 
-<section class="section form-section" id="order">
+<section id="request" class="form-section">
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="form-shell reveal">
 
-<div class="mini">
-Start Your Project
-</div>
+            <div class="form-header">
 
-<h2>
-Create Your Website
-</h2>
+                <div class="eyebrow">
+                    START A PROJECT
+                </div>
 
-<p>
+                <h2>
+                    Tell me about your
+                    <span class="gradient-text">
+                        website.
+                    </span>
+                </h2>
 
-Fill this form with your requirements.
-After clicking <strong>AI SEND (HMAS)</strong>,
-WhatsApp will open with your complete request.
+                <p>
+                    Fill in the information below.
+                    When you press AI SEND (HMAS), your complete
+                    project information will be prepared and opened
+                    directly in WhatsApp.
+                </p>
 
-</p>
+            </div>
 
-</div>
 
+            <form id="projectForm">
 
-<div class="form-wrapper reveal">
+                <div class="form-grid">
 
 
-<div class="form-heading">
+                    <!-- NAME -->
 
-<h3>
-🚀 Website Request Form
-</h3>
+                    <div class="input-group">
 
-<p>
-Please provide as much information as possible
-so I can understand your project.
-</p>
+                        <label>
+                            FULL NAME *
+                        </label>
 
-</div>
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Your full name"
+                            required
+                        >
 
+                    </div>
 
-<form id="websiteForm">
 
+                    <!-- FATHER NAME -->
 
-<div class="form-grid">
+                    <div class="input-group">
 
+                        <label>
+                            FATHER NAME
+                        </label>
 
-<!-- NAME -->
+                        <input
+                            type="text"
+                            id="fatherName"
+                            placeholder="Father's name"
+                        >
 
-<div class="form-group">
+                    </div>
 
-<label>
-Full Name <span>*</span>
-</label>
 
-<input
-type="text"
-id="clientName"
-placeholder="Enter your full name"
-required>
+                    <!-- PHONE -->
 
-</div>
+                    <div class="input-group">
 
+                        <label>
+                            WHATSAPP / PHONE *
+                        </label>
 
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="0300 1234567"
+                            required
+                        >
 
-<!-- FATHER NAME -->
+                    </div>
 
-<div class="form-group">
 
-<label>
-Father Name <span>*</span>
-</label>
+                    <!-- EMAIL -->
 
-<input
-type="text"
-id="fatherName"
-placeholder="Enter father's name"
-required>
+                    <div class="input-group">
 
-</div>
+                        <label>
+                            EMAIL
+                        </label>
 
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="your@email.com"
+                        >
 
+                    </div>
+
+
+                    <!-- WHAT DO YOU DO -->
+
+                    <div class="input-group full">
+
+                        <label>
+                            WHAT DO YOU DO? *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="occupation"
+                            placeholder="Business owner, student, teacher, freelancer, organization..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- WEBSITE TYPE -->
+
+                    <div class="input-group full">
+
+                        <label>
+                            WHICH TYPE OF WEBSITE DO YOU WANT?
+                        </label>
+
+                        <div class="checkbox-grid">
 
-<!-- PHONE -->
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="typeBusiness"
+                                       value="Business Website"
+                                       name="websiteType">
+                                <label for="typeBusiness">
+                                    💼 Business
+                                </label>
+                            </div>
 
-<div class="form-group">
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="typePortfolio"
+                                       value="Portfolio Website"
+                                       name="websiteType">
+                                <label for="typePortfolio">
+                                    👨‍💻 Portfolio
+                                </label>
+                            </div>
 
-<label>
-WhatsApp / Phone <span>*</span>
-</label>
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="typeShop"
+                                       value="Online Store"
+                                       name="websiteType">
+                                <label for="typeShop">
+                                    🛒 Online Store
+                                </label>
+                            </div>
 
-<input
-type="tel"
-id="clientPhone"
-placeholder="0300 1234567"
-required>
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="typeEducation"
+                                       value="Education Website"
+                                       name="websiteType">
+                                <label for="typeEducation">
+                                    🎓 Education
+                                </label>
+                            </div>
 
-</div>
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="typeIslamic"
+                                       value="Islamic Website"
+                                       name="websiteType">
+                                <label for="typeIslamic">
+                                    ☪️ Islamic
+                                </label>
+                            </div>
 
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="typeOther"
+                                       value="Other"
+                                       name="websiteType">
+                                <label for="typeOther">
+                                    ✨ Other
+                                </label>
+                            </div>
 
+                        </div>
 
-<!-- EMAIL -->
+                    </div>
 
-<div class="form-group">
 
-<label>
-Email Address
-</label>
+                    <!-- PACKAGE -->
 
-<input
-type="email"
-id="clientEmail"
-placeholder="your@email.com">
+                    <div class="input-group">
 
-</div>
+                        <label>
+                            PACKAGE
+                        </label>
 
+                        <select id="package">
 
+                            <option value="Not Selected">
+                                Select package
+                            </option>
 
-<!-- WHAT DO YOU DO -->
+                            <option value="Easy Website - $20">
+                                Easy Website - $20
+                            </option>
+
+                            <option value="Normal Website - $39">
+                                Normal Website - $39
+                            </option>
+
+                            <option value="Advanced Website - $50">
+                                Advanced Website - $50
+                            </option>
+
+                            <option value="Brand Website - $80">
+                                Brand Website - $80
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DEADLINE -->
+
+                    <div class="input-group">
+
+                        <label>
+                            PREFERRED DEADLINE
+                        </label>
+
+                        <input
+                            type="date"
+                            id="deadline"
+                        >
 
-<div class="form-group full">
+                    </div>
+
+
+                    <!-- PAGES -->
+
+                    <div class="input-group full">
+
+                        <label>
+                            PAGES / SECTIONS YOU NEED
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pages"
+                            placeholder="Home, About, Services, Contact, Gallery..."
+                        >
 
-<label>
-What do you do? <span>*</span>
-</label>
+                    </div>
 
-<input
-type="text"
-id="clientWork"
-placeholder="Example: Business owner, teacher, student, designer, shop owner..."
-required>
 
-</div>
+                    <!-- FEATURES -->
 
+                    <div class="input-group full">
 
+                        <label>
+                            FEATURES YOU WANT
+                        </label>
 
-<!-- WEBSITE TYPE -->
+                        <div class="checkbox-grid">
 
-<div class="form-group full">
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="featureContact"
+                                       value="Contact Form"
+                                       name="features">
+                                <label for="featureContact">
+                                    📩 Contact Form
+                                </label>
+                            </div>
 
-<label>
-What type of website do you want? <span>*</span>
-</label>
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="featureWhatsApp"
+                                       value="WhatsApp Button"
+                                       name="features">
+                                <label for="featureWhatsApp">
+                                    📱 WhatsApp
+                                </label>
+                            </div>
 
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="featureAnimation"
+                                       value="Animations"
+                                       name="features">
+                                <label for="featureAnimation">
+                                    ✨ Animations
+                                </label>
+                            </div>
 
-<div class="checkbox-grid">
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="featureGallery"
+                                       value="Gallery"
+                                       name="features">
+                                <label for="featureGallery">
+                                    🖼️ Gallery
+                                </label>
+                            </div>
 
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="featureSocial"
+                                       value="Social Media Links"
+                                       name="features">
+                                <label for="featureSocial">
+                                    🔗 Social Links
+                                </label>
+                            </div>
 
-<div class="check-option">
+                            <div class="check">
+                                <input type="checkbox"
+                                       id="featureCustom"
+                                       value="Custom Feature"
+                                       name="features">
+                                <label for="featureCustom">
+                                    ⚙️ Custom
+                                </label>
+                            </div>
 
-<input
-type="checkbox"
-name="websiteType"
-value="Business Website"
-id="business">
+                        </div>
 
-<label for="business">
-🌐 Business
-</label>
+                    </div>
 
-</div>
 
+                    <!-- COLORS -->
 
-<div class="check-option">
+                    <div class="input-group">
 
-<input
-type="checkbox"
-name="websiteType"
-value="Personal Website"
-id="personal">
+                        <label>
+                            PREFERRED COLORS
+                        </label>
 
-<label for="personal">
-👤 Personal
-</label>
+                        <input
+                            type="text"
+                            id="colors"
+                            placeholder="Black & Gold, Blue, Green..."
+                        >
 
-</div>
+                    </div>
 
 
-<div class="check-option">
+                    <!-- REFERENCE -->
 
-<input
-type="checkbox"
-name="websiteType"
-value="Portfolio Website"
-id="portfolioType">
+                    <div class="input-group">
 
-<label for="portfolioType">
-🎨 Portfolio
-</label>
+                        <label>
+                            REFERENCE WEBSITE
+                        </label>
 
-</div>
+                        <input
+                            type="url"
+                            id="reference"
+                            placeholder="https://example.com"
+                        >
 
+                    </div>
 
-<div class="check-option">
 
-<input
-type="checkbox"
-name="websiteType"
-value="Landing Page"
-id="landing">
+                    <!-- DESCRIPTION -->
 
-<label for="landing">
-🚀 Landing Page
-</label>
+                    <div class="input-group full">
 
-</div>
+                        <label>
+                            DETAILED PROJECT DESCRIPTION *
+                        </label>
 
+                        <textarea
+                            id="description"
+                            placeholder="Tell me exactly what you want your website to do..."
+                            required
+                        ></textarea>
 
-<div class="check-option">
+                    </div>
 
-<input
-type="checkbox"
-name="websiteType"
-value="Educational Website"
-id="education">
 
-<label for="education">
-🎓 Education
-</label>
+                    <!-- SUBMIT -->
 
-</div>
+                    <div class="form-submit">
 
+                        <button
+                            type="submit"
+                            class="ai-send">
+                            🤖 AI SEND (HMAS)
+                        </button>
 
-<div class="check-option">
+                    </div>
 
-<input
-type="checkbox"
-name="websiteType"
-value="Product Website"
-id="product">
+                </div>
 
-<label for="product">
-🛍️ Product
-</label>
+                <div
+                    class="form-status"
+                    id="formStatus">
+                </div>
 
-</div>
+            </form>
 
+        </div>
 
-<div class="check-option">
-
-<input
-type="checkbox"
-name="websiteType"
-value="Brand Website"
-id="brand">
-
-<label for="brand">
-🏆 Brand
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="websiteType"
-value="Organization Website"
-id="organization">
-
-<label for="organization">
-🏢 Organization
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="websiteType"
-value="Custom Website"
-id="custom">
-
-<label for="custom">
-🧩 Custom
-</label>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- PACKAGE -->
-
-<div class="form-group">
-
-<label>
-Preferred Package <span>*</span>
-</label>
-
-<select id="package" required>
-
-<option value="">
-Select a package
-</option>
-
-<option value="Easy Website - $20">
-Easy Website — $20
-</option>
-
-<option value="Normal Website - $39">
-Normal Website — $39
-</option>
-
-<option value="Advanced Website - $50">
-Advanced Website — $50
-</option>
-
-<option value="Brand Website - $80">
-Brand Website — $80
-</option>
-
-<option value="Custom / Discuss">
-Custom / Discuss
-</option>
-
-</select>
-
-</div>
-
-
-
-<!-- PAGES -->
-
-<div class="form-group">
-
-<label>
-Approx. Pages / Sections
-</label>
-
-<select id="pages">
-
-<option value="Not sure">
-Not sure
-</option>
-
-<option value="1-3 sections">
-1–3 Sections
-</option>
-
-<option value="4-6 sections">
-4–6 Sections
-</option>
-
-<option value="7-10 sections">
-7–10 Sections
-</option>
-
-<option value="10+ sections">
-10+ Sections
-</option>
-
-</select>
-
-</div>
-
-
-
-<!-- FEATURES -->
-
-<div class="form-group full">
-
-<label>
-Which features do you need?
-</label>
-
-
-<div class="checkbox-grid">
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="WhatsApp Button"
-id="whatsappFeature">
-
-<label for="whatsappFeature">
-💬 WhatsApp
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="Contact Form"
-id="contactFeature">
-
-<label for="contactFeature">
-📩 Contact Form
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="Gallery"
-id="galleryFeature">
-
-<label for="galleryFeature">
-🖼️ Gallery
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="Animations"
-id="animationFeature">
-
-<label for="animationFeature">
-✨ Animations
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="Dark Mode"
-id="darkFeature">
-
-<label for="darkFeature">
-🌙 Dark Mode
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="FAQ"
-id="faqFeature">
-
-<label for="faqFeature">
-❓ FAQ
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="Testimonials"
-id="testimonialFeature">
-
-<label for="testimonialFeature">
-⭐ Testimonials
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="Social Media Links"
-id="socialFeature">
-
-<label for="socialFeature">
-📱 Social Links
-</label>
-
-</div>
-
-
-<div class="check-option">
-
-<input
-type="checkbox"
-name="features"
-value="Custom Design"
-id="customDesign">
-
-<label for="customDesign">
-🎨 Custom Design
-</label>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- COLOR -->
-
-<div class="form-group">
-
-<label>
-Preferred Colors
-</label>
-
-<input
-type="text"
-id="colors"
-placeholder="Example: Black + Blue">
-
-</div>
-
-
-
-<!-- DEADLINE -->
-
-<div class="form-group">
-
-<label>
-Expected Deadline
-</label>
-
-<select id="deadline">
-
-<option value="No fixed deadline">
-No fixed deadline
-</option>
-
-<option value="Within 3 days">
-Within 3 days
-</option>
-
-<option value="Within 1 week">
-Within 1 week
-</option>
-
-<option value="Within 2 weeks">
-Within 2 weeks
-</option>
-
-<option value="Within 1 month">
-Within 1 month
-</option>
-
-</select>
-
-</div>
-
-
-
-<!-- REFERENCE -->
-
-<div class="form-group full">
-
-<label>
-Existing Website / Reference Link
-</label>
-
-<input
-type="url"
-id="reference"
-placeholder="https://example.com">
-
-</div>
-
-
-
-<!-- DESCRIPTION -->
-
-<div class="form-group full">
-
-<label>
-Tell Me About Your Website <span>*</span>
-</label>
-
-<textarea
-id="projectDetails"
-placeholder="Explain your website idea, business, pages, content, special requirements, design ideas etc."
-required></textarea>
-
-</div>
-
-
-</div>
-
-
-<!-- FORM BOTTOM -->
-
-<div class="form-bottom">
-
-
-<div class="contact-number">
-
-Contact HMAS directly
-
-<strong>
-0305 4330064
-</strong>
-
-</div>
-
-
-<button
-type="submit"
-class="btn send-btn">
-
-📲 AI SEND (HMAS)
-
-</button>
-
-
-</div>
-
-
-<div
-id="formNote"
-class="form-note">
-
-✓ Your request is being prepared for WhatsApp...
-
-</div>
-
-
-</form>
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
      FAQ
 ========================================================= -->
 
-<section class="section">
+<section>
 
-<div class="container">
+    <div class="section-container">
 
-<div class="section-title">
+        <div class="section-heading reveal">
 
-<div class="mini">
-FAQ
-</div>
+            <div class="eyebrow">
+                FAQ
+            </div>
 
-<h2>
-Questions?
-</h2>
+            <h2>
+                Frequently asked
+                <span class="gradient-text">
+                    questions.
+                </span>
+            </h2>
 
-</div>
-
-
-<div class="faq">
-
-
-<details>
-
-<summary>
-What websites can HMAS create?
-</summary>
-
-<p>
-
-Business websites, personal websites, portfolios,
-landing pages, educational websites, product websites,
-organization websites and custom web projects.
-
-</p>
-
-</details>
+        </div>
 
 
+        <div class="faq">
 
-<details>
+            <div class="faq-item reveal">
 
-<summary>
-Will my website work on mobile?
-</summary>
+                <button class="faq-question">
+                    How can I order a website?
+                    <span>+</span>
+                </button>
 
-<p>
+                <div class="faq-answer">
 
-Yes. Websites are designed with responsive layouts
-for phones, tablets and desktop screens.
+                    <p>
+                        Fill out the project request form and press
+                        AI SEND (HMAS). Your information will be
+                        prepared in WhatsApp.
+                    </p>
 
-</p>
+                </div>
 
-</details>
-
-
-
-<details>
-
-<summary>
-Can I choose my own colors?
-</summary>
-
-<p>
-
-Yes. You can provide your preferred colors,
-style, reference websites and design ideas.
-
-</p>
-
-</details>
+            </div>
 
 
+            <div class="faq-item reveal">
 
-<details>
+                <button class="faq-question">
+                    Do you make mobile responsive websites?
+                    <span>+</span>
+                </button>
 
-<summary>
-Can I request a custom package?
-</summary>
+                <div class="faq-answer">
 
-<p>
+                    <p>
+                        Yes. Websites can be designed to work across
+                        phones, tablets, laptops and desktop screens.
+                    </p>
 
-Yes. If your project does not fit one of the listed
-packages, select Custom / Discuss in the form.
+                </div>
 
-</p>
-
-</details>
-
-
-
-<details>
-
-<summary>
-How will my website request reach HMAS?
-</summary>
-
-<p>
-
-After you complete the form, clicking AI SEND (HMAS)
-opens WhatsApp with your project information already
-prepared as a message.
-
-</p>
-
-</details>
+            </div>
 
 
-</div>
+            <div class="faq-item reveal">
 
-</div>
+                <button class="faq-question">
+                    Can I request custom features?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Mention your required features in the
+                        project description and they can be discussed
+                        before development.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item reveal">
+
+                <button class="faq-question">
+                    Can the website be hosted on GitHub Pages?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Static websites can be published using
+                        GitHub Pages.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item reveal">
+
+                <button class="faq-question">
+                    Are the visitor and registration numbers real global numbers?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        In this backend-free version, the counters use
+                        browser local storage. They are not a centralized
+                        global database. A real global counter requires
+                        a backend or external database/counter service.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
-     CONTACT CTA
+     CONTACT
 ========================================================= -->
 
-<section class="section" id="contact">
+<section>
 
-<div class="container">
+    <div class="section-container">
 
+        <div class="contact-box reveal">
 
-<div class="cta reveal">
+            <div class="eyebrow">
+                LET'S BUILD
+            </div>
 
-<h2>
+            <h2>
+                Your next website
+                <span class="gradient-text">
+                    starts here.
+                </span>
+            </h2>
 
-Have A Website Idea?
+            <p>
+                Have an idea? Tell me about it.
+                Let's turn your concept into a professional
+                digital experience.
+            </p>
 
-</h2>
+            <div class="hero-buttons"
+                 style="justify-content:center;">
 
+                <a href="#request"
+                   class="btn btn-primary">
+                    🚀 REQUEST WEBSITE
+                </a>
 
-<p>
+                <a href="https://wa.me/923054330064"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    💬 CHAT ON WHATSAPP
+                </a>
 
-Don't know where to start?
-Tell me what you need and let's discuss your website project.
+            </div>
 
-</p>
+        </div>
 
-
-<div class="phone">
-
-📞 0305 4330064
-
-</div>
-
-
-<a
-href="https://wa.me/923054330064?text=Hello%20Abdullah%20Shahzad%20(HMAS),%20I%20want%20to%20discuss%20a%20website%20project."
-
-target="_blank"
-
-class="btn btn-whatsapp">
-
-💬 Chat With HMAS
-
-</a>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -4292,357 +3157,523 @@ class="btn btn-whatsapp">
 
 <footer>
 
-<div class="container">
-
-<p>
-
-© <span id="year"></span>
-
-<strong>
-Abdullah Shahzad (HMAS)
-</strong>
-
-— Website Creator
-
-</p>
-
-<p style="margin-top:7px;">
-
-Modern Websites • Professional Design • Custom Projects
-
-</p>
-
-</div>
+    <p>
+        © <span id="year"></span>
+        <strong>Abdullah Shahzad (HMAS)</strong>
+        — Professional Website Creator.
+    </p>
 
 </footer>
 
 
-
 <!-- =========================================================
-     FLOATING WHATSAPP
+     WHATSAPP FLOAT
 ========================================================= -->
 
 <a
-
-class="floating-wa"
-
-href="https://wa.me/923054330064?text=Hello%20Abdullah%20Shahzad%20(HMAS),%20I%20want%20a%20website."
-
-target="_blank"
-
-aria-label="Contact HMAS on WhatsApp">
-
-💬
-
+    class="whatsapp"
+    href="https://wa.me/923054330064"
+    target="_blank"
+    aria-label="WhatsApp">
+    ☎
 </a>
 
 
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i = 0; i < 55; i++){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className = "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (Math.random() * 15 + 10) + "s";
+
+    particle.style.animationDelay =
+        Math.random() * 10 + "s";
+
+    particle.style.opacity =
+        Math.random() * .5;
+
+    particleContainer.appendChild(particle);
+}
 
 
 /* =========================================================
    YEAR
 ========================================================= */
 
-document.getElementById("year").textContent =
-new Date().getFullYear();
+document.getElementById("year")
+    .textContent = new Date().getFullYear();
 
+
+/* =========================================================
+   VISITOR COUNTER
+   BACKEND-FREE / LOCAL STORAGE
+========================================================= */
+
+let visitors =
+    Number(localStorage.getItem("hmas_visitors")) || 0;
+
+visitors++;
+
+localStorage.setItem(
+    "hmas_visitors",
+    visitors
+);
+
+
+/* =========================================================
+   REGISTRATION COUNTER
+========================================================= */
+
+let registrations =
+    Number(localStorage.getItem("hmas_registrations")) || 0;
+
+
+/* =========================================================
+   NUMBER ANIMATION
+========================================================= */
+
+function animateNumber(element, target){
+
+    let start = 0;
+
+    const duration = 1200;
+
+    const startTime = performance.now();
+
+    function update(currentTime){
+
+        const progress =
+            Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+        const eased =
+            1 - Math.pow(1 - progress, 3);
+
+        const value =
+            Math.floor(start + (target - start) * eased);
+
+        element.textContent =
+            value.toLocaleString();
+
+        if(progress < 1){
+            requestAnimationFrame(update);
+        }
+
+    }
+
+    requestAnimationFrame(update);
+}
+
+
+animateNumber(
+    document.getElementById("visitorCount"),
+    visitors
+);
+
+animateNumber(
+    document.getElementById("registrationCount"),
+    registrations
+);
 
 
 /* =========================================================
    SCROLL REVEAL
 ========================================================= */
 
-const revealElements =
-document.querySelectorAll(".reveal");
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
 
 
-const observer =
-new IntersectionObserver(
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
 
-(entries)=>{
+        revealObserver.observe(element);
 
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("active");
-
-observer.unobserve(entry.target);
-
-}
-
-});
-
-},
-
-{
-threshold:.12
-}
-
-);
-
-
-revealElements.forEach(element=>{
-
-observer.observe(element);
-
-});
-
+    });
 
 
 /* =========================================================
-   WEBSITE REQUEST FORM
+   FAQ
+========================================================= */
+
+document
+    .querySelectorAll(".faq-question")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const item =
+                    button.parentElement;
+
+                document
+                    .querySelectorAll(".faq-item")
+                    .forEach(other => {
+
+                        if(other !== item){
+
+                            other.classList.remove(
+                                "active"
+                            );
+
+                        }
+
+                    });
+
+                item.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   FORM -> WHATSAPP
 ========================================================= */
 
 const form =
-document.getElementById("websiteForm");
+    document.getElementById("projectForm");
+
+const status =
+    document.getElementById("formStatus");
 
 
-form.addEventListener("submit",function(event){
+form.addEventListener(
+    "submit",
+    function(event){
 
-event.preventDefault();
-
-
-/* ---------------------------------------------------------
-   BASIC INFORMATION
---------------------------------------------------------- */
-
-const name =
-document.getElementById("clientName").value.trim();
+        event.preventDefault();
 
 
-const father =
-document.getElementById("fatherName").value.trim();
+        /* ==============================
+           GET BASIC INFORMATION
+        ============================== */
+
+        const fullName =
+            document.getElementById("fullName")
+            .value.trim();
+
+        const fatherName =
+            document.getElementById("fatherName")
+            .value.trim();
+
+        const phone =
+            document.getElementById("phone")
+            .value.trim();
+
+        const email =
+            document.getElementById("email")
+            .value.trim();
+
+        const occupation =
+            document.getElementById("occupation")
+            .value.trim();
+
+        const packageName =
+            document.getElementById("package")
+            .value;
+
+        const deadline =
+            document.getElementById("deadline")
+            .value;
+
+        const pages =
+            document.getElementById("pages")
+            .value.trim();
+
+        const colors =
+            document.getElementById("colors")
+            .value.trim();
+
+        const reference =
+            document.getElementById("reference")
+            .value.trim();
+
+        const description =
+            document.getElementById("description")
+            .value.trim();
 
 
-const phone =
-document.getElementById("clientPhone").value.trim();
+        /* ==============================
+           WEBSITE TYPES
+        ============================== */
+
+        const websiteTypes =
+            Array.from(
+                document.querySelectorAll(
+                    'input[name="websiteType"]:checked'
+                )
+            )
+            .map(input => input.value);
 
 
-const email =
-document.getElementById("clientEmail").value.trim();
+        /* ==============================
+           FEATURES
+        ============================== */
+
+        const features =
+            Array.from(
+                document.querySelectorAll(
+                    'input[name="features"]:checked'
+                )
+            )
+            .map(input => input.value);
 
 
-const work =
-document.getElementById("clientWork").value.trim();
+        /* ==============================
+           VALIDATION
+        ============================== */
+
+        if(!fullName ||
+           !phone ||
+           !occupation ||
+           !description){
+
+            status.textContent =
+                "⚠️ Please fill all required fields.";
+
+            return;
+
+        }
 
 
-const packageName =
-document.getElementById("package").value;
+        /* ==============================
+           REGISTRATION COUNT
+        ============================== */
+
+        registrations++;
+
+        localStorage.setItem(
+            "hmas_registrations",
+            registrations
+        );
+
+        animateNumber(
+            document.getElementById(
+                "registrationCount"
+            ),
+            registrations
+        );
 
 
-const pages =
-document.getElementById("pages").value;
+        /* ==============================
+           WHATSAPP MESSAGE
+        ============================== */
 
+        const message = `
 
-const colors =
-document.getElementById("colors").value.trim();
-
-
-const deadline =
-document.getElementById("deadline").value;
-
-
-const reference =
-document.getElementById("reference").value.trim();
-
-
-const details =
-document.getElementById("projectDetails").value.trim();
-
-
-
-/* ---------------------------------------------------------
-   WEBSITE TYPES
---------------------------------------------------------- */
-
-const websiteTypes =
-Array.from(
-document.querySelectorAll(
-'input[name="websiteType"]:checked'
-)
-)
-.map(item=>item.value);
-
-
-if(websiteTypes.length===0){
-
-alert(
-"Please select at least one website type."
-);
-
-return;
-
-}
-
-
-
-/* ---------------------------------------------------------
-   FEATURES
---------------------------------------------------------- */
-
-const features =
-Array.from(
-document.querySelectorAll(
-'input[name="features"]:checked'
-)
-)
-.map(item=>item.value);
-
-
-const featureText =
-features.length
-? features.join(", ")
-: "No specific features selected";
-
-
-
-/* ---------------------------------------------------------
-   WEBSITE TYPE TEXT
---------------------------------------------------------- */
-
-const websiteText =
-websiteTypes.join(", ");
-
-
-
-/* ---------------------------------------------------------
-   WHATSAPP MESSAGE
---------------------------------------------------------- */
-
-const message =
-
-`🚀 *NEW WEBSITE PROJECT REQUEST*
-
+🚀 *NEW WEBSITE REQUEST*
 ━━━━━━━━━━━━━━━━━━━━
 
 👤 *CLIENT INFORMATION*
 
-Name:
-${name}
+Full Name:
+${fullName}
 
 Father Name:
-${father}
+${fatherName || "Not Provided"}
 
 WhatsApp / Phone:
 ${phone}
 
 Email:
-${email || "Not provided"}
+${email || "Not Provided"}
 
 What I Do:
-${work}
+${occupation}
 
 
-━━━━━━━━━━━━━━━━━━━━
-
-🌐 *WEBSITE REQUIREMENTS*
+🌐 *WEBSITE INFORMATION*
 
 Website Type:
-${websiteText}
+${websiteTypes.length
+    ? websiteTypes.join(", ")
+    : "Not Selected"}
 
 Package:
 ${packageName}
 
 Pages / Sections:
-${pages}
+${pages || "Not Specified"}
 
 Features:
-${featureText}
+${features.length
+    ? features.join(", ")
+    : "Not Selected"}
 
 Preferred Colors:
-${colors || "Not specified"}
+${colors || "Not Specified"}
 
-Deadline:
-${deadline}
+Preferred Deadline:
+${deadline || "Not Specified"}
 
-
-━━━━━━━━━━━━━━━━━━━━
-
-📝 *PROJECT DETAILS*
-
-${details}
+Reference Website:
+${reference || "Not Provided"}
 
 
-━━━━━━━━━━━━━━━━━━━━
+📝 *PROJECT DESCRIPTION*
 
-🔗 *REFERENCE WEBSITE*
-
-${reference || "No reference provided"}
+${description}
 
 
 ━━━━━━━━━━━━━━━━━━━━
 
-📲 *CONTACT*
-
-This request was sent from the
+🔥 *REQUEST SENT FROM*
 Abdullah Shahzad (HMAS)
-Website Creator portfolio.
+Website Creator
 
-Please contact me to discuss the project.
-
-📞 0305 4330064
+📱 HMAS WhatsApp:
+03054330064
 
 ━━━━━━━━━━━━━━━━━━━━
-
-🤝 *HMAS — Website Creator*`;
-
+        `;
 
 
-/* ---------------------------------------------------------
-   SHOW STATUS
---------------------------------------------------------- */
+        /* ==============================
+           ENCODE MESSAGE
+        ============================== */
 
-const note =
-document.getElementById("formNote");
-
-note.classList.add("show");
-
-note.textContent =
-"✓ Request prepared. Opening WhatsApp...";
+        const encodedMessage =
+            encodeURIComponent(
+                message.trim()
+            );
 
 
+        /* ==============================
+           WHATSAPP NUMBER
+        ============================== */
 
-/* ---------------------------------------------------------
-   WHATSAPP LINK
---------------------------------------------------------- */
-
-const whatsappNumber =
-"923054330064";
-
-
-const whatsappURL =
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-encodeURIComponent(message);
+        const whatsappNumber =
+            "923054330064";
 
 
+        const whatsappURL =
+            `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-/* ---------------------------------------------------------
-   OPEN WHATSAPP
---------------------------------------------------------- */
 
-setTimeout(()=>{
+        /* ==============================
+           STATUS
+        ============================== */
 
-window.open(
-whatsappURL,
-"_blank"
+        status.textContent =
+            "✅ Request prepared. Opening WhatsApp...";
+
+
+        /* ==============================
+           OPEN WHATSAPP
+        ============================== */
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
 );
 
-},500);
 
-});
+/* =========================================================
+   3D CARD TILT EFFECT
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".glass-card, .service-card, .price-card"
+    )
+    .forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    event.clientX - rect.left;
+
+                const y =
+                    event.clientY - rect.top;
+
+                const centerX =
+                    rect.width / 2;
+
+                const centerY =
+                    rect.height / 2;
+
+                const rotateX =
+                    ((y - centerY) / centerY) * -2;
+
+                const rotateY =
+                    ((x - centerX) / centerX) * 2;
+
+                card.style.transform =
+                    `perspective(800px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-5px)`;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
+        );
+
+    });
 
 </script>
 
-
 </body>
-
 </html>
